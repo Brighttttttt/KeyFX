@@ -1,0 +1,8 @@
+@media (min-width: 1050px) {
+    .lg\:order-1 {
+        order: 1 !important;
+    }
+    .lg\:order-2 {
+        order: 2 !important;
+    }
+}

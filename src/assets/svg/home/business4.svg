@@ -1,0 +1,41 @@
+<svg width="28" height="33" viewBox="0 0 28 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="animatedGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="20%" stop-color="#00D2D3">
+                <animate attributeName="stop-color" values="#00D2D3; #3593FF; #3593FF; #3593FF; #3593FF; #00D2D3; #00D2D3" dur="5s" repeatCount="indefinite" />
+            </stop>
+            <stop offset="30%" stop-color="#3593FF">
+                <animate attributeName="stop-color" values="#3593FF; #3593FF; #3593FF; #3593FF; #00D2D3; #00D2D3; #00D2D3" dur="5s" repeatCount="indefinite" />
+            </stop>
+            <stop offset="50%" stop-color="#3593FF">
+                <animate attributeName="stop-color" values="#3593FF; #3593FF; #3593FF; #00D2D3; #00D2D3; #00D2D3; #3593FF" dur="5s" repeatCount="indefinite" />
+            </stop>
+            <stop offset="70%" stop-color="#3593FF">
+                <animate attributeName="stop-color" values="#3593FF; #3593FF; #00D2D3; #00D2D3; #00D2D3; #3593FF; #3593FF" dur="5s" repeatCount="indefinite" />
+            </stop>
+            <stop offset="80%" stop-color="#00D2D3">
+                <animate attributeName="stop-color" values="#00D2D3; #00D2D3; #00D2D3; #3593FF; #3593FF; #3593FF; #00D2D3" dur="5s" repeatCount="indefinite" />
+            </stop>
+        </linearGradient>
+    </defs>
+    <g clip-path="url(#clip0_16970_5611)">
+        <g clip-path="url(#clip1_16970_5611)">
+            <rect width="73.2641" height="80.1883" transform="matrix(0.486731 0.873552 -0.182606 0.983186 -32.1904 -118.633)" fill="url(#animatedGradient)" />
+            <rect width="73.2641" height="80.1883" transform="matrix(0.486731 0.873552 -0.182606 0.983186 3.46973 -54.6331)" fill="url(#animatedGradient)" />
+            <rect width="73.2641" height="80.1883" transform="matrix(0.486731 0.873552 -0.182606 0.983186 39.1299 9.36694)" fill="url(#animatedGradient)" />
+        </g>
+    </g>
+    <rect x="4" y="23.7927" width="15" height="2" rx="1" fill="white" />
+    <rect x="4" y="18.7927" width="15" height="2" rx="1" fill="white" />
+    <rect x="20" y="23.7927" width="4" height="2" rx="1" fill="white" />
+    <rect x="20" y="18.7927" width="4" height="2" rx="1" fill="white" />
+    <path d="M14 13.7927C16.2091 13.7927 18 12.0019 18 9.79272C18 7.58359 16.2091 5.79272 14 5.79272C11.7909 5.79272 10 7.58359 10 9.79272C10 12.0019 11.7909 13.7927 14 13.7927Z" fill="white" />
+    <defs>
+        <clipPath id="clip0_16970_5611">
+            <rect y="0.792725" width="28" height="32" rx="4" fill="white" />
+        </clipPath>
+        <clipPath id="clip1_16970_5611">
+            <rect width="73.2641" height="80.1883" fill="white" transform="matrix(0.486731 0.873552 -0.182606 0.983186 3.46973 -54.6331)" />
+        </clipPath>
+    </defs>
+</svg>
