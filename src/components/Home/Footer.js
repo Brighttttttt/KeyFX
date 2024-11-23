@@ -39,7 +39,7 @@ const Footer = ({ isMobile }) => {
                                                                           src='/Phone%20Calling%20Rounded.svg'/>0800-002-9331</a>
           <a className='mt-2 text-sm text600 flex items-center gap-2'><img alt='Not Available' src='/Letter.svg'/>info@keyfx.co.uk</a>
           <a className='mt-2 text-sm text600 flex items-center gap-2'><img alt='Not Available'
-                                                                          src='/Clock%20Circle.svg'/>9am-5pm Mon -
+                                                                          src='/clock.svg'/>9am-5pm Mon -
             Fri</a>
           <a className='mt-2 text-sm text600 flex items-center gap-2'><img alt='Not Available'
                                                                           src='/Streets%20Map%20Point.svg'/>128 City
