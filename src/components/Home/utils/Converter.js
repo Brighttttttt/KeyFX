@@ -67,7 +67,7 @@ const Converter = ({ isMobile }) => {
   }, []);
   
   return (
-    <div className="mainPage">
+    <div className="mainPage converterWrapper">
       <div className="globe converter-card cvt-shadow grid lg:grid-cols-11 grid-cols-4 gap-3 items-center">
         <div className="flex flex-col col-span-4 ">
           <label className="small pb-2">Amount</label>

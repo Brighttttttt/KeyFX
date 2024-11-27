@@ -481,11 +481,26 @@ input[type="number"] {
   }
 
   .globe {
-    margin-top: 140px;
+    /*margin-top: 140px;*/
   }
 
   .observablehq {
-    height: 140px;
+    /*height: 140px;*/
+  }
+
+  .observablehq canvas {
+    width: 650px !important;
+    height: 650px !important;
+    margin-top: -500px !important;
+  }
+
+  .converterWrapper {
+    margin-top: -300px !important;
+  }
+
+  .currencyIcon {
+    width: 50px;
+    height: 50px;
   }
 
   .curr-icons {
@@ -539,11 +554,26 @@ input[type="number"] {
 
 @media (max-width: 425px) {
   .globe {
-    margin-top: 110px;
+    /*margin-top: 110px;*/
   }
 
   .observablehq {
-    height: 110px;
+    /*height: 110px;*/
+  }
+
+  .observablehq canvas {
+    width: 550px !important;
+    height: 550px !important;
+    margin-top: -600px !important;
+  }
+
+  .converterWrapper {
+    margin-top: -350px !important;
+  }
+
+  .currencyIcon {
+    width: 40px;
+    height: 40px;
   }
 
   .curr-icons {
@@ -1188,4 +1218,11 @@ input[type="number"] {
 }
 button.loading:disabled {
   appearance: none;
+}
+
+.converterWrapper {
+  background-color: #fff;
+  margin-top: -250px;
+  z-index: 100;
+  position: relative;
 }

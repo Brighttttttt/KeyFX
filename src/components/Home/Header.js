@@ -1,6 +1,6 @@
 import React from 'react';
 import Converter from './utils/Converter';
-import World from './utils/WorldTour';
+import WorldTour from './utils/WorldTour';
 import arrowRight from "../../assets/svg/home/arrowRight.svg";
 
 const Header = ({ isMobile }) => {
@@ -30,7 +30,7 @@ const Header = ({ isMobile }) => {
                     </div>
                 </div>
             </div>
-            <World />
+            <WorldTour />
             <Converter />
         </div>
     );
