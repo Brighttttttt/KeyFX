@@ -1,15 +1,40 @@
-import React, {useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import usd from '../../../assets/svg/flags/united states.svg';
 import './css/TransactionsImg.css';
 
 const TransactionsImg = () => {
   const [isClicked, setIsClicked] = useState(false);
+  const [isInView, setIsInView] = useState(false);
+  const targetRef = useRef(null);
+  
+  useEffect(() => {
+    const observerOptions = {root: null, rootMargin: '0px', threshold: 0.1};
+    const observerCallback = (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+        } else {
+          setIsInView(false);
+        }
+      });
+    };
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    if (targetRef.current) {
+      observer.observe(targetRef.current);
+    }
+    return () => {
+      if (targetRef.current) {
+        observer.unobserve(targetRef.current);
+      }
+    };
+  }, []);
   return (
     <>
       
       
       <div
-        className={`sm:w-80 w-60 flex justify-center flex-col relative cursor-pointer lg:mt-0 mt-5 sm:ms-0 ms-5 ${isClicked ? 'transactions-hove' : ''}`}
+        ref={targetRef}
+        className={`sm:w-80 w-60 flex justify-center flex-col relative cursor-pointer lg:mt-0 mt-5 sm:ms-0 ms-5 ${isClicked ? 'transactions-hove' : ''} ${isInView ? 'transactions-hove' : ''}`}
         onClick={() => setIsClicked(!isClicked)}
       >
         

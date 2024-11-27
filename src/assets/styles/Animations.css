@@ -62,7 +62,7 @@
     transition: left 1s ease, transform 1s ease, opacity 1s ease-in-out;
 }
 
-.local-acc-card:hover .local-arrow {
+.local-acc-card-hover .local-arrow {
     left: -20px;
     opacity: 1;
 }
@@ -84,7 +84,7 @@
     transition: height 1s ease, transform 1s ease;
 }
 
-.local-acc-card:hover .local-img {
+.local-acc-card-hover .local-img {
     height: 100%;
 }
 
@@ -92,11 +92,11 @@
     overflow: hidden !important;
 }
 
-.local-acc-card2:hover .local-img2 {
+.local-acc-card2-hover .local-img2 {
     height: 100%;
 }
 
-.local-acc-card2:hover .local-img3 {
+.local-acc-card2-hover .local-img3 {
     height: 100%;
 }
 
@@ -116,6 +116,22 @@
 }
 
 .corpCard-anim:hover .corpDiv2 .corp4 {
+    transform: translateY(-15px);
+    transition: transform 0.9s ease-in-out;
+}
+
+
+.corpCard-anim-hover .corpDiv .corp1 {
+    transform: rotate(-20deg);
+    transition: transform 0.9s ease-in-out;
+}
+
+.corpCard-anim-hover .corpDiv .corp2 {
+    transform: rotate(5deg);
+    transition: transform 0.9s ease-in-out;
+}
+
+.corpCard-anim-hover .corpDiv2 .corp4 {
     transform: translateY(-15px);
     transition: transform 0.9s ease-in-out;
 }
@@ -444,17 +460,17 @@ section {
     color: #D108B4;
 }
 
-.local-acc-card:hover .gbp {
+.local-acc-card-hover .gbp {
     background-color: #D5DAEF30;
     color: var(--Gray-700, #2C3667);
 }
 
-.local-acc-card:hover .usd {
+.local-acc-card-hover .usd {
     background-color: #D5DAEF30;
     color: var(--Gray-700, #2C3667);
 }
 
-.local-acc-card:hover .eur {
+.local-acc-card-hover .eur {
     background-color: #D5DAEF30;
     color: var(--Gray-700, #2C3667);
 }

@@ -1,12 +1,38 @@
-import React, {useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 
 const Lisence = () => {
   const [isClicked, setIsClicked] = useState(false);
+  const [isInView, setIsInView] = useState(false);
+  const targetRef = useRef(null);
+  
+  useEffect(() => {
+    const observerOptions = {root: null, rootMargin: '0px', threshold: 0.1};
+    const observerCallback = (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+        } else {
+          setIsInView(false);
+        }
+      });
+    };
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    if (targetRef.current) {
+      observer.observe(targetRef.current);
+    }
+    return () => {
+      if (targetRef.current) {
+        observer.unobserve(targetRef.current);
+      }
+    };
+  }, []);
   
   return (
     <>
-      <div className={`foil-image cursor-pointer lg:mt-0 mt-5 ${isClicked ? 'lisence-hove' : ''}`}
-           onClick={() => setIsClicked(!isClicked)}
+      <div
+        ref={targetRef}
+        className={`foil-image cursor-pointer lg:mt-0 mt-5 ${isClicked ? 'lisence-hove' : ''} ${isInView ? 'lisence-hove' : ''}`}
+        onClick={() => setIsClicked(!isClicked)}
       >
         <div className="imgSignUp">
           <div className="imgSignUpShadow"></div>

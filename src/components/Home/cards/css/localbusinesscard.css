@@ -249,12 +249,12 @@ ul::before {
     margin-left: 250px;
 }
 
-.corpCard-anim:hover .upsideDiv {
+.corpCard-anim-hover .upsideDiv {
     position: relative;
     z-index: 1;
 }
 
-.corpCard-anim:hover .upsideDiv::before {
+.corpCard-anim-hover .upsideDiv::before {
     content: "";
     position: absolute;
     top: -30px;

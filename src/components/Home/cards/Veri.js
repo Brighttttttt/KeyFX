@@ -1,13 +1,39 @@
-import React, {useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 
 const Veri = () => {
   const [isClicked, setIsClicked] = useState(false);
+  const [isInView, setIsInView] = useState(false);
+  const targetRef = useRef(null);
+  
+  useEffect(() => {
+    const observerOptions = {root: null, rootMargin: '0px', threshold: 0.1};
+    const observerCallback = (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+        } else {
+          setIsInView(false);
+        }
+      });
+    };
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    if (targetRef.current) {
+      observer.observe(targetRef.current);
+    }
+    return () => {
+      if (targetRef.current) {
+        observer.unobserve(targetRef.current);
+      }
+    };
+  }, []);
   
   
   return (
     <>
-      <div className={`relative cursor-pointer ${isClicked ? 'veri-hove' : ''}`}
-           onClick={() => setIsClicked(!isClicked)}
+      <div
+        ref={targetRef}
+        className={`relative cursor-pointer ${isClicked ? 'veri-hove' : ''} ${isInView ? 'veri-hove' : ''}`}
+        onClick={() => setIsClicked(!isClicked)}
       >
         <div className="v-card rounded-lg w-77 flex flex-col items-center">
           <svg className="veri-tick-1" width="39" height="38" viewBox="0 0 39 38" fill="none"

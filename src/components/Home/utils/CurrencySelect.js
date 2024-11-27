@@ -1,10 +1,10 @@
 import React from 'react';
-import {currencies} from "../../../data/Currencies.js";
+import {currenciesWithFlags} from "../../../assets/data/CurrenciesWithFlags.js";
 import Dropdown from "./Dropdown";
 import './css/Dropdown.css';
 
 const CurrenciesSelect = ({selectedCurrency, onCurrencyChange, component='unset'}) => {
-  const options = currencies.map((item) => ({
+  const options = currenciesWithFlags.map((item) => ({
     code: item.code.toUpperCase(),
     flag: item.flag,
     value: item.code,
