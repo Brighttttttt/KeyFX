@@ -4,7 +4,7 @@ const Subscribe = ({ isMobile }) => {
   return (
     <div className='pt-32 sub-card h-52 mb-5'>
       <div className="rbw-bg"></div>
-      <div className={`rounded-xl v-card py-4  bg-white grid grid-cols-2 ${isMobile ? "px-4 text-center" : "px-10 "} `}>
+      <div className={`rounded-xl v-card py-4 w-full bg-white grid grid-cols-2 ${isMobile ? "px-4 text-center" : "px-10 "} `}>
         <div className='lg:col-span-1 col-span-2'>
           <div className='flex text-xl fw600 roboto'><p className='text-rbw lh30'>Need Help Before Signing Up? {'\u2009'}</p><p
             className='lg:inline hidden lh30'>Get Your </p></div>

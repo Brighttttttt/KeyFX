@@ -232,7 +232,7 @@ ul::before {
     cursor: pointer;
     border: 2px solid transparent;
     outline: none;
-    transition: background-color 1.5s ease-in-out;
+    transition: background-color 1.25s ease-in-out;
 }
 
 .custom-checkbox:checked {
@@ -299,6 +299,7 @@ ul::before {
 
 .flowing-gradient {
     animation: gradientAnimation 5s infinite;
+    animation-delay: 2.5s;
 }
 
 @keyframes gradientAnimation {
@@ -333,6 +334,7 @@ ul::before {
     width: 3px;
     background: linear-gradient(180deg,#EEC840,#00D2D3,#0076FF,#00D2D3,#EEC840);
     animation: 5s height infinite;
+    animation-delay: 2.5s;
     z-index: 1;
 }
 @keyframes height {

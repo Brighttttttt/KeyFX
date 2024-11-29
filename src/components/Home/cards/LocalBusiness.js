@@ -11,13 +11,17 @@ import eur from '../../../assets/svg/flags/eur.svg';
 const LocalBusinessCard = () => {
   const [isHovered, setIsHovered] = useState(true);
   
+  setTimeout(() => {
+    setIsHovered(!isHovered);
+  }, 2500);
+  
   return (
     <>
       <div className="tree">
         <ul className='cstomUl'>
           <li
             className={`parent pt-4 flex justify-center flex-col items-center ${isHovered ? 'custom-hover-class' : ''}`}
-            onClick={() => setIsHovered(!isHovered)}
+            // onClick={() => setIsHovered(!isHovered)}
           >
             <div className="background-shadow"></div>
             <a className='child1 flex justify-center flex-col items-center gap-3'>

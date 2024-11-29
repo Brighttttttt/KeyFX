@@ -36,7 +36,7 @@ const TransactionsImg = () => {
         className={`w-full flex justify-center flex-col relative cursor-pointer ${isClicked ? 'payto-hove' : ''} ${isInView ? 'payto-hove' : ''}`}
         onClick={() => setIsClicked(!isClicked)}
       >
-        <div className="v-card rounded-xl w-77 p-0">
+        <div className="v-card rounded-3xl w-77 p-0">
           <p className='card-head-blue flex px-4 mt-4'>Pay to</p>
           
           <div className='flex gap-2 mt-4 px-4'>

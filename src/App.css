@@ -1056,7 +1056,7 @@ input[type="number"] {
   }
 
   .blackLi li::before{
-    background: black;
+    /*background: black;*/
     color: white;
   } 
 

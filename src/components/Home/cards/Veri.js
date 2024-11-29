@@ -35,7 +35,7 @@ const Veri = () => {
         className={`relative cursor-pointer ${isClicked ? 'veri-hove' : ''} ${isInView ? 'veri-hove' : ''}`}
         onClick={() => setIsClicked(!isClicked)}
       >
-        <div className="v-card rounded-lg w-77 flex flex-col items-center">
+        <div className="v-card rounded-3xl w-77 flex flex-col items-center">
           <svg className="veri-tick-1" width="39" height="38" viewBox="0 0 39 38" fill="none"
                xmlns="http://www.w3.org/2000/svg">
             <path fillRule="evenodd" clipRule="evenodd"
@@ -58,7 +58,7 @@ const Veri = () => {
           
           
           <p
-            className={`card-head-blue py-3 w-full ${isClicked ? 'card-head-blue2' : ''}`}
+            className={`card-head-blue py-3 w-full ${isInView ? 'card-head-blue2' : ''}`}
             style={{borderBottom: '1px solid #D5DAEF', width: '110%'}}
           >
             Get Veirifed instantly
