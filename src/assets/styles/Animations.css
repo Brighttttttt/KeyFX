@@ -58,12 +58,15 @@
 
 .local-arrow {
     opacity: 0;
-    left: -55px;
+    left: -80px;
+    height: 102px;
+    width: fit-content;
+    max-width: fit-content;
     transition: left 1s ease, transform 1s ease, opacity 1s ease-in-out;
 }
 
 .local-acc-card-hover .local-arrow {
-    left: -20px;
+    left: -70px;
     opacity: 1;
 }
 

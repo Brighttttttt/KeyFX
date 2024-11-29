@@ -7,14 +7,19 @@ const Business = ({isMobile}) => {
   const targetRef2 = useRef(null);
   const targetRef3 = useRef(null);
   const targetRef4 = useRef(null);
+  
+  setTimeout(() => {
+    setIsInView(!isInView);
+  }, 2500);
+  
   useEffect(() => {
     const observerOptions = {root: null, rootMargin: '0px', threshold: 0.1};
-    const observerCallback = (entries, observer) => {
+    const observerCallback = (entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          setIsInView(true);
+          // setIsInView(true);
         } else {
-          setIsInView(false);
+          // setIsInView(false);
         }
       });
     };
@@ -107,7 +112,7 @@ const Business = ({isMobile}) => {
               </div>
             </div>
             <div className='col-span-1 flex items-center relative z-20 h-full'>
-              <img className='absolute local-arrow  h-24' alt="Not Found" src="/Icons/middleArrow.png"/>
+              <img className='absolute local-arrow' alt="Not Found" src="/Icons/middleArrow.png"/>
             </div>
             <div className='col-span-3 relative z-10 flex items-end'>
               <img className='local-img' alt="Not Found" src="/Icons/localAccountimg.svg"/>
