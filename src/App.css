@@ -226,6 +226,11 @@ input[type="number"] {
 .input-gray {
   border: 1px solid var(--Gray-100);
   padding: 10px 24px;
+  color: var(--Gray-800);
+}
+.input-gray:focus, .input-gray:focus-visible, .input-gray:active {
+  border: 2px solid var(--Gray-800);
+  outline: none;
 }
 
 .services {

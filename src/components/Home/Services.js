@@ -14,6 +14,7 @@ import card4 from '../../assets/svg/home/card4.svg';
 import ATMCard from '../../assets/svg/home/ATMCard.svg';
 import business1 from '../../assets/svg/home/business1.svg';
 import business2 from '../../assets/svg/home/business2.svg';
+import {commafy, decommafy} from "../../utils/NumberFormatter";
 // import currencyGBP from "../../assets/svg/home/currencyGBP.svg";
 // import currencyEUR from "../../assets/svg/home/currencyEUR.svg";
 // import currencyUSD from "../../assets/svg/home/currencyUSD.svg";
@@ -24,7 +25,7 @@ const Services = ({ isMobile }) => {
   const [animate, setAnimate] = useState(false);
   const [fromCurrency, setFromCurrency] = useState("GBP");
   const [toCurrency, setToCurrency] = useState("USD");
-  const [amount, setAmount] = useState(1);
+  const [amount, setAmount] = useState(1000);
   const [exchange, setExchange] = useState(1);
   
   const handleFromCurrencyChange = (newCurrency) => {
@@ -36,7 +37,7 @@ const Services = ({ isMobile }) => {
   };
   
   const setAmountFunction = (e) => {
-    setAmount(e.target.value);
+    setAmount(decommafy(e.target.value));
   };
   
   
@@ -44,7 +45,7 @@ const Services = ({ isMobile }) => {
     const requestData = {
       from: fromCurrency,
       to: toCurrency,
-      amount: amount,
+      amount: Number(decommafy(amount)),
     };
     
     try {
@@ -58,7 +59,7 @@ const Services = ({ isMobile }) => {
       
       const data = await response.json();
       if (data) {
-        setExchange(data.rates[toCurrency]);
+        setExchange(data.rates[toCurrency] * amount);
       }
       console.log(data);
     } catch (error) {
@@ -170,9 +171,9 @@ const Services = ({ isMobile }) => {
                     >
                       <input
                         className="w-full bg-transparent fw-bold"
-                        type="number"
+                        // type="number"
                         step="any"
-                        value={amount}
+                        value={commafy(amount)}
                         onChange={setAmountFunction}
                       />
                       {/* <span className="text-lg font-semibold">1</span> */}
@@ -193,7 +194,7 @@ const Services = ({ isMobile }) => {
                     >
                       <div className="rate-container">
                         <span className={`rate-value ${animate ? 'animate-slide' : ''}`}>
-                            {exchange}
+                            {commafy(exchange.toFixed(4))}
                         </span>
                       </div>
                       <span className="flex items-center">

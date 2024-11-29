@@ -1,14 +1,13 @@
 import React, {useEffect, useState} from "react";
 import CurrenciesSelect from "./CurrencySelect";
 import arrowLeftRight from "../../../assets/svg/home/arrowsLeftRight.svg";
-// import {numberFormatter} from "../../../utils/NumberFormatter";
+import {commafy, decommafy} from "../../../utils/NumberFormatter";
 
-//todo: format numbers
 const Converter = ({ isMobile }) => {
   const [loading, setLoading] = useState(false);
   const [fromCurrency, setFromCurrency] = useState("USD");
   const [toCurrency, setToCurrency] = useState("GBP");
-  const [amount, setAmount] = useState(1);
+  const [amount, setAmount] = useState(1000);
   const [exchange, setExchange] = useState(0);
   const [loadingSwap, setLoadingSwap] = useState(false);
   let tmp;
@@ -22,7 +21,7 @@ const Converter = ({ isMobile }) => {
   };
   
   const setAmountFunction = (e) => {
-    setAmount(e.target.value);
+    setAmount(decommafy(e.target.value));
   };
   
   const convertCurrency = async () => {
@@ -30,7 +29,7 @@ const Converter = ({ isMobile }) => {
     const requestData = {
       from: fromCurrency,
       to: toCurrency,
-      amount: amount,
+      amount: Number(decommafy(amount)),
     };
     
     try {
@@ -44,7 +43,7 @@ const Converter = ({ isMobile }) => {
       
       const data = await response.json();
       if (data) {
-        setExchange(data.rates[toCurrency]);
+        setExchange(data.rates[toCurrency] * amount);
         setLoading(false);
       }
     } catch (error) {
@@ -74,9 +73,9 @@ const Converter = ({ isMobile }) => {
           <div className="relative">
             <input
               className="w-full input-gray rounded-xl shadow-sm py-3 fw-bold"
-              type="number"
+              // type="number"
               step="any"
-              value={amount}
+              value={commafy(amount)}
               onChange={setAmountFunction}
               style={{height: '76px'}}
             />
@@ -108,8 +107,8 @@ const Converter = ({ isMobile }) => {
           <div className="relative">
             <input
               className="input-gray rounded-md shadow-sm w-full py-3 fw-bold"
-              type="number"
-              value={exchange}
+              // type="number"
+              value={commafy(exchange.toFixed(4))}
               step="any"
               style={{height: '76px'}}
             />
