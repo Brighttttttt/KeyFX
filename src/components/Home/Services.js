@@ -11,7 +11,7 @@ import card1 from '../../assets/svg/home/card1.svg';
 import card2 from '../../assets/svg/home/card2.svg';
 import card3 from '../../assets/svg/home/card3.svg';
 import card4 from '../../assets/svg/home/card4.svg';
-import ATMCard from '../../assets/svg/home/ATMCard.svg';
+import ATMCard from '../../assets/svg/home/ATMCard.png';
 import business1 from '../../assets/svg/home/business1.svg';
 import business2 from '../../assets/svg/home/business2.svg';
 import {commafy, decommafy} from "../../utils/NumberFormatter";
@@ -351,7 +351,7 @@ const Services = ({ isMobile }) => {
               <div className="bloc">
                 <div className="foil-image">
                   <div>
-                    <img src={ATMCard} alt="ATMCard"/>
+                    <img src={ATMCard} alt="ATMCard" style={{width: '252px', height: '354px'}}/>
                   </div>
                 </div>
               </div>

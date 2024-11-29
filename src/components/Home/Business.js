@@ -62,8 +62,8 @@ const Business = ({isMobile}) => {
           >
             <div ref={targetRef2} className={`relative corpDiv upsideDiv ${isInView ? 'corpCard-anim-hover' : ''}`}>
               <img className='absolute sm:bottom-10 bottom-3 sm:left-3 left-0 corp1 sm:w-52 w-32 Card1Img '
-                   alt="Not Found" src="/Icons/corpmasterCard.svg"/>
-              <img className='relative z-10 corp2 top15' alt="Not Found" src="/Icons/corpCard.svg"/>
+                   alt="Not Found" src="/Icons/corpmasterCard.png"/>
+              <img className='relative z-10 corp2 top15' alt="Not Found" src="/Icons/corpCard.png" style={{width: '306px', height: '221px'}}/>
             </div>
             <div>
               <img alt="Not Found" src="/Icons/corpArrows.svg"/>
