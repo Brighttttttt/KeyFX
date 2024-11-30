@@ -634,18 +634,33 @@ input[type="number"] {
   top: -20px;
   left: -20px;
   animation: bounce 3s infinite;
+  background-image: url("./assets/svg/home/currencyEUR.svg");
+  background-size: 167px 167px;
+  background-position-y: -6px;
+  background-position-x: center;
+  background-repeat: no-repeat;
 }
 
 .currency-symbol.top-right {
   top: -20px;
   right: -20px;
   animation: bounce-slow 3s infinite;
+  background-image: url("./assets/svg/home/currencyGBP.svg");
+  background-size: 167px 167px;
+  background-position-y: -6px;
+  background-position-x: center;
+  background-repeat: no-repeat;
 }
 
 .currency-symbol.bottom-right {
   bottom: 40px;
   right: -30px;
   animation: bounce 3s infinite;
+  background-image: url("./assets/svg/home/currencyUSD.svg");
+  background-size: 46px 46px;
+  background-position-y: 16px;
+  background-position-x: center;
+  background-repeat: no-repeat;
 }
 
 .arrow-icon {
@@ -683,7 +698,7 @@ input[type="number"] {
 .rate-value {
   display: inline-block;
   position: relative;
-  transition: transform 0.5s ease;
+  transition: transform 1s ease;
   font-weight: bold;
   /* Smooth transition for sliding */
 }

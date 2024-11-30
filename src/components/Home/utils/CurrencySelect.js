@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {currenciesWithFlags} from "../../../assets/data/CurrenciesWithFlags.js";
 import Dropdown from "./Dropdown";
 import './css/Dropdown.css';
@@ -13,6 +13,10 @@ const CurrenciesSelect = ({selectedCurrency, onCurrencyChange, component='unset'
   const handleSelect = (currencyCode) => {
     onCurrencyChange(currencyCode);
   };
+  
+  useEffect(() => {
+    onCurrencyChange(selectedCurrency);
+  }, [selectedCurrency]);
   
   return (
     <div>

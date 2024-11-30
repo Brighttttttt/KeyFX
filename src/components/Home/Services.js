@@ -15,18 +15,15 @@ import ATMCard from '../../assets/svg/home/ATMCard.png';
 import business1 from '../../assets/svg/home/business1.svg';
 import business2 from '../../assets/svg/home/business2.svg';
 import {commafy, decommafy} from "../../utils/NumberFormatter";
-// import currencyGBP from "../../assets/svg/home/currencyGBP.svg";
-// import currencyEUR from "../../assets/svg/home/currencyEUR.svg";
-// import currencyUSD from "../../assets/svg/home/currencyUSD.svg";
 
 const Services = ({ isMobile }) => {
-  const [rate, setRate] = useState(1);
-  const [payeeRate, setPayeeRate] = useState(1);
+  const [payeeRate, setPayeeRate] = useState('10,000');
   const [animate, setAnimate] = useState(false);
-  const [fromCurrency, setFromCurrency] = useState("GBP");
-  const [toCurrency, setToCurrency] = useState("USD");
+  const [fromCurrency, setFromCurrency] = useState("USD");
+  const [toCurrency, setToCurrency] = useState("GBP");
   const [amount, setAmount] = useState(1000);
   const [exchange, setExchange] = useState(1);
+  const [counter, setCounter] = useState(0);
   
   const handleFromCurrencyChange = (newCurrency) => {
     setFromCurrency(newCurrency);
@@ -73,13 +70,34 @@ const Services = ({ isMobile }) => {
     const interval = setInterval(() => {
       setAnimate(true); // Start the animation
       setTimeout(() => {
-        setRate((prevRate) => (prevRate === 1 ? 0.46 : 1));
-        setPayeeRate((prevRate) => (prevRate === 1 ? '70,000' : '10,000'));
+        setPayeeRate((prevRate) => (prevRate === '10,000' ? '70,000' : '10,000'));
         setAnimate(false);
       }, 1000);
     }, 2000);
     return () => clearInterval(interval);
   }, []);
+  
+  setTimeout(() => {
+    setCounter(counter + 1);
+  }, 2000);
+  
+  useEffect(() => {
+    if (counter % 3 === 1) {
+      setFromCurrency("GBP");
+      setToCurrency("EUR");
+      convertCurrency();
+    }
+    else if (counter % 3 === 2) {
+      setFromCurrency("EUR");
+      setToCurrency("USD");
+      convertCurrency();
+    }
+    else if (counter % 3 === 0) {
+      setFromCurrency("USD");
+      setToCurrency("GBP");
+      convertCurrency();
+    }
+  }, [counter]);
   
   return (
     <div className='services mainPage2'>
@@ -148,19 +166,15 @@ const Services = ({ isMobile }) => {
                   </button>
                 </div>
                 <div className="currency-symbol top-right">
-                  <span className="text-5xl text-white" style={{fontFamily: 'Gadugi'}}>£</span>
-                  {/*<img src={currencyGBP} alt="currencyGBP"/>*/}
                 </div>
               </div>
               
               <div className='relative mt-32'>
                 <div className="currency-symbol top-left z-9">
-                  <span className="text-5xl text-white">€</span>
                 </div>
                 <div className="v-card relative bg-white cc-rad p-6 sm:w-80 w-60 z-10 card1">
                   
                   <div className="currency-symbol bottom-right z-99">
-                    <span className="text-5xl text-white font">$</span>
                   </div>
                   
                   <div>
