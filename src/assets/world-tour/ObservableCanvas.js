@@ -22,8 +22,8 @@ function _2(html, name) {
 
 async function* _canvas(width, d3, land, borders, countries, $0, Versor) {
   console.log(width);
-  const widthFixed = 950; // Fixed width
-  const heightFixed = 950; // Fixed height
+  const widthFixed = 1200; // Fixed width
+  const heightFixed = 1200; // Fixed height
   
   const dpr = window.devicePixelRatio ?? 1;
   const canvas = d3.create("canvas")
@@ -31,14 +31,14 @@ async function* _canvas(width, d3, land, borders, countries, $0, Versor) {
     .attr("height", dpr * heightFixed)
     .style("width", `${widthFixed}px`)
     .style("height", `${heightFixed}px`)
-    .style("margin-bottom", "-200px")
-    .style("margin-top", "-250px");
+    .style("margin-bottom", "-650px")
+    .style("margin-top", "-450px");
   const context = canvas.node().getContext("2d");
   context.scale(dpr, dpr);
   
   const projection = d3.geoOrthographic().fitExtent([[10, 10], [widthFixed - 10, heightFixed - 10]], {type: "Sphere"});
   const path = d3.geoPath(projection, context);
-  const tilt = 45; // Adjusted tilt to position focused country higher
+  const tilt = 52; // Adjusted tilt to position focused country higher
   
   function render(country, arc) {
     context.clearRect(0, 0, widthFixed, heightFixed);
@@ -107,19 +107,19 @@ async function* _canvas(width, d3, land, borders, countries, $0, Versor) {
     function drawCurrencyIcon(currencyPath) {
       // Draw the outer circle
       context.beginPath();
-      context.arc(centroidX, centroidY-90, 29, 0, 2 * Math.PI, false);
+      context.arc(centroidX, centroidY-83, 29, 0, 2 * Math.PI, false);
       context.fillStyle = "#D5DAEF";
       context.fill();
       
       // Draw the inner circle
       context.beginPath();
-      context.arc(centroidX, centroidY-90, 24.65, 0, 2 * Math.PI, false);
+      context.arc(centroidX, centroidY-83, 24.65, 0, 2 * Math.PI, false);
       context.fillStyle = "#475385";
       context.fill();
       
       // Draw the path
       context.save();
-      context.translate(centroidX - 30, centroidY-90 - 30);
+      context.translate(centroidX - 30, centroidY-83 - 30);
       const path = currencyPath;
       context.fillStyle = "white";
       context.fill(path);
@@ -141,7 +141,7 @@ async function* _canvas(width, d3, land, borders, countries, $0, Versor) {
     return context.canvas;
   }
   
-  const specifiedCountries = ["United States of America", "United Kingdom", "Japan", "India", "Austria", "Belgium", "Cyprus", "Estonia", "Finland", "France", "Germany", "Greece", "Ireland", "Italy", "Latvia", "Lithuania", "Luxembourg", "Malta", "Netherlands", "Portugal", "Slovakia", "Slovenia", "Spain"];
+  const specifiedCountries = ["United States of America", "United Kingdom", "Japan", "India", "Austria", "Belgium", "Cyprus", "Estonia", "Finland", "Germany", "Greece", "Ireland", "Italy", "Latvia", "Lithuania", "Luxembourg", "Malta", "Netherlands", "Portugal", "Slovakia", "Slovenia", "Spain"];
   let p1, p2 = [0, 0], r1, r2 = [0, 0, 0];
   while (true) {
     for (const country of countries) {

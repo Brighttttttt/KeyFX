@@ -103,7 +103,7 @@ const Services = ({ isMobile }) => {
     <div className='services mainPage2'>
       <div className='text-center'>
         <p className='small text300'>L e a r n&ensp;M o r e</p>
-        <p className='mt-3 roboto fw600 text800' style={{fontSize: '44px'}}>KeyFX Services</p>
+        <p className='roboto fw600 text800' style={{fontSize: '44px'}}>KeyFX Services</p>
       </div>
       <div>
         <div className={`grid lg:grid-cols-2 grid-cols-1 gap-24 ${isMobile ? 'mt-10' : ' mt-36'} `}>

@@ -8,7 +8,7 @@ const Header = ({ isMobile }) => {
         <div>
             <div className='flex justify-center mainPage'>
                 <div className={isMobile ? 'mt-0 pt-0 w-full text-center' : 'mt-10 pt-5 text-center'}>
-                    <p className='text-grad roboto text-6xl fw600'>Empowering</p>
+                    <p className='text-grad roboto text-6xl fw600 -mt-3'>Empowering</p>
                     <p className='mt-3 roboto text-6xl fw600 text900'>Your Business Globally</p>
                     <p className='mt-3 text-xl roboto text500' style={!isMobile ? {width: '658px'} : {}}>
                         Your One-Stop for

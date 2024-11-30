@@ -496,7 +496,7 @@ input[type="number"] {
   .observablehq canvas {
     width: 650px !important;
     height: 650px !important;
-    margin-top: -500px !important;
+    margin-top: -900px !important;
   }
 
   .converterWrapper {
@@ -569,7 +569,7 @@ input[type="number"] {
   .observablehq canvas {
     width: 550px !important;
     height: 550px !important;
-    margin-top: -600px !important;
+    margin-top: -1050px !important;
   }
 
   .converterWrapper {
@@ -1242,7 +1242,8 @@ button.loading:disabled {
 
 .converterWrapper {
   background-color: #fff;
-  margin-top: -250px;
+  margin-top: -275px;
   z-index: 100;
   position: relative;
+  padding-bottom: 110px;
 }
