@@ -8,7 +8,7 @@ const BarChart = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setHeights(heights.map(() => Math.floor(Math.random() * 100)));
-        }, 2000);
+        }, 5000);
 
         return () => clearInterval(interval);
     }, []);

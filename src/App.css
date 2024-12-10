@@ -944,7 +944,7 @@ input[type="number"] {
   }
 
   50% {
-    transform: scale(1.02);
+    transform: scale(1.07);
     fill: #F0F0F0;
     /* Original color at peak */
   }
@@ -959,6 +959,22 @@ input[type="number"] {
 .scale-active {
   animation: scaleUpDown 5s forwards;
   transform-origin: center !important;
+}
+.scale-active-right {
+  animation: scaleUpDown 5s forwards;
+  transform-origin: right !important;
+}
+.scale-active-top {
+  animation: scaleUpDown 5s forwards;
+  transform-origin: top !important;
+}
+.scale-active-top-right {
+  animation: scaleUpDown 5s forwards;
+  transform-origin: top right !important;
+}
+.scale-active-bottom {
+  animation: scaleUpDown 5s forwards;
+  transform-origin: bottom !important;
 }
 
 .bgWhiteImg {
@@ -1021,7 +1037,7 @@ input[type="number"] {
   width: 40px;
   background: linear-gradient(166.28deg, #00D2D3 43.18%, #00B3FF 90.5%);
   border-radius: 10px;
-  transition: height 0.5s ease;
+  transition: height 4s ease;
   /* Smooth height transition */
 }
 
@@ -1165,7 +1181,7 @@ input[type="number"] {
 }
 
 .btn-explore {
-  width: 134px;
+  width: 136px;
   height: 37px;
   border-radius: 8px;
   font-size: 14px;
