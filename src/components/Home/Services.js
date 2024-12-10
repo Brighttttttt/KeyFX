@@ -58,7 +58,6 @@ const Services = ({ isMobile }) => {
       if (data) {
         setExchange(data.rates[toCurrency] * amount);
       }
-      console.log(data);
     } catch (error) {
       console.error("Error converting currency:", error);
     }

@@ -21,7 +21,6 @@ function _2(html, name) {
 }
 
 async function* _canvas(width, d3, land, borders, countries, $0, Versor) {
-  console.log(width);
   const widthFixed = 1200; // Fixed width
   const heightFixed = 1200; // Fixed height
 
