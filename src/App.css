@@ -496,7 +496,7 @@ input[type="number"] {
   .observablehq canvas {
     width: 650px !important;
     height: 650px !important;
-    margin-top: -900px !important;
+    margin-top: -1000px !important;
   }
 
   .converterWrapper {
@@ -569,7 +569,7 @@ input[type="number"] {
   .observablehq canvas {
     width: 550px !important;
     height: 550px !important;
-    margin-top: -1050px !important;
+    margin-top: -1100px !important;
   }
 
   .converterWrapper {
@@ -682,9 +682,9 @@ input[type="number"] {
 
 .customBoxShadow {
   box-shadow:
-    0 4px 10px rgba(0, 0, 0, 0.1),
-    0 10px 15px rgba(0, 0, 0, 0.05),
-    0 0 20px rgba(0, 0, 0, 0.03);
+          0 4px 10px rgba(0, 0, 0, 0.1),
+          0 10px 15px rgba(0, 0, 0, 0.05),
+          0 0 20px rgba(0, 0, 0, 0.03);
 }
 
 /* styles.css */
@@ -1073,7 +1073,7 @@ input[type="number"] {
   .blackLi li::before{
     /*background: black;*/
     color: white;
-  } 
+  }
 
 
 
