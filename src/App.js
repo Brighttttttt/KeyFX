@@ -3,7 +3,7 @@ import MainPage from './pages/Index';
 
 function App() {
   return (
-    <div className="">
+    <div className="mainContainer">
       <MainPage />
     </div>
   );

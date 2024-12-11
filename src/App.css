@@ -32,6 +32,11 @@ body {
   width: 100%;
 }
 
+.mainContainer {
+  max-width: 1740px;
+  margin: 0 auto;
+}
+
 .converterBtn {
   width: 58px !important;
   height: 58px !important;
@@ -416,6 +421,7 @@ input[type="number"] {
 .rbw-bg {
   position: absolute;
   width: 110vw;
+  max-width: 1790px;
   height: 118px;
   top: 100px;
   left: -10px;
@@ -1262,4 +1268,27 @@ button.loading:disabled {
   z-index: 100;
   position: relative;
   padding-bottom: 110px;
+}
+
+.ATMCard {
+  width: 252px !important;
+  min-width: 252px !important;
+  max-width: 252px !important;
+  height: 354px !important;
+}
+
+@media (max-width: 639px) {
+  .virtualCard {
+    width: 175px !important;
+    height: 530px !important;
+  }
+  .ATMCard {
+    width: 145px !important;
+    min-width: 145px !important;
+    max-width: 145px !important;
+    height: 200px !important;
+  }
+  .ATMCard-wrapper {
+    padding: 0 !important;
+  }
 }

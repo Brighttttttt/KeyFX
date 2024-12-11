@@ -12,6 +12,11 @@ module.exports = {
       xl: '1280px',
       '2xl': '1536px',
     },
+    fontSize: {
+      xs: '12px',
+      xxs: '10px',
+      '3xs': '8px',
+    },
   },
   plugins: [],
 }

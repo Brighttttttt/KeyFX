@@ -275,7 +275,7 @@ const Services = ({ isMobile }) => {
             <div className='leftCard'>
               {/* <img alt="Not Found" src="/cardServices.png" /> */}
               <div className='relative'>
-                <div className="v-card sm:w-72 w-60 flex flex-col items-center justify-center rounded-3xl">
+                <div className="virtualCard v-card sm:w-72 w-60 flex flex-col items-center justify-center rounded-3xl">
                   <div className='icon-rotate'>
                     <img className='icon-rotate1' alt="card3" src={card3}/>
                     <img className='icon-rotate2' alt="card4" src={card4}/>
@@ -284,7 +284,7 @@ const Services = ({ isMobile }) => {
                   <p className='text-xs text-gray-500 mt-2'>
                     secure, temporary, no real details required
                   </p>
-                  <div className='gray-card mt-3 flex gap-2'>
+                  <div className='gray-card mt-3 flex gap-0.5 sm:gap-2'>
                     
                     <svg width="63" className='sm:w-14 w-8' height="47" viewBox="0 0 63 47" fill="none"
                          xmlns="http://www.w3.org/2000/svg">
@@ -301,12 +301,12 @@ const Services = ({ isMobile }) => {
                     </svg>
                     
                     <div>
-                      <p className='card-head-blue font-10'>Global Ventures Ltd.</p>
-                      <p className='font-10 card-gray-text'>David Leo</p>
+                      <p className='card-head-blue sm:text-xxs text-3xs'>Global Ventures Ltd.</p>
+                      <p className='sm:text-xxs text-3xs card-gray-text'>David Leo</p>
                     </div>
                   
                   </div>
-                  <div className='gray-card flex gap-2 mt-2'>
+                  <div className='gray-card flex gap-0.5 sm:gap-2 mt-2'>
                     <svg className='sm:w-14 w-8' width="63" height="47" viewBox="0 0 63 47" fill="none"
                          xmlns="http://www.w3.org/2000/svg">
                       <rect x="0.5" y="0.5" width="62" height="46" rx="9.5" fill="#2C3667" stroke="#00D2D3"/>
@@ -321,13 +321,13 @@ const Services = ({ isMobile }) => {
                             fill="#FF5E00"/>
                     </svg>
                     <div>
-                      <p className='card-head-blue font-10'>Global Ventures Ltd.</p>
-                      <p className='font-10 card-gray-text'>David Leo</p>
+                      <p className='card-head-blue sm:text-xxs text-3xs'>Global Ventures Ltd.</p>
+                      <p className='sm:text-xxs text-3xs card-gray-text'>David Leo</p>
                     </div>
                   
                   </div>
                   <div className='mt-3' style={{border: '0.5px solid #D5DAEF', width: '113%'}}></div>
-                  <div className='experience-card flex gap-2 items-center font-8 roboto py-2 mt-3'>
+                  <div className='experience-card flex items-center font-8 roboto py-2 mt-3'>
                     <svg className='w-24' width="27" height="30" viewBox="0 0 27 30" fill="none"
                          xmlns="http://www.w3.org/2000/svg">
                       <path fillRule="evenodd" clipRule="evenodd"
@@ -337,14 +337,14 @@ const Services = ({ isMobile }) => {
                             d="M20.0864 9.895C20.6707 10.4474 20.6707 11.343 20.0864 11.8954L13.1047 18.4963C12.5205 19.0487 11.5732 19.0487 10.9889 18.4963L7.99679 15.6673C7.41253 15.1149 7.41253 14.2193 7.99679 13.6669C8.58104 13.1146 9.52831 13.1146 10.1126 13.6669L12.0468 15.4957L17.9707 9.895C18.5549 9.34262 19.5022 9.34262 20.0864 9.895Z"
                             fill="white"/>
                     </svg>
-                    <p>Experience the convenience of secure spending wherever your business takes you.</p>
+                    <p className='text900'>Experience the convenience of secure spending wherever your business takes you.</p>
                   </div>
                   <button className='btn-dblue text-white w-full py-2 my-3'>
                     Continue
                   </button>
                 
                 </div>
-                <div className='v-card p-2 flex items-center absolute top-20 sm:-right-32 -right-20 rounded-lg'>
+                <div className='v-card p-2 flex items-center absolute sm:top-20 top-8 -right-32 sm:-right-40 rounded-lg'>
                   <svg className='sm:w-14 w-8' width="27" height="30" viewBox="0 0 27 30" fill="none"
                        xmlns="http://www.w3.org/2000/svg">
                     <path fillRule="evenodd" clipRule="evenodd"
@@ -362,9 +362,9 @@ const Services = ({ isMobile }) => {
             </div>
             <div className='rightCard'>
               <div className="bloc">
-                <div className="foil-image">
+                <div className="foil-image ATMCard-wrapper">
                   <div>
-                    <img src={ATMCard} alt="ATMCard" style={{width: '252px', height: '354px'}}/>
+                    <img src={ATMCard} alt="ATMCard" className='ATMCard'/>
                   </div>
                 </div>
               </div>
