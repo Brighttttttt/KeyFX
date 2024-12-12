@@ -4,10 +4,10 @@ const Lisence = () => {
   const [isClicked, setIsClicked] = useState(false);
   const [isInView, setIsInView] = useState(false);
   const targetRef = useRef(null);
-  
+
   useEffect(() => {
-    const observerOptions = {root: null, rootMargin: '0px', threshold: 0.1};
-    const observerCallback = (entries, observer) => {
+    const observerOptions = {root: null, rootMargin: '0px', threshold: 0.75};
+    const observerCallback = (entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           setIsInView(true);
@@ -31,11 +31,11 @@ const Lisence = () => {
     <>
       <div
         ref={targetRef}
-        className={`foil-image cursor-pointer lg:mt-0 mt-5 ${isClicked ? 'lisence-hove' : ''} ${isInView ? 'lisence-hove' : ''}`}
+        className={`foil-image py-0 overflow-visible cursor-pointer lg:mt-0 mt-5 ${isClicked ? 'lisence-hove' : ''} ${isInView ? 'lisence-hove' : ''}`}
         onClick={() => setIsClicked(!isClicked)}
       >
-        <div className="imgSignUp">
-          <div className="imgSignUpShadow"></div>
+        <div className="imgSignUp overflow-visible">
+          <div className="imgSignUpShadow overflow-visible"></div>
         </div>
         {/* <svg className="lisence2" width="450" height="349" viewBox="0 0 450 349" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_ddi_14808_8264)">

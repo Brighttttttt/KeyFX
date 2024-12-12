@@ -8,8 +8,8 @@ const TransactionsImg = () => {
   const targetRef = useRef(null);
   
   useEffect(() => {
-    const observerOptions = {root: null, rootMargin: '0px', threshold: 0.1};
-    const observerCallback = (entries, observer) => {
+    const observerOptions = {root: null, rootMargin: '0px', threshold: 0.85};
+    const observerCallback = (entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           setIsInView(true);
