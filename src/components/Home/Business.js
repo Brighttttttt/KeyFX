@@ -1,56 +1,12 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useState} from 'react';
 import Carousel from './utils/Carousel';
 
 const Business = ({isMobile}) => {
   const [isInView, setIsInView] = useState(false);
-  const targetRef = useRef(null);
-  const targetRef2 = useRef(null);
-  const targetRef3 = useRef(null);
-  const targetRef4 = useRef(null);
   
   setTimeout(() => {
     setIsInView(!isInView);
   }, 2500);
-  
-  useEffect(() => {
-    const observerOptions = {root: null, rootMargin: '0px', threshold: 0.1};
-    const observerCallback = (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          // setIsInView(true);
-        } else {
-          // setIsInView(false);
-        }
-      });
-    };
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-    if (targetRef.current) {
-      observer.observe(targetRef.current);
-    }
-    if (targetRef2.current) {
-      observer.observe(targetRef2.current);
-    }
-    if (targetRef3.current) {
-      observer.observe(targetRef3.current);
-    }
-    if (targetRef4.current) {
-      observer.observe(targetRef4.current);
-    }
-    return () => {
-      if (targetRef.current) {
-        observer.unobserve(targetRef.current);
-      }
-      if (targetRef2.current) {
-        observer.unobserve(targetRef2.current);
-      }
-      if (targetRef3.current) {
-        observer.unobserve(targetRef3.current);
-      }
-      if (targetRef4.current) {
-        observer.unobserve(targetRef4.current);
-      }
-    };
-  }, []);
   
   const cards = [
     {
@@ -62,13 +18,12 @@ const Business = ({isMobile}) => {
             currency of your choice. Take
             advantage of competitive conversion rates and seamless transactions, both online and in-store.</p>
           <div
-            ref={targetRef}
             className={`flex items-center sm:gap-4 gap-2 corpCard-anim ${isInView ? 'corpCard-anim-hover' : ''}`}
           >
-            <div ref={targetRef2} className={`relative corpDiv upsideDiv ${isInView ? 'corpCard-anim-hover' : ''}`}>
-              <img className='absolute sm:bottom-10 bottom-3 sm:left-3 left-0 corp1 sm:w-52 w-32 Card1Img '
+            <div className={`relative corpDiv upsideDiv ${isInView ? 'corpCard-anim-hover' : ''}`}>
+              <img className='absolute bottom-10 sm:left-3 left-0 corp1 Card1Img '
                    alt="Not Found" src="/Icons/corpmasterCard.png"/>
-              <img className='relative z-10 corp2 top15' alt="Not Found" src="/Icons/corpCard.png" style={{width: '306px', height: '221px'}}/>
+              <img className='relative z-10 corp2 top15 Card2Img' alt="Not Found" src="/Icons/corpCard.png"/>
             </div>
             <div>
               <img alt="Not Found" src="/Icons/corpArrows.svg"/>
@@ -90,7 +45,7 @@ const Business = ({isMobile}) => {
             currency of your choice. Take
             advantage of competitive conversion rates and seamless transactions, both online and in-store.</p>
           {/* <img alt="Not Found" src="/Corporate Cards.png" /> */}
-          <div ref={targetRef3} className={`local-acc-card grid grid-cols-7 ${isInView ? 'local-acc-card-hover' : ''}`}>
+          <div className={`local-acc-card grid grid-cols-7 ${isInView ? 'local-acc-card-hover' : ''}`}>
             <div className='flex flex-col col-span-3 relative z-30 justify-center'>
               <div className='bg-white shadow-inner shade1 p-2 rounded-sm flex items-center gap-2'>
                 <div className='gbp p-2 roboto rounded-md '>
@@ -131,7 +86,7 @@ const Business = ({isMobile}) => {
             supports up to 33 currencies. Pay
             and get paid in your chosen currency with ease.</p>
           {/* <img alt="Not Found" src="/Corporate Cards.png" /> */}
-          <div ref={targetRef4} className={`local-acc-card local-acc-card2 grid grid-cols-6 mt-14 ${isInView ? 'local-acc-card2-hover' : ''}`}>
+          <div className={`local-acc-card local-acc-card2 grid grid-cols-6 mt-14 ${isInView ? 'local-acc-card2-hover' : ''}`}>
             <div className='col-span-3 relative z-10 flex items-start'>
               <img className='local-img2' alt="Not Found" src="/pcard2.png"/>
             </div>

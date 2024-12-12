@@ -63,13 +63,19 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .Card1Img {
-  width: 260px !important;
+  width: 240px !important;
+}
+.Card2Img {
+  width: 306px !important;
 }
 
-@media (max-width: 1600px) {
+@media (max-width: 700px) {
   .Card1Img {
-    width: 165px !important;
-    top: -0px;
+    width: 150px !important;
+    bottom: 12px !important;
+  }
+  .Card2Img {
+    width: 235px !important;
   }
 }
 
@@ -1224,6 +1230,7 @@ input[type="number"] {
   }
   .corpCard-anim, .local-acc-card {
     margin-top: 0 !important;
+    padding: 10px !important;
   }
   .talkCard {
     width: 342px !important;
