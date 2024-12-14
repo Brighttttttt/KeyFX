@@ -30,7 +30,7 @@ const MainPage = () => {
   }, []);
   
   return (
-    <>
+    <div className={"mainContainer"}>
       <Navbar />
       <Header isMobile={isMobile} />
       <Services isMobile={isMobile} />
@@ -42,7 +42,7 @@ const MainPage = () => {
       <TalkBusiness isMobile={isMobile} />
       <Subscribe isMobile={isMobile} />
       <Footer isMobile={isMobile} />
-    </>
+    </div>
   );
 };
 

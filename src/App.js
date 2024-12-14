@@ -1,12 +1,18 @@
 import './App.css';
 import MainPage from './pages/Index';
+import {createBrowserRouter, RouterProvider} from "react-router";
+
+const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <MainPage/>,
+    },
+], {});
 
 function App() {
-  return (
-    <div className="mainContainer">
-      <MainPage />
-    </div>
-  );
+    return (
+        <RouterProvider router={router}/>
+    );
 }
 
 export default App;
