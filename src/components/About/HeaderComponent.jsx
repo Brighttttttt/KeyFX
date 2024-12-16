@@ -2,7 +2,7 @@ import React from "react";
 import bg from "../../assets/images/bg.png";
 import bgMobile from "../../assets/images/bg_mobile.png";
 
-function HeaderComponent({isMobile}) {
+function HeaderComponent() {
     return (
         <div>
             <div className='md:static relative flex justify-center py-5'>
