@@ -71,14 +71,14 @@ const Services = ({ isMobile }) => {
       setTimeout(() => {
         setPayeeRate((prevRate) => (prevRate === '10,000' ? '70,000' : '10,000'));
         setAnimate(false);
-      }, 1000);
-    }, 2000);
+      }, 1500);
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
   
   setTimeout(() => {
     setCounter(counter + 1);
-  }, 2000);
+  }, 3000);
   
   useEffect(() => {
     if (counter % 3 === 1) {

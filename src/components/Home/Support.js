@@ -17,7 +17,7 @@ const Support = ({ isMobile }) => {
     useEffect(() => {
         const observerOptions = {
             root: null,
-            rootMargin: '-70px 0px -200px 0px',
+            rootMargin: `-70px 0px ${isMobile ? '-90px' : '-200px'} 0px`,
             threshold: 0,
         };
         const observerCallback = (entries) => {
@@ -86,7 +86,7 @@ const Support = ({ isMobile }) => {
                 observer3.unobserve(targetRef3.current);
             }
         };
-    }, []);
+    }, [isMobile]);
 
     return (
         <div>
@@ -112,7 +112,7 @@ const Support = ({ isMobile }) => {
                         </div>
                         <div className='overflow-visible lg:order-2 order-1 flex lg:justify-start justify-center'>
                             <div className="overflow-visible mx-auto">
-                                <Lisence />
+                                <Lisence isMobile={isMobile} />
                             </div>
                             {/* <img alt='not available' src='/Sign up online.png' /> */}
                         </div>
@@ -126,7 +126,7 @@ const Support = ({ isMobile }) => {
                         <div className='lg:order-2 order-1 flex lg:justify-start justify-center'>
                             {/* <img alt='not available' src='/Get verified instantly.png' /> */}
                             <div className='mx-auto my-3'>
-                                <Veri />
+                                <Veri isMobile={isMobile} />
                             </div>
                         </div>
                     </div>
@@ -138,7 +138,7 @@ const Support = ({ isMobile }) => {
                         </div>
                         <div className='lg:order-2 order-1 flex lg:justify-start justify-center'>
                             <div className='mx-auto pb-5'>
-                                <Payto />
+                                <Payto isMobile={isMobile} />
                             </div>
                             {/* <img alt='not available' src='/Easily fund your account.png' /> */}
                         </div>
@@ -157,7 +157,7 @@ const Support = ({ isMobile }) => {
                         </div>
                         <div className='lg:order-2 order-1 flex lg:justify-start justify-center'>
                             <div className='mx-auto my-3'>
-                                <TransactionsImg />
+                                <TransactionsImg isMobile={isMobile} />
                             </div>
                             {/* <img alt='not available' src='/Start making transactions.svg' /> */}
                         </div>

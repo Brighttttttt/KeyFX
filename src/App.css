@@ -1250,12 +1250,18 @@ input[type="number"] {
     text-align: left;
     width: 604px;
     height: 484px;
+    padding: 24px !important;
+}
+
+.corporateTitle {
+  margin-top: 12px;
 }
 
 @media (max-width: 700px) {
     .corporateCard {
         width: 342px;
         height: 394px;
+        padding: 16px 12px !important;
     }
 
     .corpCard-anim, .local-acc-card {
@@ -1266,6 +1272,9 @@ input[type="number"] {
     .talkCard {
         width: 342px !important;
     }
+    .corporateTitle {
+        margin-top: 0;
+    }
 }
 
 .ellipsis {
@@ -1274,6 +1283,11 @@ input[type="number"] {
     display: -webkit-box;
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
+}
+@media (max-width: 540px) {
+    .ellipsis {
+        -webkit-line-clamp: 3;
+    }
 }
 
 .f16 {

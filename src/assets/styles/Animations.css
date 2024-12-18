@@ -70,6 +70,23 @@
     opacity: 1;
 }
 
+@media (max-width: 700px) {
+    .local-arrow {
+        height: 92px;
+    }
+    .local-img {
+        width: 115px;
+    }
+}
+
+.local-img-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    z-index: 10;
+}
+
 .local-img2 {
     top: -30px;
     position: relative;

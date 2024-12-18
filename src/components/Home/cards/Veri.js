@@ -1,12 +1,12 @@
 import React, {useEffect, useRef, useState} from "react";
 
-const Veri = () => {
+const Veri = ({ isMobile }) => {
   const [isClicked, setIsClicked] = useState(false);
   const [isInView, setIsInView] = useState(false);
   const targetRef = useRef(null);
   
   useEffect(() => {
-    const observerOptions = {root: null, rootMargin: '0px', threshold: 0.85};
+    const observerOptions = {root: null, rootMargin: '0px', threshold: isMobile ? 0.60 : 0.75};
     const observerCallback = (entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -25,7 +25,7 @@ const Veri = () => {
         observer.unobserve(targetRef.current);
       }
     };
-  }, []);
+  }, [isMobile]);
   
   
   return (
