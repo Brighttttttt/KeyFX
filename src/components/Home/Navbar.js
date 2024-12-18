@@ -4,13 +4,15 @@ import {Link} from "react-router";
 
 const Navbar = () => {
     return (
-        <nav className='flex justify-between items-center my-4 mainPage'>
+        <nav className='h-[80px] w-full absolute top-0 flex justify-between items-center mainPage z-50'>
             <div className='flex gap-3 items-center'>
                 <div><img alt="logo" src={logo}/></div>
                 <ul className='navTabs sm:flex hidden'>
                     <li>Products</li>
                     <li>Pricing</li>
-                    <li>Contact</li>
+                    <Link to={"/contact-us"}>
+                        <li>Contact</li>
+                    </Link>
                     <Link to={"/about"}>
                         <li>About</li>
                     </Link>
