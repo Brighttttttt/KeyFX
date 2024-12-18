@@ -1,7 +1,9 @@
-/** @type {import('tailwindcss').Config} */
+const {nextui} = require("@nextui-org/react");
+
 module.exports = {
     content: [
         './src/**/*.{js,jsx,ts,tsx}', // include all JSX and TSX files
+        "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
     ],
     theme: {
         extend: {
@@ -10,6 +12,15 @@ module.exports = {
             },
             backgroundImage: {
                 'linear3': 'linear-gradient(to right,#EEC840 3%,#00D2D3 27%,#0076FF 56%,#00D2D3 85%,#EEC840 100%)',
+            },
+            animation: {
+                'bounce-slow': 'bounceSlow 4s ease-in-out infinite',
+            },
+            keyframes: {
+                bounceSlow: {
+                    '0%, 100%': { transform: 'translateY(-5px)' },
+                    '50%': { transform: 'translateY(5px)' },
+                },
             },
         },
         screens: {
@@ -37,5 +48,6 @@ module.exports = {
             '9xl': ['128px', '1'],
         },
     },
-    plugins: [],
+    darkMode: "class",
+    plugins: [nextui()],
 }
