@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@d3/world-tour": "https://api.observablehq.com/@d3/world-tour.tgz?v=3",
+    "@nextui-org/react": "^2.6.8",
     "@observablehq/runtime": "^5.9.9",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -12,6 +13,7 @@
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "d3": "^7.9.0",
+    "framer-motion": "^11.14.4",
     "jquery": "^3.7.1",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.5",
