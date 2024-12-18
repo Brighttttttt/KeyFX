@@ -2,6 +2,8 @@ import './App.css';
 import MainPage from './pages/Index';
 import {createBrowserRouter, RouterProvider} from "react-router";
 import AboutPage from "./pages/AboutPage";
+import ContactUsPage from "./pages/ContactUsPage";
+import {NextUIProvider} from "@nextui-org/react";
 
 const router = createBrowserRouter([
     {
@@ -12,11 +14,17 @@ const router = createBrowserRouter([
         path: "/about",
         element: <AboutPage/>,
     },
+    {
+        path: "/contact-us",
+        element: <ContactUsPage/>,
+    },
 ], {});
 
 function App() {
     return (
-        <RouterProvider router={router}/>
+        <NextUIProvider>
+            <RouterProvider router={router}/>
+        </NextUIProvider>
     );
 }
 
