@@ -22,9 +22,6 @@
     opacity: 1;
 }
 
-
-/* ///////////////////////////////////////////// */
-
 .payto2 {
     opacity: 0;
     position: absolute;
@@ -69,22 +66,18 @@
 }
 
 .veri-tick-1 {
-    /* opacity: 1; */
     display: block;
 }
 
 .veri-tick-2 {
-    /* opacity: 0; */
     display: none;
 }
 
 .veri-hove .veri-tick-2 {
-    /* opacity: 1; */
     display: block;
 }
 
 .veri-hove .veri-tick-1 {
-    /* opacity: 0; */
     display: none;
 }
 
@@ -100,11 +93,9 @@
 .slider-track {
     display: flex;
     width: calc(100% * 2);
-    /* Two sets of items for continuous loop */
     animation: scrollLeft 20s linear infinite;
 }
 
-/* Define keyframes for continuous scroll */
 @keyframes scrollLeft {
     from {
         transform: translateX(0);
@@ -117,18 +108,13 @@
 
 .carousel-card {
     min-width: 250px;
-    /* Set a minimum width for each card */
     margin-right: 10px;
-    /* Optional spacing between cards */
 }
 
 .carousel-card img {
     width: 100%;
-    /* Ensure images are responsive */
     height: auto;
-    /* Maintain aspect ratio */
     border-radius: 10px;
-    /* Optional styling */
 }
 
 .min-w-400 {

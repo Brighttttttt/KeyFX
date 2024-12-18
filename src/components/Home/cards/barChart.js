@@ -15,7 +15,6 @@ const BarChart = () => {
 
     return (
         <div className='flex justify-center relative'>
-            {/* <div className='2xl:w-96 w-80 v-card absolute bottom-0 top-5 left-0 px-4 py-3 cc-rad ChartBarHeight'> */}
             <div className="2xl:w-96 w-60 md:w-80 v-card absolute bottom-0 top-5 left-0 px-4 py-3 cc-rad ChartBarHeight">
 
                 <p className='serviceAmount pb-2'>$20,245</p>

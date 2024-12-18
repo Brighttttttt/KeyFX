@@ -73,14 +73,12 @@ const Converter = ({ isMobile }) => {
           <div className="relative">
             <input
               className="w-full input-gray rounded-xl shadow-sm py-3 fw-bold"
-              // type="number"
               step="any"
               value={commafy(amount)}
               onChange={setAmountFunction}
               style={{height: '76px'}}
             />
             <div className="absolute top-0 right-0">
-              {/* Pass the fromCurrency and the function to update it */}
               <CurrenciesSelect
                 selectedCurrency={fromCurrency}
                 onCurrencyChange={handleFromCurrencyChange}
@@ -107,13 +105,11 @@ const Converter = ({ isMobile }) => {
           <div className="relative">
             <input
               className="input-gray rounded-md shadow-sm w-full py-3 fw-bold"
-              // type="number"
               value={commafy(exchange.toFixed(4))}
               step="any"
               style={{height: '76px'}}
             />
             <div className="absolute top-0 right-0">
-              {/* For toCurrency selection */}
               <CurrenciesSelect
                 selectedCurrency={toCurrency}
                 onCurrencyChange={handleToCurrencyChange}
@@ -134,14 +130,6 @@ const Converter = ({ isMobile }) => {
             {loading ? 'Converting' : 'Continue'}
           </button>
         </div>
-        
-        {/* {result && (
-          <div className="col-span-11 mt-4">
-            <p>
-              {amount} {result.from} = {result.rates[toCurrency]} {toCurrency}
-            </p>
-          </div>
-        )} */}
       </div>
     </div>
   );

@@ -37,18 +37,6 @@
     border-radius: 14px;
 }
 
-
-.tree li::before,
-.tree li::after {
-    /*content: '';*/
-    /*position: absolute;*/
-    /*top: 0;*/
-    /*right: 50%;*/
-    /*border-top: 3px solid #ccc; */
-    /*width: 47%;*/
-    /*height: 20px;*/
-}
-
 .tree li::after {
     right: auto;
     left: 50%;
@@ -80,17 +68,6 @@
 
 .tree li:first-child::after {
     border-radius: 5px 0 0 0;
-}
-
-
-.tree ul ul::before {
-    /*content: '';*/
-    /*position: absolute;*/
-    /*top: 0;*/
-    /*left: 50%;*/
-    /*border-left: 3px solid #ccc;*/
-    /*width: 0;*/
-    /*height: 132px;*/
 }
 
 .tree li a {
@@ -195,27 +172,11 @@
     }
 }
 
-li::before,
-li::after,
-ul::before {
-    /*border-image: linear-gradient(to right,#ccc,#ccc,#ccc,#ccc,#ccc) 1;*/
-    /*border-color: transparent;*/
-    /*    transition: border-image 0.3s ease-in-out;*/
-}
-
-.custom-hover-class li::before,
-.custom-hover-class li::after,
-.custom-hover-class ul::before {
-    /*border-image: linear-gradient(to right,#EEC840,#00D2D3,#0076FF,#00D2D3,#EEC840) 1;*/
-    /*border-color: transparent;*/
-    /*transition: border-image 0.9s ease-in-out;*/
-}
-
 .check-lcb {
     width: 44px;
     height: 40px;
     border-radius: 8px;
-    appearance: none; /* removes default checkbox styling */
+    appearance: none;
     background-color: #ECF0FF;
     border: 2px solid var(--Gray-50)
 }
@@ -280,7 +241,7 @@ ul::before {
     right: 0;
     bottom: -15px;
     opacity: 0;
-    transition: opacity 0.3s ease-in-out; /* Smooth transition */
+    transition: opacity 0.3s ease-in-out;
     background: radial-gradient(19.49% 58.52% at 50% 0%, rgba(249, 196, 60, 0.30) 0%, rgba(231, 166, 1, 0.00) 100%),
     radial-gradient(70.71% 70.71% at 100% 100%, #520AEB 10.27%, rgba(159, 115, 255, 0.00) 100%),
     radial-gradient(110.11% 70.71% at 100% 0%, #00A7FF 0%, rgba(0, 166, 254, 0.12) 100%),
@@ -288,7 +249,7 @@ ul::before {
     radial-gradient(99.33% 70.71% at 0% 100%, #E81D72 0%, rgba(255, 0, 0, 0.00) 100%);
     background-blend-mode: overlay, normal, normal, color-dodge, normal;
     border-radius: 20px;
-    pointer-events: none; /* Prevents any interaction with the shadow */
+    pointer-events: none;
 }
 
 .flow {

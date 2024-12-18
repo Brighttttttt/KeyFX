@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import '../../../assets/styles/Carousel.css'; // Import your CSS file for styling
+import '../../../assets/styles/Carousel.css';
 import arrowGray from '../../../assets/svg/home/arrowGray.svg';
 import arrowWhite from '../../../assets/svg/home/arrowWhite.svg';
 
-const Carousel = ({cards, component = 'unset', isMobile}) => {  // Corrected how props are accessed
+const Carousel = ({cards, component = 'unset', isMobile}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const cardsToShow = 1; // Number of cards to show at once
+  const cardsToShow = 1;
   const totalCards = cards.length;
   const translateX = (currentIndex / totalCards) * (component === 'business' ? 100 : 200);
   
