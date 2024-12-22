@@ -1,25 +1,25 @@
 .logos-slide, .slide {
-    width: 86% ;
-  }
-  
-@media only screen and (min-width: 400px) and (max-width : 2200px)  {
-    .logos-slide, .slide{
-        width: 1550px !important;
-    }
-}
-.v-card3{
-    padding: 10px;
-    background-color: transparent !important;
-}
-.v-card3 .v-card:hover{
-    /* background-image: url('/public/BackgroundGlow.png'); */
-    box-shadow: 
-    0 0 40px rgba(0, 210, 211, 0.3),  /* Cyan shadow */
-    0 0 60px rgba(255, 141, 108, 0.4), /* Orange shadow */
-    0 0 80px rgba(0, 167, 254, 0.12), /* Blue shadow */
-    0 0 100px rgba(249, 196, 60, 0.3);
+  width: 86%;
 }
 
-.opacity-0{
-    opacity: 0 !important;
+@media only screen and (min-width: 400px) and (max-width: 2200px) {
+  .logos-slide, .slide {
+    width: 1550px !important;
+  }
+}
+
+.v-card3 {
+  padding: 10px;
+  background-color: transparent !important;
+}
+
+.v-card3 .v-card:hover {
+  box-shadow: 0 0 40px rgba(0, 210, 211, 0.3),
+  0 0 60px rgba(255, 141, 108, 0.4),
+  0 0 80px rgba(0, 167, 254, 0.12),
+  0 0 100px rgba(249, 196, 60, 0.3);
+}
+
+.opacity-0 {
+  opacity: 0 !important;
 }

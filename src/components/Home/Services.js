@@ -67,18 +67,18 @@ const Services = ({ isMobile }) => {
   useEffect(() => {
     convertCurrency();
     const interval = setInterval(() => {
-      setAnimate(true); // Start the animation
+      setAnimate(true);
       setTimeout(() => {
         setPayeeRate((prevRate) => (prevRate === '10,000' ? '70,000' : '10,000'));
         setAnimate(false);
-      }, 1000);
-    }, 2000);
+      }, 1500);
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
   
   setTimeout(() => {
     setCounter(counter + 1);
-  }, 2000);
+  }, 3000);
   
   useEffect(() => {
     if (counter % 3 === 1) {
@@ -112,7 +112,6 @@ const Services = ({ isMobile }) => {
               <img className='icon-rotate2' alt="payment2" src={payment2}/>
             
             </div>
-            {/* <img alt="Not Found" src="/Component 9.png" /> */}
             <p className='roboto fw600 text700' style={{fontSize: '36px', marginTop: '30px'}}>Payment Services</p>
             <ul className={`${isMobile ? 'aqua-list' : 'blue-list'} mt-4`}>
               <li>Open a multi-currency account</li>
@@ -127,7 +126,6 @@ const Services = ({ isMobile }) => {
           </div>
           <div className={`lg:order-2 order-1 flex ${isMobile ? 'justify-start px-3' : 'justify-center'} `}>
             <div className="flex items-center justify-center relative">
-              {/* Background Box */}
               <div
                 className="v-card absolute -top-4 left-10 cc-rad px-3 py-4 sm:w-72 w-60 transform translate-x-8 translate-y-4 card2">
                 <h2 className="text-xl font-semibold mb-4 text-center rate-container flex justify-center">
@@ -184,12 +182,10 @@ const Services = ({ isMobile }) => {
                     >
                       <input
                         className="w-full bg-transparent fw-bold"
-                        // type="number"
                         step="any"
                         value={commafy(amount)}
                         onChange={setAmountFunction}
                       />
-                      {/* <span className="text-lg font-semibold">1</span> */}
                       <span className="flex items-center">
                         <CurrenciesSelect
                           selectedCurrency={toCurrency}
@@ -207,7 +203,7 @@ const Services = ({ isMobile }) => {
                     >
                       <div className="rate-container">
                         <span className={`rate-value ${animate ? 'animate-slide' : ''}`}>
-                            {commafy(exchange.toFixed(4))}
+                            {commafy(exchange.toFixed(1))}
                         </span>
                       </div>
                       <span className="flex items-center">
@@ -216,8 +212,6 @@ const Services = ({ isMobile }) => {
                           onCurrencyChange={handleFromCurrencyChange}
                           component={'services'}
                         />
-                        {/* <img src="https://flagcdn.com/w320/eu.png" alt="EUR" className="w-6 h-4 ml-2" />
-                      <span className="ml-2">EUR</span> */}
                       </span>
                     </div>
                   </div>
@@ -234,7 +228,6 @@ const Services = ({ isMobile }) => {
               <img className='icon-rotate2' alt="exchange2" src={exchange2}/>
             
             </div>
-            {/* <img alt="Not Found" src="/Component 8.png" /> */}
             <p className='roboto fw600 text700' style={{fontSize: '36px', marginTop: '30px'}}>Foreign Exchange
               Services</p>
             <ul className={`${isMobile ? 'aqua-list' : 'blue-list'} mt-4`}>
@@ -256,7 +249,6 @@ const Services = ({ isMobile }) => {
               <img className='icon-rotate1' alt="card1" src={card1}/>
               <img className='icon-rotate2' alt="card2" src={card2}/>
             </div>
-            {/* <img alt="Not Found" src="/Component 7.png" /> */}
             <p className='roboto fw600 text700' style={{fontSize: '36px', marginTop: '30px'}}>Card Services</p>
             <ul className={`${isMobile ? 'aqua-list' : 'blue-list'} mt-4`}>
               <li>Get debit Mastercard</li>
@@ -273,7 +265,6 @@ const Services = ({ isMobile }) => {
           </div>
           <div className={`lg:order-2 order-1 flex justify-center items-end  ${isMobile ? 'mt-5' : 'mt-0'} `}>
             <div className='leftCard'>
-              {/* <img alt="Not Found" src="/cardServices.png" /> */}
               <div className='relative'>
                 <div className="virtualCard v-card sm:w-72 w-60 flex flex-col items-center justify-center rounded-3xl">
                   <div className='icon-rotate'>
@@ -358,7 +349,6 @@ const Services = ({ isMobile }) => {
                 
                 </div>
               </div>
-              {/* <img alt="Not Found" className='PhysicalCard' src="/PhysicalCard.png" /> */}
             </div>
             <div className='rightCard'>
               <div className="bloc">
@@ -368,15 +358,12 @@ const Services = ({ isMobile }) => {
                   </div>
                 </div>
               </div>
-              {/* <div className="shine"></div>
-                    <img alt="Not Found" src="/AtmCard.png" /> */}
             </div>
           </div>
         </div>
         <div className={`grid lg:grid-cols-2 grid-cols-1 gap-20  ${isMobile ? 'mt-0' : 'mt-36'}  `}>
           <div className='justify-center flex mb-5'>
             <LocalBusinessCard/>
-            {/* <img alt="Not Found" src="/Local Business Bank Accounts.svg" /> */}
           </div>
           <div>
             
@@ -384,7 +371,6 @@ const Services = ({ isMobile }) => {
               <img className='icon-rotate1' alt="business1" src={business1}/>
               <img className='icon-rotate2' alt="business2" src={business2}/>
             </div>
-            {/* <img alt="Not Found" src="/Component 10.png" /> */}
             <p className='roboto fw600 text700 localBusiness' style={{fontSize: '36px', marginTop: '30px'}}>Local Business Bank
               Accounts</p>
             <ul className={`${isMobile ? 'aqua-list' : 'blue-list'} mt-4 flex justify-between sm-col`}>

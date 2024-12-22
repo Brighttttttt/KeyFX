@@ -32,20 +32,18 @@ const Business = ({isMobile}) => {
               <img className='corp4' alt="Not Found" src="/Icons/corp4.svg"/>
             </div>
           </div>
-          {/* <img alt="Not Found" src="/Corporate Cards.png" /> */}
         </div>
       )
     },
     {
       id: 2, title: 'Card 2', content: (
-        <div className={`rounded-lg  ${isMobile ? "py-4 px-3" : "p-6"} corporateCard`}>
-          <p className={`${isMobile ? " mt-0" : " mt-3"} roboto text-3xl fw600 text700`}
+        <div className={`rounded-lg corporateCard`}>
+          <p className={`corporateTitle roboto text-3xl fw600 text700`}
              style={{fontSize: '30px'}}>Corporate Cards</p>
           <p className='mt-2 text500' style={{fontSize: '16px'}}>Spend securely using our Mastercard debit cards in the
             currency of your choice. Take
             advantage of competitive conversion rates and seamless transactions, both online and in-store.</p>
-          {/* <img alt="Not Found" src="/Corporate Cards.png" /> */}
-          <div className={`local-acc-card grid grid-cols-7 ${isInView ? 'local-acc-card-hover' : ''}`}>
+          <div className={`local-acc-card grid grid-cols-7 pb-12 ${isInView ? 'local-acc-card-hover' : ''}`}>
             <div className='flex flex-col col-span-3 relative z-30 justify-center'>
               <div className='bg-white shadow-inner shade1 p-2 rounded-sm flex items-center gap-2'>
                 <div className='gbp p-2 roboto rounded-md '>
@@ -69,7 +67,7 @@ const Business = ({isMobile}) => {
             <div className='col-span-1 flex items-center relative z-20 h-full'>
               <img className='absolute local-arrow' alt="Not Found" src="/Icons/middleArrow.png"/>
             </div>
-            <div className='col-span-3 relative z-10 flex items-end'>
+            <div className='local-img-wrapper col-span-3'>
               <img className='local-img' alt="Not Found" src="/Icons/localAccountimg.svg"/>
             </div>
           </div>
@@ -85,7 +83,6 @@ const Business = ({isMobile}) => {
           <p className='mt-2 text500' style={{fontSize: '16px'}}>Manage your finances globally with an account that
             supports up to 33 currencies. Pay
             and get paid in your chosen currency with ease.</p>
-          {/* <img alt="Not Found" src="/Corporate Cards.png" /> */}
           <div className={`local-acc-card local-acc-card2 grid grid-cols-6 mt-14 ${isInView ? 'local-acc-card2-hover' : ''}`}>
             <div className='col-span-3 relative z-10 flex items-start'>
               <img className='local-img2' alt="Not Found" src="/pcard2.png"/>
@@ -109,13 +106,6 @@ const Business = ({isMobile}) => {
       <div>
         <Carousel cards={cards} component={'business'} isMobile={isMobile}/>
       </div>
-      {/* <div className='grid lg:grid-cols-2 grid-cols-1 gap-4 mt-5  '>
-                <div className='rounded-lg business-csr-card py-10 px-5'>
-                <p className='mt-3 roboto text-3xl fw600'>Corporate Cards</p>
-                <p className='small'>Spend securely using our Mastercard debit cards in the currency of your choice. Take advantage of competitive conversion rates and seamless transactions, both online and in-store.</p>
-                <img alt="Not Found" src="/Corporate Cards.png" />
-                </div>
-            </div> */}
     </div>
   );
 };

@@ -1,10 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Runtime, Inspector } from '@observablehq/runtime';
-
-// Import the Observable module definition
 import define from '../../../assets/world-tour';
 
-// React Component
 const WorldTour = () => {
   const canvasRef = useRef(null);
 
@@ -21,18 +18,6 @@ const WorldTour = () => {
 
   return (
     <div className='w-full'>
-      <div className='mx-auto w-full flex justify-center items-start relative h-full'>
-        {/*{isReady ? (*/}
-        {/*  <img src={currencyIcon} alt="currencyIcon" className='currencyIcon'/>*/}
-        {/*) : null}*/}
-        {/*<img src={usd} alt="usd" className='usdIcon'/>*/}
-        {/*<img src={eur} alt="eur" className='eurIcon'/>*/}
-        {/*<img src={gbp} alt="gbp" className='gbpIcon'/>*/}
-        {/*<img src={jpy} alt="jpy" className='jpyIcon'/>*/}
-        {/*<img src={inr} alt="inr" className='inrIcon'/>*/}
-        {/*<img className='mx-auto absolute z-999 curr-icons' alt="Not Available" src="/Icons/SectionCurrency.png" />*/}
-      </div>
-      
       <div id="observablehq-canvas-ec88052a" ref={canvasRef}></div>
     </div>
   );

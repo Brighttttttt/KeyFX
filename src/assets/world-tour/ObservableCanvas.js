@@ -21,8 +21,8 @@ function _2(html, name) {
 }
 
 async function* _canvas(width, d3, land, borders, countries, $0, Versor) {
-  const widthFixed = 1200; // Fixed width
-  const heightFixed = 1200; // Fixed height
+  const widthFixed = 1200;
+  const heightFixed = 1200;
 
   const dpr = window.devicePixelRatio ?? 1;
   const canvas = d3.create("canvas")
@@ -57,6 +57,7 @@ async function* _canvas(width, d3, land, borders, countries, $0, Versor) {
     context.fill();
     context.restore();
 
+    context.save();
     context.shadowColor = "#8C95C24D";
     context.shadowBlur = 40;
     context.shadowOffsetX = 0;

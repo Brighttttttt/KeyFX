@@ -1,13 +1,13 @@
 import React, {useEffect, useRef, useState} from 'react';
 import './css/TransactionsImg.css';
 
-const TransactionsImg = () => {
+const TransactionsImg = ({ isMobile }) => {
   const [isClicked, setIsClicked] = useState(false);
   const [isInView, setIsInView] = useState(false);
   const targetRef = useRef(null);
   
   useEffect(() => {
-    const observerOptions = {root: null, rootMargin: '0px', threshold: 0.85};
+    const observerOptions = {root: null, rootMargin: '0px', threshold: isMobile ? 0.60 : 0.75};
     const observerCallback = (entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -26,11 +26,10 @@ const TransactionsImg = () => {
         observer.unobserve(targetRef.current);
       }
     };
-  }, []);
+  }, [isMobile]);
   return (
+
     <>
-      
-      
       <div
         ref={targetRef}
         className={`w-full flex justify-center flex-col relative cursor-pointer ${isClicked ? 'payto-hove' : ''} ${isInView ? 'payto-hove' : ''}`}
@@ -38,7 +37,6 @@ const TransactionsImg = () => {
       >
         <div className="v-card rounded-3xl w-77 p-0">
           <p className='card-head-blue flex px-4 mt-4'>Pay to</p>
-          
           <div className='flex gap-2 mt-4 px-4'>
             <input className='w-full border-gray-500 border rounded-md py-2 px-3 font-10' placeholder='Account number'
                    type="text"/>
