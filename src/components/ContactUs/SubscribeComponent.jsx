@@ -1,11 +1,14 @@
 import {Button} from "react-bootstrap";
 import contact6Image from "../../assets/images/contact6_image.png";
 
-function SubscribeComponent() {
+function SubscribeComponent({withoutBlur}) {
     return (
         <div
             className={"relative z-10 w-full text-center flex items-center justify-center flex-col my-10"}>
-            <img src={contact6Image} alt="Contact Us" className={"absolute bottom-1/2 -z-10 h-[617px]"}/>
+            {
+                !withoutBlur &&
+                <img src={contact6Image} alt="Contact Us" className={"absolute bottom-1/2 -z-10 h-[617px]"}/>
+            }
             <div
                 className={"z-10 bg-white w-[80%] flex items-center justify-center lg:gap-12 gap-10 lg:flex-row flex-col lg:px-20 md:px-8 px-6 lg:py-6 md:py-12 py-8 rounded-2xl shadow-[inset_0px_-2px_10px_0px_#3e6f9f40,0px_30px_50px_-30px_#4a4a4a1a,0px_30px_70px_-20px_#32325d26]"}>
                 <div className={"lg:!text-start text-center"}>

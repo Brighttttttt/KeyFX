@@ -9,7 +9,9 @@ const Navbar = () => {
                 <div><img alt="logo" src={logo}/></div>
                 <ul className='navTabs sm:flex hidden'>
                     <li>Products</li>
-                    <li>Pricing</li>
+                    <Link to={"/pricing"}>
+                        <li>Pricing</li>
+                    </Link>
                     <Link to={"/contact-us"}>
                         <li>Contact</li>
                     </Link>

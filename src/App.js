@@ -4,6 +4,7 @@ import {createBrowserRouter, RouterProvider} from "react-router";
 import AboutPage from "./pages/AboutPage";
 import ContactUsPage from "./pages/ContactUsPage";
 import {NextUIProvider} from "@nextui-org/react";
+import PricingPage from "./pages/PricingPage";
 
 const router = createBrowserRouter([
     {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
     {
         path: "/contact-us",
         element: <ContactUsPage/>,
+    },
+    {
+        path: "/pricing",
+        element: <PricingPage/>,
     },
 ], {});
 
