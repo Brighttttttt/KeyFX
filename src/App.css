@@ -1165,3 +1165,15 @@ button.loading:disabled {
   font-family: 'plusJakartaSans';
   src: url('./assets/fonts/PlusJakartaSans-Regular.ttf') format('truetype');
 }
+
+@font-face {
+  font-family: 'Roboto Serif';
+  src: url('./assets/fonts/RobotoSerif-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Roboto Serif';
+  src: url('./assets/fonts/RobotoSerif-Medium.ttf') format('truetype');
+  font-weight: 500;
+}
