@@ -21,83 +21,81 @@ function _2(html, name) {
 }
 
 async function* _canvas(width, d3, land, borders, countries, $0, Versor) {
-  const widthFixed = 1200;
-  const heightFixed = 1200;
+  const height = Math.min(width, 1420);
 
   const dpr = window.devicePixelRatio ?? 1;
   const canvas = d3.create("canvas")
-      .attr("width", dpr * widthFixed)
-      .attr("height", dpr * heightFixed)
-      .style("width", `${widthFixed}px`)
-      .style("height", `${heightFixed}px`)
-      .style("margin-bottom", "-650px")
-      .style("margin-top", "-460px");
+    .attr("width", dpr * width)
+    .attr("height", dpr * height)
+    .style("width", `${width}px`)
+    .style("height", `${height}px`)
+    .style("position", "absolute")
+    .style("top", "5px");
   const context = canvas.node().getContext("2d");
   context.scale(dpr, dpr);
 
-  const projection = d3.geoOrthographic().fitExtent([[10, 10], [widthFixed - 10, heightFixed - 10]], {type: "Sphere"});
+  const projection = d3.geoOrthographic().fitExtent([[10, 10], [width - 10, height - 10]], {type: "Sphere"});
   const path = d3.geoPath(projection, context);
-  const tilt = 52; // Adjusted tilt to position focused country higher
+  const tilt = width <= 470 ? 27 : width <= 630 ? 35 : width <= 970 ? 42 : 52; // Adjusted tilt to position focused country higher
   function render(country, arc) {
-    context.clearRect(0, 0, widthFixed, heightFixed);
+    context.clearRect(0, 0, width, height);
     context.save();
 
     context.fillStyle = "white";
-    context.fillRect(0, 0, widthFixed, heightFixed);
+    context.fillRect(0, 0, width, height);
 
     // Draw shadow around the sphere
     context.save();
+    context.shadowOffsetX = 0;
+    context.shadowOffsetY = 0;
+
     context.globalCompositeOperation = "destination-over";
     context.shadowColor = "#B0BAE5B2";
     context.shadowBlur = 112;
-    context.shadowOffsetX = 0;
-    context.shadowOffsetY = 0;
     context.beginPath();
-    context.arc(widthFixed / 2, heightFixed / 2, heightFixed / 2, 0, 2 * Math.PI);
+    context.arc(width / 2, height / 2, height / 2, 0, 2 * Math.PI);
     context.fill();
     context.restore();
 
     context.save();
     context.shadowColor = "#8C95C24D";
     context.shadowBlur = 40;
-    context.shadowOffsetX = 0;
-    context.shadowOffsetY = 0;
     context.beginPath();
-    context.arc((widthFixed / 2), heightFixed / 2, (heightFixed / 2)-11, 0, 2 * Math.PI);
+    context.arc((width / 2), height / 2, (height / 2)-11, 0, 2 * Math.PI);
     context.fill();
     context.restore();
 
     context.beginPath();
-    context.arc(widthFixed / 2, heightFixed / 2, heightFixed / 2 - 10, 0, Math.PI, true);
+    context.arc(width / 2, height / 2, height / 2 - 10, 0, Math.PI, true);
     context.clip();
 
-    const waterGradient = context.createRadialGradient(widthFixed / 2, heightFixed / 2, heightFixed / 2.35, widthFixed / 2, heightFixed / 2, heightFixed / 2);
+    const waterGradient = context.createRadialGradient(width / 2, height / 2, height / 2.35, width / 2, height / 2, height / 2);
     waterGradient.addColorStop(0, "#eafdfa90");
     waterGradient.addColorStop(1, "#d0deef");
 
     context.fillStyle = waterGradient;
-    context.fillRect(0, 0, widthFixed, heightFixed);
+    context.fillRect(0, 0, width, height);
 
-    const radialGradient = context.createRadialGradient(widthFixed / 2, heightFixed / 2, heightFixed / 2 - 10, widthFixed / 2, heightFixed / 2, 0);
+    const radialGradient = context.createRadialGradient(width / 2, height / 2, height / 2 - 10, width / 2, height / 2, 0);
     radialGradient.addColorStop(0, "rgba(255, 255, 255, 0)");
     radialGradient.addColorStop(0.7737, "rgba(255, 255, 255, 1)");
 
     context.fillStyle = radialGradient;
-    context.fillRect(0, 0, widthFixed, heightFixed);
+    context.fillRect(0, 0, width, height);
 
     context.globalCompositeOperation = "source-atop";
 
-    context.beginPath();
-    path({type: "Sphere"});
-    context.clip();
+    // context.beginPath();
+    // path({type: "Sphere"});
+    // context.clip();
 
-    const countryGradient = context.createLinearGradient(0, 0, widthFixed, 0);
-    countryGradient.addColorStop(0.3906, "#31fcfb");
-    countryGradient.addColorStop(1, "#82dff0");
+    // const countryGradient = context.createLinearGradient(0, 0, width, 0);
+    // countryGradient.addColorStop(0.3906, "#31fcfb");
+    // countryGradient.addColorStop(1, "#82dff0");
 
     context.beginPath();
     path(land);
-    context.fillStyle = countryGradient;
+    context.fillStyle = "#31fcfb";
     context.fill();
 
     context.beginPath();
@@ -123,42 +121,40 @@ async function* _canvas(width, d3, land, borders, countries, $0, Versor) {
     context.stroke();
 
     const [centroidX, centroidY] = projection(d3.geoCentroid(country));
-
-    function drawCurrencyIcon(currencyPath) {
-      // Draw the outer circle
-      context.beginPath();
-      context.arc(centroidX, centroidY-83, 29, 0, 2 * Math.PI, false);
-      context.fillStyle = "#D5DAEF";
-      context.fill();
-
-      // Draw the inner circle
-      context.beginPath();
-      context.arc(centroidX, centroidY-83, 24.65, 0, 2 * Math.PI, false);
-      context.fillStyle = "#475385";
-      context.fill();
-
-      // Draw the path
-      context.save();
-      context.translate(centroidX - 30, centroidY-83 - 30);
-      const path = currencyPath;
-      context.fillStyle = "white";
-      context.fill(path);
-      context.restore();
-    }
-
-    country.properties.name === "United States of America" ?
-        drawCurrencyIcon(usdPath)
-        : country.properties.name === "United Kingdom" ?
-            drawCurrencyIcon(gbpPath)
-            : country.properties.name === "Japan" ?
-                drawCurrencyIcon(jpyPath)
-                : country.properties.name === "India" ?
-                    drawCurrencyIcon(inrPath)
-                    : drawCurrencyIcon(eurPath)
+      drawCurrencyIcon(centroidX, centroidY - 76, getCurrencyPath(country));
 
     context.restore();
     return context.canvas;
   }
+
+  const iconRadius = width <= 550 ? 23 : 28;
+  const innerCircleRadius = iconRadius * 0.85;
+  function drawCurrencyIcon(x, y, path) {
+    context.beginPath();
+    context.arc(x, y, iconRadius, 0, 2 * Math.PI);
+    context.fillStyle = "#D5DAEF";
+    context.fill();
+
+    context.beginPath();
+    context.arc(x, y, innerCircleRadius, 0, 2 * Math.PI);
+    context.fillStyle = "#475385";
+    context.fill();
+
+    context.translate(x - 30, y - 30);
+    context.fillStyle = "white";
+    context.fill(path);
+  }
+
+  function getCurrencyPath(country) {
+    switch (country.properties.name) {
+      case "United States of America": return usdPath;
+      case "United Kingdom": return gbpPath;
+      case "Japan": return jpyPath;
+      case "India": return inrPath;
+      default: return eurPath;
+    }
+  }
+
 
   const specifiedCountries = ["United States of America", "United Kingdom", "Japan", "India", "Austria", "Belgium", "Cyprus", "Estonia", "Finland", "Germany", "Greece", "Ireland", "Italy", "Latvia", "Lithuania", "Luxembourg", "Malta", "Netherlands", "Portugal", "Slovakia", "Slovenia", "Spain"];
   let p1, p2 = [0, 0], r1, r2 = [0, 0, 0];
@@ -166,7 +162,7 @@ async function* _canvas(width, d3, land, borders, countries, $0, Versor) {
     for (const country of countries) {
       if (!specifiedCountries.includes(country.properties.name)) continue;
 
-      $0.value = country.properties.name;
+      // $0.value = country.properties.name;
       yield render(country);
 
       // eslint-disable-next-line
@@ -177,16 +173,16 @@ async function* _canvas(width, d3, land, borders, countries, $0, Versor) {
       const iv = Versor.interpolateAngles(r1, r2);
 
       await d3.transition()
-          .duration(1500)
-          .tween("render", () => t => {
-            projection.rotate(iv(t));
-            render(country, {type: "LineString", coordinates: [p1, ip(t)]});
-          })
-          .transition()
-          .tween("render", () => t => {
-            render(country, {type: "LineString", coordinates: [ip(t), p2]});
-          })
-          .end();
+        .duration(1500)
+        .tween("render", () => t => {
+          projection.rotate(iv(t));
+          render(country, {type: "LineString", coordinates: [p1, ip(t)]});
+        })
+        .transition()
+        .tween("render", () => t => {
+          render(country, {type: "LineString", coordinates: [ip(t), p2]});
+        })
+        .end();
     }
   }
 }
