@@ -294,7 +294,7 @@
   text-align: center;
   font-family: "Roboto Serif", serif;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 700 !important;
   line-height: 24px;
   text-transform: capitalize;
 }

@@ -1131,19 +1131,41 @@ button.loading:disabled {
 
 @media (max-width: 639px) {
   .virtualCard {
-    width: 175px !important;
-    height: 530px !important;
+    width: 240px !important;
   }
 
   .ATMCard {
-    width: 145px !important;
-    min-width: 145px !important;
-    max-width: 145px !important;
-    height: 200px !important;
+    width: 183px !important;
+    min-width: 183px !important;
+    max-width: 183px !important;
+    height: 260px !important;
+    margin-bottom: -24px;
+    margin-left: -18px;
   }
 
   .ATMCard-wrapper {
     padding: 0 !important;
+    width: auto !important;
+  }
+}
+
+@media (max-width: 425px) {
+  .virtualCard {
+    width: 200px !important;
+  }
+
+  .ATMCard {
+    width: 143px !important;
+    min-width: 143px !important;
+    max-width: 143px !important;
+    height: 205px !important;
+    margin-bottom: -18px;
+    margin-left: -5px;
+  }
+
+  .ATMCard-wrapper {
+    padding: 0 !important;
+    width: auto !important;
   }
 }
 

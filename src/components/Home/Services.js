@@ -275,7 +275,7 @@ const Services = ({ isMobile }) => {
                   <p className='text-xs text-gray-500 mt-2'>
                     secure, temporary, no real details required
                   </p>
-                  <div className='gray-card mt-3 flex gap-0.5 sm:gap-2'>
+                  <div className='gray-card mt-3 flex gap-2'>
                     
                     <svg width="63" className='sm:w-14 w-8' height="47" viewBox="0 0 63 47" fill="none"
                          xmlns="http://www.w3.org/2000/svg">
@@ -292,12 +292,12 @@ const Services = ({ isMobile }) => {
                     </svg>
                     
                     <div>
-                      <p className='card-head-blue sm:text-xxs text-3xs'>Global Ventures Ltd.</p>
-                      <p className='sm:text-xxs text-3xs card-gray-text'>David Leo</p>
+                      <p className='card-head-blue text-xxs'>Global Ventures Ltd.</p>
+                      <p className='text-3xs card-gray-text'>David Leo</p>
                     </div>
                   
                   </div>
-                  <div className='gray-card flex gap-0.5 sm:gap-2 mt-2'>
+                  <div className='gray-card flex gap-2 mt-2'>
                     <svg className='sm:w-14 w-8' width="63" height="47" viewBox="0 0 63 47" fill="none"
                          xmlns="http://www.w3.org/2000/svg">
                       <rect x="0.5" y="0.5" width="62" height="46" rx="9.5" fill="#2C3667" stroke="#00D2D3"/>
@@ -312,8 +312,8 @@ const Services = ({ isMobile }) => {
                             fill="#FF5E00"/>
                     </svg>
                     <div>
-                      <p className='card-head-blue sm:text-xxs text-3xs'>Global Ventures Ltd.</p>
-                      <p className='sm:text-xxs text-3xs card-gray-text'>David Leo</p>
+                      <p className='card-head-blue text-xxs'>Global Ventures Ltd.</p>
+                      <p className='text-3xs card-gray-text'>David Leo</p>
                     </div>
                   
                   </div>
@@ -350,14 +350,8 @@ const Services = ({ isMobile }) => {
                 </div>
               </div>
             </div>
-            <div className='rightCard'>
-              <div className="bloc">
-                <div className="foil-image ATMCard-wrapper">
-                  <div>
-                    <img src={ATMCard} alt="ATMCard" className='ATMCard'/>
-                  </div>
-                </div>
-              </div>
+            <div className='rightCard foil-image ATMCard-wrapper'>
+              <img src={ATMCard} alt="ATMCard" className='ATMCard'/>
             </div>
           </div>
         </div>
