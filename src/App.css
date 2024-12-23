@@ -426,14 +426,8 @@ input[type="number"] {
     padding-right: 15px;
   }
 
-  .observablehq canvas {
-    width: 650px !important;
-    height: 650px !important;
-    margin-top: -1000px !important;
-  }
-
   .converterWrapper {
-    margin-top: -300px !important;
+    margin-top: -350px !important;
   }
 
   .w-sm-full {
@@ -477,12 +471,6 @@ input[type="number"] {
 }
 
 @media (max-width: 425px) {
-  .observablehq canvas {
-    width: 550px !important;
-    height: 550px !important;
-    margin-top: -1100px !important;
-  }
-
   .converterWrapper {
     margin-top: -350px !important;
   }

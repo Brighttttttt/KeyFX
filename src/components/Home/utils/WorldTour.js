@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Runtime, Inspector } from '@observablehq/runtime';
-import define from 'https://api.observablehq.com/d/0c9ac32c1357dbd5.js?v=4';
+// import define from 'https://api.observablehq.com/d/0c9ac32c1357dbd5.js?v=4';
+import define from '../../../assets/world-tour';
 
 const WorldTour = () => {
   const canvasRef = useRef(null);
