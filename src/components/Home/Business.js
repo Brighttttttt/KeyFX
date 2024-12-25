@@ -1,5 +1,9 @@
 import React, {useState} from 'react';
 import Carousel from './utils/Carousel';
+import GB from '../../assets/svg/flags/united kingdom.svg';
+import US from '../../assets/svg/flags/united states.svg';
+import EU from '../../assets/svg/flags/eur.svg';
+import listIconAqua from '../../assets/svg/home/listIconAqua.svg';
 
 const Business = ({isMobile}) => {
   const [isInView, setIsInView] = useState(false);
@@ -77,18 +81,65 @@ const Business = ({isMobile}) => {
     },
     {
       id: 2, title: 'Card 2', content: (
-        <div className={`rounded-lg  ${isMobile ? "py-4 px-3" : "p-6"} corporateCard `}>
+        <div className={`rounded-lg  ${isMobile ? "py-4 px-3" : "p-6"} corporateCard relative`}>
           <p className={`${isMobile ? " mt-0" : " mt-3"} roboto text-3xl fw600 text700`}
              style={{fontSize: '30px'}}>Global Multi-Currency Account</p>
           <p className='mt-2 text500' style={{fontSize: '16px'}}>Manage your finances globally with an account that
             supports up to 33 currencies. Pay
             and get paid in your chosen currency with ease.</p>
-          <div className={`local-acc-card local-acc-card2 grid grid-cols-6 mt-14 ${isInView ? 'local-acc-card2-hover' : ''}`}>
-            <div className='col-span-3 relative z-10 flex items-start'>
-              <img className='local-img2' alt="Not Found" src="/pcard2.png"/>
+          <div className="flex local-acc-card2">
+            <div className="relative w-full">
+              <div className={`multi-currency-card1 ${isInView ? 'multi-currency-card1-hover' : ''}`}>
+                <div className="flex justify-between mb-1.5">
+                  <div
+                    className={`f16 fw-bold text700 roboto ml-5 ${isInView ? 'text-grad' : ''}`}
+                    style={{lineHeight: "inherit !important"}}
+                  >
+                    Payment
+                  </div>
+                  <img src={GB} alt="GB" className='mr-5'/>
+                </div>
+                <div className='input-wrapper'>
+                  <div className='text200 fw400 text-xxs'>Sort code</div>
+                  <div className="input">11_00_42</div>
+                  <div className='text200 fw400 text-xxs acc-num'>Account number</div>
+                  <div className="input">76543087</div>
+                </div>
+              </div>
             </div>
-            <div className='col-span-3 relative z-10 flex items-end'>
-              <img className='local-img3' alt="Not Found" src="/pcard1.png"/>
+            <div className="relative w-full">
+              <div className={`multi-currency-card2 ${isInView ? 'multi-currency-card2-hover' : ''}`}>
+                <div
+                  className={`f16 fw-bold text700 roboto mb-2.5 ${isInView ? 'text-grad' : ''}`}
+                  style={{lineHeight: "inherit !important"}}
+                >
+                  Supports up to 33 currencies
+                </div>
+                <div className={`curr-wrapper ${isInView ? 'gbp-hover' : ''}`}>
+                  <div className="flex justify-between w-full">
+                    <div className='flex gap-2'>
+                      <img src={GB} alt="GB"/>
+                      <div className='text700 fw-bold roboto text-sm'>GBP</div>
+                    </div>
+                    <img
+                      src={listIconAqua}
+                      alt="listIconAqua"
+                      style={{
+                        transition: "opacity 1.5s ease",
+                        opacity: isInView ? '1' : '0',
+                      }}
+                    />
+                  </div>
+                </div>
+                <div className="curr-wrapper">
+                  <img src={US} alt="US"/>
+                  <div className="text300 fw-bold roboto text-sm">USD</div>
+                </div>
+                <div className="curr-wrapper">
+                  <img src={EU} alt="EU" width={24}/>
+                  <div className="text300 fw-bold roboto text-sm">EUR</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
