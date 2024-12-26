@@ -91,10 +91,7 @@ const Business = ({isMobile}) => {
             <div className="relative w-full">
               <div className={`multi-currency-card1 ${isInView ? 'multi-currency-card1-hover' : ''}`}>
                 <div className="flex justify-between mb-1.5">
-                  <div
-                    className={`f16 fw-bold text700 roboto ml-5 ${isInView ? 'text-grad' : ''}`}
-                    style={{lineHeight: "inherit !important"}}
-                  >
+                  <div className={`f16 fw-bold text700 roboto ml-5 lh-base ${isInView ? 'text-grad' : ''}`}>
                     Payment
                   </div>
                   <img src={GB} alt="GB" className='mr-5'/>
@@ -109,10 +106,7 @@ const Business = ({isMobile}) => {
             </div>
             <div className="relative w-full">
               <div className={`multi-currency-card2 ${isInView ? 'multi-currency-card2-hover' : ''}`}>
-                <div
-                  className={`f16 fw-bold text700 roboto mb-2.5 ${isInView ? 'text-grad' : ''}`}
-                  style={{lineHeight: "inherit !important"}}
-                >
+                <div className={`f16 fw-bold text700 roboto mb-2.5 lh-base ${isInView ? 'text-grad' : ''}`}>
                   Supports up to 33 currencies
                 </div>
                 <div className={`curr-wrapper ${isInView ? 'gbp-hover' : ''}`}>

@@ -1150,10 +1150,6 @@ button.loading:disabled {
 }
 
 @media (max-width: 425px) {
-  .virtualCard {
-    width: 200px !important;
-  }
-
   .ATMCard {
     width: 143px !important;
     min-width: 143px !important;
@@ -1166,6 +1162,11 @@ button.loading:disabled {
   .ATMCard-wrapper {
     padding: 0 !important;
     width: auto !important;
+  }
+}
+@media (max-width: 393px) {
+  .virtualCard {
+    width: 200px !important;
   }
 }
 
