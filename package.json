@@ -2,32 +2,10 @@
   "name": "keyfx",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@d3/world-tour": "https://api.observablehq.com/@d3/world-tour.tgz?v=3",
-    "@nextui-org/react": "^2.6.8",
-    "@observablehq/runtime": "^5.9.9",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "6189fc76f778024d": "https://api.observablehq.com/d/6189fc76f778024d@283.tgz?v=3",
-    "bootstrap": "^5.3.3",
-    "bootstrap-icons": "^1.11.3",
-    "d3": "^7.9.0",
-    "framer-motion": "^11.14.4",
-    "jquery": "^3.7.1",
-    "react": "^18.3.1",
-    "react-bootstrap": "^2.10.5",
-    "react-dom": "^18.3.1",
-    "react-router": "^7.0.2",
-    "react-scripts": "5.0.1",
-    "topojson": "^3.0.2",
-    "web-vitals": "^2.1.4"
-  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "vite --port 3000",
+    "build": "vite build",
+    "serve": "vite preview"
   },
   "eslintConfig": {
     "extends": [
@@ -47,9 +25,32 @@
       "last 1 safari version"
     ]
   },
+  "dependencies": {
+    "@nextui-org/react": "^2.6.11",
+    "@observablehq/inspector": "^5.0.1",
+    "@observablehq/runtime": "^5.9.9",
+    "@vitejs/plugin-react": "^4.3.4",
+    "bootstrap": "^5.3.3",
+    "clsx": "^2.1.1",
+    "d3": "^7.9.0",
+    "framer-motion": "^11.17.0",
+    "react": "^19.0.0",
+    "react-bootstrap": "^2.10.7",
+    "react-dom": "^19.0.0",
+    "react-router": "^7.1.1",
+    "vite": "^6.0.7",
+    "vite-tsconfig-paths": "^5.1.4",
+    "web-vitals": "^4.2.4"
+  },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/react": "^19.0.4",
+    "@types/react-dom": "^19.0.2",
     "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.47",
-    "tailwindcss": "^3.4.14"
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.14",
+    "tailwindcss-animate": "^1.0.7"
   }
 }

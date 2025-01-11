@@ -5,312 +5,332 @@ const jpyPath = new Path2D("M39.7286 20.316L33.0117 28.5202H35.7356C36.1174 28.5
 const inrPath = new Path2D("M40.0534 23.2425C40.0534 23.6242 39.9017 23.9903 39.6318 24.2603C39.3619 24.5302 38.9958 24.6818 38.614 24.6818H35.2556C35.2533 26.7171 34.4439 28.6683 33.0047 30.1075C31.5656 31.5466 29.6143 32.3561 27.5791 32.3583H26.9794L34.7758 39.4495C34.9183 39.5759 35.0343 39.7293 35.117 39.9008C35.1998 40.0724 35.2476 40.2587 35.2579 40.4488C35.2681 40.639 35.2405 40.8294 35.1766 41.0088C35.1127 41.1883 35.0139 41.3532 34.8858 41.4942C34.7577 41.6352 34.6029 41.7493 34.4304 41.83C34.2578 41.9107 34.071 41.9563 33.8807 41.9643C33.6904 41.9722 33.5004 41.9423 33.3217 41.8763C33.1431 41.8103 32.9793 41.7095 32.8399 41.5797L22.2847 31.9841C22.0692 31.7882 21.9182 31.5316 21.8516 31.248C21.785 30.9645 21.806 30.6675 21.9118 30.3962C22.0176 30.1248 22.2032 29.8919 22.4441 29.7283C22.685 29.5647 22.9699 29.478 23.2611 29.4796H27.5791C28.8516 29.4796 30.0719 28.9742 30.9717 28.0744C31.8714 27.1746 32.3769 25.9543 32.3769 24.6818H23.2611C22.8793 24.6818 22.5132 24.5302 22.2433 24.2603C21.9734 23.9903 21.8217 23.6242 21.8217 23.2425C21.8217 22.8608 21.9734 22.4947 22.2433 22.2247C22.5132 21.9548 22.8793 21.8032 23.2611 21.8032H31.4173C30.9704 21.2073 30.3909 20.7237 29.7247 20.3906C29.0585 20.0575 28.3239 19.884 27.5791 19.884H23.2611C22.8793 19.884 22.5132 19.7324 22.2433 19.4625C21.9734 19.1925 21.8217 18.8264 21.8217 18.4447C21.8217 18.063 21.9734 17.6969 22.2433 17.4269C22.5132 17.157 22.8793 17.0054 23.2611 17.0054H38.614C38.9958 17.0054 39.3619 17.157 39.6318 17.4269C39.9017 17.6969 40.0534 18.063 40.0534 18.4447C40.0534 18.8264 39.9017 19.1925 39.6318 19.4625C39.3619 19.7324 38.9958 19.884 38.614 19.884H33.5655C34.0326 20.4656 34.4124 21.1121 34.693 21.8032H38.614C38.9958 21.8032 39.3619 21.9548 39.6318 22.2247C39.9017 22.4947 40.0534 22.8608 40.0534 23.2425Z");
 
 function _1(md) {
-  return (
-      md`<div style="color: grey; font: 13px/25.5px var(--sans-serif); text-transform: uppercase;"><h1 style="display: none;">World tour</h1><a href="https://d3js.org/">D3</a> › <a href="/@d3/gallery">Gallery</a></div>
+    return (
+        md`<div style="color: grey; font: 13px/25.5px var(--sans-serif); text-transform: uppercase;"><h1 style="display: none;">World tour</h1><a href="https://d3js.org/">D3</a> › <a href="/@d3/gallery">Gallery</a></div>
 
 # World tour
 
 This animation uses [d3.geoInterpolate](https://d3js.org/d3-geo/math#geoInterpolate) to interpolate a path along great arcs, and [spherical linear interpolation](https://en.wikipedia.org/wiki/Slerp) to rotate the [orthographic](/@d3/orthographic) projection.`
-  )
+    )
 }
 
 function _2(html, name) {
-  return (
-      html`<b style="display:block;text-align:center;line-height:33px;">${name}`
-  )
+    return (
+        html`<b style="display:block;text-align:center;line-height:33px;">${name}`
+    )
 }
 
 async function* _canvas(width, d3, land, borders, countries, $0, Versor) {
-  const height = Math.min(width, 1420);
+    const height = Math.min(width, 1420);
 
-  const dpr = window.devicePixelRatio ?? 1;
-  const canvas = d3.create("canvas")
-    .attr("width", dpr * width)
-    .attr("height", dpr * height)
-    .style("width", `${width}px`)
-    .style("height", `${height}px`)
-    .style("position", "absolute")
-    .style("top", "5px");
-  const context = canvas.node().getContext("2d");
-  context.scale(dpr, dpr);
+    const dpr = window.devicePixelRatio ?? 1;
+    const canvas = d3.create("canvas")
+        .attr("width", dpr * width)
+        .attr("height", dpr * height)
+        .style("width", `${width}px`)
+        .style("height", `${height}px`)
+        .style("position", "absolute")
+        .style("top", "5px");
+    const context = canvas.node().getContext("2d");
+    context.scale(dpr, dpr);
 
-  const projection = d3.geoOrthographic().fitExtent([[10, 10], [width - 10, height - 10]], {type: "Sphere"});
-  const path = d3.geoPath(projection, context);
-  const tilt = width <= 470 ? 27 : width <= 630 ? 35 : width <= 970 ? 42 : 52; // Adjusted tilt to position focused country higher
-  function render(country, arc) {
-    context.clearRect(0, 0, width, height);
-    context.save();
+    const projection = d3.geoOrthographic().fitExtent([[10, 10], [width - 10, height - 10]], {type: "Sphere"});
+    const path = d3.geoPath(projection, context);
+    const tilt = width <= 470 ? 27 : width <= 630 ? 35 : width <= 970 ? 42 : 52; // Adjusted tilt to position focused country higher
+    function render(country, arc) {
+        context.clearRect(0, 0, width, height);
+        context.save();
 
-    context.fillStyle = "white";
-    context.fillRect(0, 0, width, height);
+        context.fillStyle = "transparent";
+        context.fillRect(0, 0, width, height);
 
-    // Draw shadow around the sphere
-    context.save();
-    context.shadowOffsetX = 0;
-    context.shadowOffsetY = 0;
+        // Draw shadow around the sphere
+        context.save();
+        context.shadowOffsetX = 0;
+        context.shadowOffsetY = 0;
 
-    context.globalCompositeOperation = "destination-over";
-    context.shadowColor = "#B0BAE5B2";
-    context.shadowBlur = 112;
-    context.beginPath();
-    context.arc(width / 2, height / 2, height / 2, 0, 2 * Math.PI);
-    context.fill();
-    context.restore();
+        context.globalCompositeOperation = "destination-over";
+        // context.shadowColor = "#B0BAE5B2";
+        // context.shadowBlur = 112;
+        context.beginPath();
+        context.arc(width / 2, height / 2, height / 2, 0, 2 * Math.PI);
+        context.fill();
+        context.restore();
 
-    context.save();
-    context.shadowColor = "#8C95C24D";
-    context.shadowBlur = 40;
-    context.beginPath();
-    context.arc((width / 2), height / 2, (height / 2)-11, 0, 2 * Math.PI);
-    context.fill();
-    context.restore();
+        context.save();
+        // context.shadowColor = "#8C95C24D";
+        // context.shadowBlur = 40;
+        context.beginPath();
+        context.arc((width / 2), height / 2, (height / 2) - 11, 0, 2 * Math.PI);
+        context.fill();
+        context.restore();
 
-    context.beginPath();
-    context.arc(width / 2, height / 2, height / 2 - 10, 0, Math.PI, true);
-    context.clip();
+        context.beginPath();
+        context.arc(width / 2, height / 2, height / 2 - 10, 0, Math.PI, true);
+        context.clip();
 
-    const waterGradient = context.createRadialGradient(width / 2, height / 2, height / 2.35, width / 2, height / 2, height / 2);
-    waterGradient.addColorStop(0, "#eafdfa90");
-    waterGradient.addColorStop(1, "#d0deef");
+        const waterGradient = context.createRadialGradient(width / 2, height / 2, height / 2.35, width / 2, height / 2, height / 2);
+        waterGradient.addColorStop(0, "#eafdfa90");
+        waterGradient.addColorStop(1, "#d0deef");
 
-    context.fillStyle = waterGradient;
-    context.fillRect(0, 0, width, height);
+        context.fillStyle = waterGradient;
+        context.fillRect(0, 0, width, height);
 
-    const radialGradient = context.createRadialGradient(width / 2, height / 2, height / 2 - 10, width / 2, height / 2, 0);
-    radialGradient.addColorStop(0, "rgba(255, 255, 255, 0)");
-    radialGradient.addColorStop(0.7737, "rgba(255, 255, 255, 1)");
+        const radialGradient = context.createRadialGradient(width / 2, height / 2, height / 2 - 10, width / 2, height / 2, 0);
+        radialGradient.addColorStop(0, "rgba(255, 255, 255, 0)");
+        radialGradient.addColorStop(0.7737, "rgba(255, 255, 255, 1)");
 
-    context.fillStyle = radialGradient;
-    context.fillRect(0, 0, width, height);
+        // context.fillStyle = radialGradient;
+        context.fillRect(0, 0, width, height);
 
-    context.globalCompositeOperation = "source-atop";
+        context.globalCompositeOperation = "source-atop";
 
-    // context.beginPath();
-    // path({type: "Sphere"});
-    // context.clip();
+        // context.beginPath();
+        // path({type: "Sphere"});
+        // context.clip();
 
-    // const countryGradient = context.createLinearGradient(0, 0, width, 0);
-    // countryGradient.addColorStop(0.3906, "#31fcfb");
-    // countryGradient.addColorStop(1, "#82dff0");
+        // const countryGradient = context.createLinearGradient(0, 0, width, 0);
+        // countryGradient.addColorStop(0.3906, "#31fcfb");
+        // countryGradient.addColorStop(1, "#82dff0");
 
-    context.beginPath();
-    path(land);
-    context.fillStyle = "#31fcfb";
-    context.fill();
+        context.beginPath();
+        path(land);
+        context.fillStyle = "#31fcfb";
+        context.fill();
 
-    context.beginPath();
-    path(borders);
-    context.strokeStyle = "#AFB7DC70"; // Updated color for borders
-    context.lineWidth = 0.5;
-    context.stroke();
+        context.beginPath();
+        path(borders);
+        context.strokeStyle = "#AFB7DC70"; // Updated color for borders
+        context.lineWidth = 0.5;
+        context.stroke();
 
-    context.beginPath();
-    path({type: "Sphere"});
-    context.strokeStyle = "#E2FCFC";
-    context.lineWidth = 1.5;
-    context.stroke();
+        context.beginPath();
+        path({type: "Sphere"});
+        context.strokeStyle = "#E2FCFC";
+        context.lineWidth = 1.5;
+        context.stroke();
 
-    context.beginPath();
-    path(country);
-    context.fillStyle = "#475385"; // Updated color for focused country
-    context.fill();
+        context.beginPath();
+        path(country);
+        context.fillStyle = "#475385"; // Updated color for focused country
+        context.fill();
 
-    context.beginPath();
-    path(arc);
-    context.strokeStyle = "#475385"; // Updated color for moving line
-    context.stroke();
+        context.beginPath();
+        path(arc);
+        context.strokeStyle = "#475385"; // Updated color for moving line
+        context.stroke();
 
-    const [centroidX, centroidY] = projection(d3.geoCentroid(country));
-      drawCurrencyIcon(centroidX, centroidY - 76, getCurrencyPath(country));
+        const [centroidX, centroidY] = projection(d3.geoCentroid(country));
+        drawCurrencyIcon(centroidX, centroidY - 76, getCurrencyPath(country));
 
-    context.restore();
-    return context.canvas;
-  }
-
-  const iconRadius = width <= 550 ? 23 : 28;
-  const innerCircleRadius = iconRadius * 0.85;
-  function drawCurrencyIcon(x, y, path) {
-    context.beginPath();
-    context.arc(x, y, iconRadius, 0, 2 * Math.PI);
-    context.fillStyle = "#D5DAEF";
-    context.fill();
-
-    context.beginPath();
-    context.arc(x, y, innerCircleRadius, 0, 2 * Math.PI);
-    context.fillStyle = "#475385";
-    context.fill();
-
-    context.translate(x - 30, y - 30);
-    context.fillStyle = "white";
-    context.fill(path);
-  }
-
-  function getCurrencyPath(country) {
-    switch (country.properties.name) {
-      case "United States of America": return usdPath;
-      case "United Kingdom": return gbpPath;
-      case "Japan": return jpyPath;
-      case "India": return inrPath;
-      default: return eurPath;
+        context.restore();
+        return context.canvas;
     }
-  }
 
+    const iconRadius = width <= 550 ? 23 : 28;
+    const innerCircleRadius = iconRadius * 0.85;
 
-  const specifiedCountries = ["United States of America", "United Kingdom", "Japan", "India", "Austria", "Belgium", "Cyprus", "Estonia", "Finland", "Germany", "Greece", "Ireland", "Italy", "Latvia", "Lithuania", "Luxembourg", "Malta", "Netherlands", "Portugal", "Slovakia", "Slovenia", "Spain"];
-  let p1, p2 = [0, 0], r1, r2 = [0, 0, 0];
-  while (true) {
-    for (const country of countries) {
-      if (!specifiedCountries.includes(country.properties.name)) continue;
+    function drawCurrencyIcon(x, y, path) {
+        context.beginPath();
+        context.arc(x, y, iconRadius, 0, 2 * Math.PI);
+        context.fillStyle = "#D5DAEF";
+        context.fill();
 
-      // $0.value = country.properties.name;
-      yield render(country);
+        context.beginPath();
+        context.arc(x, y, innerCircleRadius, 0, 2 * Math.PI);
+        context.fillStyle = "#475385";
+        context.fill();
 
-      // eslint-disable-next-line
-      p1 = p2, p2 = d3.geoCentroid(country);
-      // eslint-disable-next-line
-      r1 = r2, r2 = [-p2[0], tilt - p2[1], 0];
-      const ip = d3.geoInterpolate(p1, p2);
-      const iv = Versor.interpolateAngles(r1, r2);
-
-      await d3.transition()
-        .duration(1500)
-        .tween("render", () => t => {
-          projection.rotate(iv(t));
-          render(country, {type: "LineString", coordinates: [p1, ip(t)]});
-        })
-        .transition()
-        .tween("render", () => t => {
-          render(country, {type: "LineString", coordinates: [ip(t), p2]});
-        })
-        .end();
+        context.translate(x - 30, y - 30);
+        context.fillStyle = "white";
+        context.fill(path);
     }
-  }
+
+    function getCurrencyPath(country) {
+        switch (country.properties.name) {
+            case "United States of America":
+                return usdPath;
+            case "United Kingdom":
+                return gbpPath;
+            case "Japan":
+                return jpyPath;
+            case "India":
+                return inrPath;
+            default:
+                return eurPath;
+        }
+    }
+
+
+    const specifiedCountries = ["United States of America", "United Kingdom", "Japan", "India", "Austria", "Belgium", "Cyprus", "Estonia", "Finland", "Germany", "Greece", "Ireland", "Italy", "Latvia", "Lithuania", "Luxembourg", "Malta", "Netherlands", "Portugal", "Slovakia", "Slovenia", "Spain"];
+    let p1, p2 = [0, 0], r1, r2 = [0, 0, 0];
+    while (true) {
+        for (const country of countries) {
+            if (!specifiedCountries.includes(country.properties.name)) continue;
+
+            // $0.value = country.properties.name;
+            yield render(country);
+
+
+            p1 = p2;
+            p2 = d3.geoCentroid(country);
+            // eslint-disable-next-line
+            r1 = r2;
+            r2 = [-p2[0], tilt - p2[1], 0];
+            const ip = d3.geoInterpolate(p1, p2);
+            const iv = Versor.interpolateAngles(r1, r2);
+
+            await d3.transition()
+                .duration(1500)
+                .tween("render", () => t => {
+                    projection.rotate(iv(t));
+                    render(country, {type: "LineString", coordinates: [p1, ip(t)]});
+                })
+                .transition()
+                .tween("render", () => t => {
+                    render(country, {type: "LineString", coordinates: [ip(t), p2]});
+                })
+                .end();
+        }
+    }
 }
 
 
 function _Versor() {
-  return (
-      class Versor {
-        static fromAngles([l, p, g]) {
-          l *= Math.PI / 360;
-          p *= Math.PI / 360;
-          g *= Math.PI / 360;
-          const sl = Math.sin(l), cl = Math.cos(l);
-          const sp = Math.sin(p), cp = Math.cos(p);
-          const sg = Math.sin(g), cg = Math.cos(g);
-          return [
-            cl * cp * cg + sl * sp * sg,
-            sl * cp * cg - cl * sp * sg,
-            cl * sp * cg + sl * cp * sg,
-            cl * cp * sg - sl * sp * cg
-          ];
-        }
+    return (
+        class Versor {
+            static fromAngles([l, p, g]) {
+                l *= Math.PI / 360;
+                p *= Math.PI / 360;
+                g *= Math.PI / 360;
+                const sl = Math.sin(l), cl = Math.cos(l);
+                const sp = Math.sin(p), cp = Math.cos(p);
+                const sg = Math.sin(g), cg = Math.cos(g);
+                return [
+                    cl * cp * cg + sl * sp * sg,
+                    sl * cp * cg - cl * sp * sg,
+                    cl * sp * cg + sl * cp * sg,
+                    cl * cp * sg - sl * sp * cg
+                ];
+            }
 
-        static toAngles([a, b, c, d]) {
-          return [
-            Math.atan2(2 * (a * b + c * d), 1 - 2 * (b * b + c * c)) * 180 / Math.PI,
-            Math.asin(Math.max(-1, Math.min(1, 2 * (a * c - d * b)))) * 180 / Math.PI,
-            Math.atan2(2 * (a * d + b * c), 1 - 2 * (c * c + d * d)) * 180 / Math.PI
-          ];
-        }
+            static toAngles([a, b, c, d]) {
+                return [
+                    Math.atan2(2 * (a * b + c * d), 1 - 2 * (b * b + c * c)) * 180 / Math.PI,
+                    Math.asin(Math.max(-1, Math.min(1, 2 * (a * c - d * b)))) * 180 / Math.PI,
+                    Math.atan2(2 * (a * d + b * c), 1 - 2 * (c * c + d * d)) * 180 / Math.PI
+                ];
+            }
 
-        static interpolateAngles(a, b) {
-          const i = Versor.interpolate(Versor.fromAngles(a), Versor.fromAngles(b));
-          return t => Versor.toAngles(i(t));
-        }
+            static interpolateAngles(a, b) {
+                const i = Versor.interpolate(Versor.fromAngles(a), Versor.fromAngles(b));
+                return t => Versor.toAngles(i(t));
+            }
 
-        static interpolateLinear([a1, b1, c1, d1], [a2, b2, c2, d2]) {
-          //eslint-disable-next-line
-          a2 -= a1, b2 -= b1, c2 -= c1, d2 -= d1;
-          const x = new Array(4);
-          return t => {
-            const l = Math.hypot(x[0] = a1 + a2 * t, x[1] = b1 + b2 * t, x[2] = c1 + c2 * t, x[3] = d1 + d2 * t);
-            //eslint-disable-next-line
-            x[0] /= l, x[1] /= l, x[2] /= l, x[3] /= l;
-            return x;
-          };
-        }
+            static interpolateLinear([a1, b1, c1, d1], [a2, b2, c2, d2]) {
 
-        static interpolate([a1, b1, c1, d1], [a2, b2, c2, d2]) {
-          let dot = a1 * a2 + b1 * b2 + c1 * c2 + d1 * d2;
-          //eslint-disable-next-line
-          if (dot < 0) a2 = -a2, b2 = -b2, c2 = -c2, d2 = -d2, dot = -dot;
-          if (dot > 0.9995) return Versor.interpolateLinear([a1, b1, c1, d1], [a2, b2, c2, d2]);
-          const theta0 = Math.acos(Math.max(-1, Math.min(1, dot)));
-          const x = new Array(4);
-          const l = Math.hypot(a2 -= a1 * dot, b2 -= b1 * dot, c2 -= c1 * dot, d2 -= d1 * dot);
-          //eslint-disable-next-line
-          a2 /= l, b2 /= l, c2 /= l, d2 /= l;
-          return t => {
-            const theta = theta0 * t;
-            const s = Math.sin(theta);
-            const c = Math.cos(theta);
-            x[0] = a1 * c + a2 * s;
-            x[1] = b1 * c + b2 * s;
-            x[2] = c1 * c + c2 * s;
-            x[3] = d1 * c + d2 * s;
-            return x;
-          };
+                a2 -= a1;
+                b2 -= b1;
+                c2 -= c1;
+                d2 -= d1;
+                const x = new Array(4);
+                return t => {
+                    const l = Math.hypot(x[0] = a1 + a2 * t, x[1] = b1 + b2 * t, x[2] = c1 + c2 * t, x[3] = d1 + d2 * t);
+                    x[0] /= l;
+                    x[1] /= l;
+                    x[2] /= l;
+                    x[3] /= l;
+                    return x;
+                };
+            }
+
+            static interpolate([a1, b1, c1, d1], [a2, b2, c2, d2]) {
+                let dot = a1 * a2 + b1 * b2 + c1 * c2 + d1 * d2;
+                if (dot < 0) {
+                    a2 = -a2;
+                    b2 = -b2;
+                    c2 = -c2;
+                    d2 = -d2;
+                    dot = -dot;
+                }
+                if (dot > 0.9995) return Versor.interpolateLinear([a1, b1, c1, d1], [a2, b2, c2, d2]);
+                const theta0 = Math.acos(Math.max(-1, Math.min(1, dot)));
+                const x = new Array(4);
+                const l = Math.hypot(a2 -= a1 * dot, b2 -= b1 * dot, c2 -= c1 * dot, d2 -= d1 * dot);
+                a2 /= l;
+                b2 /= l;
+                c2 /= l;
+                d2 /= l;
+                return t => {
+                    const theta = theta0 * t;
+                    const s = Math.sin(theta);
+                    const c = Math.cos(theta);
+                    x[0] = a1 * c + a2 * s;
+                    x[1] = b1 * c + b2 * s;
+                    x[2] = c1 * c + c2 * s;
+                    x[3] = d1 * c + d2 * s;
+                    return x;
+                };
+            }
         }
-      }
-  )
+    )
 }
 
 function _name() {
-  return (
-      ""
-  )
+    return (
+        ""
+    )
 }
 
 function _countries(topojson, world) {
-  return (
-      topojson.feature(world, world.objects.countries).features
-  )
+    return (
+        topojson.feature(world, world.objects.countries).features
+    )
 }
 
 function _borders(topojson, world) {
-  return (
-      topojson.mesh(world, world.objects.countries, (a, b) => a !== b)
-  )
+    return (
+        topojson.mesh(world, world.objects.countries, (a, b) => a !== b)
+    )
 }
 
 function _land(topojson, world) {
-  return (
-      topojson.feature(world, world.objects.land)
-  )
+    return (
+        topojson.feature(world, world.objects.land)
+    )
 }
 
 function _world(FileAttachment) {
-  return (
-      FileAttachment("countries-110m.json").json()
-  )
+    return (
+        FileAttachment("countries-110m.json").json()
+    )
 }
 
 export default function define(runtime, observer) {
-  const main = runtime.module();
+    const main = runtime.module();
 
-  function toString() {
-    return this.url;
-  }
+    function toString() {
+        return this.url;
+    }
 
-  const fileAttachments = new Map([
-    ["countries-110m.json", {
-      url: new URL("./files/topology.json", import.meta.url),
-      mimeType: "application/json",
-      toString
-    }]
-  ]);
-  main.builtin("FileAttachment", runtime.fileAttachments(name => fileAttachments.get(name)));
-  main.variable(observer()).define(["md"], _1);
-  main.variable(observer()).define(["html", "name"], _2);
-  main.variable(observer("canvas")).define("canvas", ["width", "d3", "land", "borders", "countries", "mutable name", "Versor"], _canvas);
-  main.variable(observer("Versor")).define("Versor", _Versor);
-  main.define("initial name", _name);
-  main.variable(observer("mutable name")).define("mutable name", ["Mutable", "initial name"], (M, _) => new M(_));
-  main.variable(observer("name")).define("name", ["mutable name"], _ => _.generator);
-  main.variable(observer("countries")).define("countries", ["topojson", "world"], _countries);
-  main.variable(observer("borders")).define("borders", ["topojson", "world"], _borders);
-  main.variable(observer("land")).define("land", ["topojson", "world"], _land);
-  main.variable(observer("world")).define("world", ["FileAttachment"], _world);
-  return main;
+    const fileAttachments = new Map([
+        ["countries-110m.json", {
+            url: new URL("./files/topology.json", import.meta.url),
+            mimeType: "application/json",
+            toString
+        }]
+    ]);
+    main.builtin("FileAttachment", runtime.fileAttachments(name => fileAttachments.get(name)));
+    main.variable(observer()).define(["md"], _1);
+    main.variable(observer()).define(["html", "name"], _2);
+    main.variable(observer("canvas")).define("canvas", ["width", "d3", "land", "borders", "countries", "mutable name", "Versor"], _canvas);
+    main.variable(observer("Versor")).define("Versor", _Versor);
+    main.define("initial name", _name);
+    main.variable(observer("mutable name")).define("mutable name", ["Mutable", "initial name"], (M, _) => new M(_));
+    main.variable(observer("name")).define("name", ["mutable name"], _ => _.generator);
+    main.variable(observer("countries")).define("countries", ["topojson", "world"], _countries);
+    main.variable(observer("borders")).define("borders", ["topojson", "world"], _borders);
+    main.variable(observer("land")).define("land", ["topojson", "world"], _land);
+    main.variable(observer("world")).define("world", ["FileAttachment"], _world);
+    return main;
 }

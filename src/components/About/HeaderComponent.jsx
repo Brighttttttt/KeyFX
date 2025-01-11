@@ -1,18 +1,25 @@
 import React from "react";
-import bg from "../../assets/images/bg.png";
-import bgMobile from "../../assets/images/bg_mobile.png";
-import dollar from "../../assets/images/Dollar.png";
-import eur from "../../assets/images/EUR.png";
-import jpy from "../../assets/images/jpy.png";
-import component from "../../assets/images/Component.png";
-import lnr from "../../assets/images/lnr.png";
-import gpb from "../../assets/images/GPB.png";
+import bgLg from "../../assets/svg/about/bg_lg.svg";
+import bgMobile from "../../assets/svg/about/bg_mobile.svg";
+import dollar from "../../assets/svg/about/Dollar.svg";
+import eur from "../../assets/svg/about/EUR.svg";
+import jpy from "../../assets/svg/about/jpy.svg";
+import component from "../../assets/svg/about/Component.svg";
+import lnr from "../../assets/svg/about/lnr.svg";
+import gpb from "../../assets/svg/about/GPB.svg";
 
 function HeaderComponent() {
     return (
         <div className={"relative pt-[80px]"}>
-            <img src={bg} className={"absolute top-0 md:block hidden"} alt={"bg"}/>
-            <img src={bgMobile} className={"absolute top-0 md:hidden block"} alt={"bg"}/>
+            {/*<img src={bg} className={"absolute top-0 md:block hidden"} alt={"bg"}/>*/}
+            {/*<img src={bgMobile} className={"absolute top-0 md:hidden block"} alt={"bg"}/>*/}
+
+            <picture className={"absolute top-0 w-full "}>
+                <source srcSet={bgLg} media="(min-width: 426px)"/>
+                <source srcSet={bgMobile} media="(max-width: 425px)"/>
+                <img src={bgMobile} alt="Responsive Image" className={"md:w-fit w-full"}/>
+            </picture>
+
             <div className='relative z-10 flex justify-center py-5'>
                 <div className={"w-full h-full absolute z-50"}>
                     <img src={dollar} alt={"dollar"}

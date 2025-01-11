@@ -20,6 +20,18 @@
   0 0 100px rgba(249, 196, 60, 0.3);
 }
 
+.slider_card{
+
+}
+
+.slider_card img:first-of-type{
+  opacity: 0;
+}
+
+.slider_card:hover img:first-of-type{
+  opacity: 1;
+}
+
 .opacity-0 {
   opacity: 0 !important;
 }

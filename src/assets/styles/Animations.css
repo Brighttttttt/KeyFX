@@ -361,7 +361,7 @@
   padding: 20px 15px;
   border: 1px solid var(--Gray-100, #AFB7DC);
   background: #fff;
-  box-shadow: 0 50px 100px -20px rgba(50, 50, 93, 0.25), 0 30px 60px -30px rgba(0, 0, 0, 0.30), 0 -2px 8px 0 rgba(20, 62, 104, 0.35) inset;
+  /*box-shadow: 0 50px 100px -20px rgba(50, 50, 93, 0.25), 0 30px 60px -30px rgba(0, 0, 0, 0.30), 0 -2px 8px 0 rgba(20, 62, 104, 0.35) inset;*/
 }
 
 .v-card2 {

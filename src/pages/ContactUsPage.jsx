@@ -8,7 +8,7 @@ import SubscribeComponent from "../components/ContactUs/SubscribeComponent";
 
 function ContactUsPage() {
     return (
-        <div>
+        <div className={"relative"}>
             <Navbar/>
             <HeaderComponent/>
             <SupportComponent/>

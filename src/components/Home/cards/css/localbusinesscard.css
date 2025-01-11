@@ -293,11 +293,12 @@
     left: 272px;
     height: 0;
     width: 3px;
-    background: linear-gradient(180deg,#EEC840,#00D2D3,#0076FF,#00D2D3,#EEC840);
+    background: linear-gradient(180deg, #EEC840, #00D2D3, #0076FF, #00D2D3, #EEC840);
     animation: 5s height infinite;
     animation-delay: 2.5s;
     z-index: 1;
 }
+
 @keyframes height {
     0% {
         height: 0;
@@ -321,26 +322,33 @@
         width: 180px;
         height: 46px;
     }
+
     .background-shadow {
         width: 280px;
     }
+
     .curr-text {
         font-size: 16px;
     }
+
     .child1 {
         width: 256px;
     }
+
     .flow {
         left: 65px;
     }
+
     .flowLine {
         left: 200px;
     }
+
     .custom-checkbox, .check-lcb {
         height: 30px;
         width: 30px;
     }
-    .badge > p{
+
+    .badge > p {
         width: 43px;
     }
 }
