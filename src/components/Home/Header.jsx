@@ -14,7 +14,7 @@ const Header = ({isMobile}) => {
             <div className='flex justify-center mainPage'>
                 <div
                     className={`${isMobile ? 'mt-0 pt-0 w-full text-center' : 'md:pt-5 text-center'} flex flex-col items-stretch justify-center sm:gap-0 gap-2`}>
-                    <p className='text-grad roboto md:text-6xl text-[18px] fw600'>Empowering</p>
+                    <p className='text-grad roboto md:text-6xl !leading-normal text-[18px] fw600'>Empowering</p>
                     <p className='md:mt-3 roboto md:text-6xl text-[18px] fw600 text900'>Your Business Globally</p>
                     <p className='md:mt-2 mt-1 md:text-xl text-[14px] roboto text500'
                        style={!isMobile ? {width: '658px'} : {}}>
