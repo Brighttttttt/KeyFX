@@ -25,7 +25,7 @@ const Converter = ({isMobile}) => {
             amount: inputs.amount,
         };
         try {
-            const response = await fetch("https://keyfx.co.uk/calculator", {
+            const response = await fetch("https://old.keyfx.co.uk/calculator", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -159,13 +159,13 @@ const Converter = ({isMobile}) => {
                 </div>
                 <div
                     className={"md:w-[160px] w-full lg:col-span-2 col-span-4 flex justify-center px-0"}>
-                    <button
-                        className={`md:h-[76px] h-[50px] btn-p rounded-md w-full md:py-3 py-2 roboto font-medium text-lg`}
+                    <a href="https://panel.keyfx.co.uk/login"
+                        className={`md:h-[76px] h-[50px] flex justify-content-center align-items-center btn-p rounded-md w-full md:py-3 py-2 roboto font-medium text-lg`}
                         // onClick={convertCurrency}
                         // style={{height: '76px'}}
                     >
                         Continue
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>

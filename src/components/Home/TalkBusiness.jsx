@@ -5,32 +5,26 @@ import arrowWhite from "../../assets/svg/home/arrowWhite.svg";
 
 const TalkBusiness = ({ isMobile }) => {
   const cards = [
+    
     {
       id: 1, title: 'Card 1', content: (
         <div className='rounded-lg p-2 talkCard'>
-          <img alt="Not Found" className='w-full' src="/13.png"/>
-          <p className='mt-3 fw600 text-lg text-left pb-3'>Title</p>
-          <p className='small px-0 text-left MidnightHaze'>Spend securely using our Mastercard debit cards in the currency of your
-            choice. Take advantage of competitive conversion rates and seamless transactions, both online and
-            in-store.</p>
+          <a href="https://keyfx.co.uk/blog/reliable-food-beverage-importers-you-can-count-on/">
+          <img alt="Not Found" className='w-full' src="https://keyfx.co.uk/blog/wp-content/uploads/2025/01/2150379587-980x340.jpg"/>
+          <p className='mt-3 fw600 text-lg text-left pb-3'>Over 140,000 Business Accounts Closed by Major Banks: A Growing Concern for UK Businesses</p>
+          <p className='small text-left MidnightHaze'>Recent figures from the UK Treasury Committee highlight a worrisome trend in the financial sector: over 140,000 business accounts were closed by major banks in 2023. This surge in “de-banking” has sparked concerns about the accessibility and dependability of banking services, particularly for small and medium-sized enterprises (SMEs), which are among the hardest hit.</p>
           
           <div className='mt-3 book-mark rounded-md flex items-center justify-between px-3 py-1'>
             <div className='flex items-center'>
               <img className='w-14 h-14 rounded-md' alt='not available' src='/12.png'/>
               <div className='ps-3'>
-                <p className='fw-bold text-left'>Header</p>
-                <p className='small text-left mt-0'>January 13,</p>
-                <p className='small text-left mt-0'>2023</p>
+                <p className='fw-bold text-left'>Danny</p>
+                <p className='small text-left mt-0'>January 10,</p>
+                <p className='small text-left mt-0'>2025</p>
               </div>
             </div>
-            <div>
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#627394" className="bi bi-bookmark"
-                   viewBox="0 0 16 16">
-                <path
-                  d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
-              </svg>
-            </div>
           </div>
+          </a>
         </div>
       
       )
@@ -38,28 +32,22 @@ const TalkBusiness = ({ isMobile }) => {
     {
       id: 2, title: 'Card 1', content: (
         <div className='rounded-lg p-2 talkCard'>
-          <img alt="Not Found" className='w-full' src="/13.png"/>
-          <p className='mt-3 fw600 text-lg text-left pb-3'>Title</p>
-          <p className='small text-left MidnightHaze'>Spend securely using our Mastercard debit cards in the currency of your choice.
-            Take advantage of competitive conversion rates and seamless transactions, both online and in-store.</p>
+          <a href="https://keyfx.co.uk/blog/closed-business-accounts/">
+          <img alt="Not Found" className='w-full' src="https://keyfx.co.uk/blog/wp-content/uploads/2025/01/beverages-79709857-74dbe34b-8502-4174-8d15-d49387c0eecc-980x340.jpg"/>
+          <p className='mt-3 fw600 text-lg text-left pb-3'>Reliable Food & Beverage Importers You Can Count On</p>
+          <p className='small px-0 text-left MidnightHaze'>Are you struggling to find reliable food and beverage importers in the United Kingdom? Many import and export companies face challenges in identifying trustworthy partners for their vegetable and other food products. This article outlines how to identify top importers in your area, evaluate their industry specialisations, and assess their reputation and customer feedback</p>
           
           <div className='mt-3 book-mark rounded-md flex items-center justify-between px-3 py-1'>
             <div className='flex items-center'>
               <img className='w-14 h-14 rounded-md' alt='not available' src='/12.png'/>
               <div className='ps-3'>
-                <p className='fw-bold text-left'>Header</p>
-                <p className='small text-left mt-0'>January 13,</p>
-                <p className='small text-left mt-0'>2023</p>
+                <p className='fw-bold text-left'>Danny</p>
+                <p className='small text-left mt-0'>January 4,</p>
+                <p className='small text-left mt-0'>2025</p>
               </div>
             </div>
-            <div>
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#627394" className="bi bi-bookmark"
-                   viewBox="0 0 16 16">
-                <path
-                  d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
-              </svg>
-            </div>
           </div>
+          </a>
         </div>
       
       )
@@ -67,87 +55,22 @@ const TalkBusiness = ({ isMobile }) => {
     {
       id: 3, title: 'Card 2', content: (
         <div className='rounded-lg p-2 talkCard'>
-          <img alt="Not Found" className='w-full' src="/13.png"/>
-          <p className='mt-3 fw600 text-lg text-left pb-3'>Title</p>
-          <p className='small text-left MidnightHaze'>Spend securely using our Mastercard debit cards in the currency of your choice.
-            Take advantage of competitive conversion rates and seamless transactions, both online and in-store.</p>
+          <a href="https://keyfx.co.uk/blog/optimising-your-electrical-equipment-imports-best-suppliers-and-bulk-deals-in-the-uk/">
+          <img alt="Not Found" className='w-full' src="https://keyfx.co.uk/blog/wp-content/uploads/2024/12/top-view-circuit-board-repair_with_bgc-980x340.png"/>
+          <p className='mt-3 fw600 text-lg text-left pb-3'>Optimising Your Electrical Equipment Imports: Best Suppliers and Bulk Deals in the UK</p>
+          <p className='small text-left MidnightHaze'>Sourcing electrical equipment for your business is a critical decision that affects quality, compliance, and cost efficiency. At KEYFX, we provide tailored FX services to importers, enabling seamless payments and cost savings on currency transfers. Top 10 Suppliers of Electrical Equipment in the UK The UK boasts a robust market for electrical equipment, making it.</p>
           
           <div className='mt-3 book-mark rounded-md flex items-center justify-between px-3 py-1'>
             <div className='flex items-center'>
               <img className='w-14 h-14 rounded-md' alt='not available' src='/12.png'/>
               <div className='ps-3'>
-                <p className='fw-bold text-left'>Header</p>
-                <p className='small text-left mt-0'>January 13,</p>
-                <p className='small text-left mt-0'>2023</p>
+                <p className='fw-bold text-left'>Danny</p>
+                <p className='small text-left mt-0'>December 25,</p>
+                <p className='small text-left mt-0'>2024</p>
               </div>
             </div>
-            <div>
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#627394" className="bi bi-bookmark"
-                   viewBox="0 0 16 16">
-                <path
-                  d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
-              </svg>
-            </div>
           </div>
-        </div>
-      
-      )
-    },
-    {
-      id: 4, title: 'Card 1', content: (
-        <div className='rounded-lg p-2 talkCard'>
-          <img alt="Not Found" className='w-full' src="/13.png"/>
-          <p className='mt-3 fw600 text-lg text-left pb-3'>Title</p>
-          <p className='small text-left MidnightHaze'>Spend securely using our Mastercard debit cards in the currency of your choice.
-            Take advantage of competitive conversion rates and seamless transactions, both online and in-store.</p>
-          
-          <div className='mt-3 book-mark rounded-md flex items-center justify-between px-3 py-1'>
-            <div className='flex items-center'>
-              <img className='w-14 h-14 rounded-md' alt='not available' src='/12.png'/>
-              <div className='ps-3'>
-                <p className='fw-bold text-left'>Header</p>
-                <p className='small text-left mt-0'>January 13,</p>
-                <p className='small text-left mt-0'>2023</p>
-              </div>
-            </div>
-            <div>
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#627394" className="bi bi-bookmark"
-                   viewBox="0 0 16 16">
-                <path
-                  d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
-              </svg>
-            </div>
-          </div>
-        </div>
-      
-      )
-    },
-    {
-      id: 5, title: 'Card 1', content: (
-        <div className='rounded-lg p-2 talkCard'>
-          <img alt="Not Found" className='w-full' src="/13.png"/>
-          <p className='mt-3 fw600 text-lg text-left pb-3'>Title</p>
-          <p className='small text-left  MidnightHaze'>Spend securely using our Mastercard debit cards in the currency of your
-            choice. Take advantage of competitive conversion rates and seamless transactions, both online and
-            in-store.</p>
-          
-          <div className='mt-3 book-mark rounded-md flex items-center justify-between px-3 py-1'>
-            <div className='flex items-center'>
-              <img className='w-14 h-14 rounded-md' alt='not available' src='/12.png'/>
-              <div className='ps-3'>
-                <p className='fw-bold text-left'>Header</p>
-                <p className='small text-left mt-0'>January 13,</p>
-                <p className='small text-left mt-0'>2023</p>
-              </div>
-            </div>
-            <div>
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#627394" className="bi bi-bookmark"
-                   viewBox="0 0 16 16">
-                <path
-                  d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
-              </svg>
-            </div>
-          </div>
+          </a>
         </div>
       
       )
@@ -185,7 +108,7 @@ const TalkBusiness = ({ isMobile }) => {
               </div>
               <div className={`flex gap-4`}>
                   <button
-                      className={`w-10 h-10 justify-items-center rounded-full ${currentIndex === 0 ? 'step2 disabled' : 'step1'}`}
+                      className={`w-10 h-10 flex justify-center items-center rounded-full ${currentIndex === 0 ? 'step2 disabled' : 'step1'}`}
                       onClick={prev}
                       disabled={currentIndex === 0}
                   >
@@ -196,7 +119,7 @@ const TalkBusiness = ({ isMobile }) => {
                       )}
                   </button>
                   <button
-                      className={`w-10 h-10 justify-items-center rounded-full ${currentIndex + cardsToShow >= totalCards ? 'step2 disabled' : 'step1'}`}
+                      className={`w-10 h-10 flex justify-center items-center rounded-full ${currentIndex + cardsToShow >= totalCards ? 'step2 disabled' : 'step1'}`}
                       onClick={next}
                       disabled={currentIndex + cardsToShow >= totalCards}
                   >

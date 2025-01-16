@@ -67,14 +67,10 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className='items-center  sm:flex hidden'>
-                    <button className='fw600 btn' onClick={() => {
-                        navigate("https://panel.keyfx.co.uk/login");
-                    }}>Login
-                    </button>
-                    <button className='btn-p rounded-md py-2 px-3 fw600' onClick={() => {
-                        navigate("https://panel.keyfx.co.uk/register");
-                    }}>Sign up
-                    </button>
+                    <a className='fw600 btn' href="https://panel.keyfx.co.uk/login">Login
+                    </a>
+                    <a className='btn-p rounded-md py-2 px-3 fw600' href="https://panel.keyfx.co.uk/register">Sign up
+                    </a>
                 </div>
                 <div className='sm:hidden visible'>
                     <img alt="Not Available" src="/List.svg" onClick={onOpenChange}/>
@@ -106,6 +102,7 @@ const Navbar = () => {
                             <DrawerFooter className={"w-full px-2 py-4 flex items-start justify-start flex-col gap-2"}>
                                 {menuItems.map((item, i) => {
                                     return <Link
+                                        onClick={onClose}
                                         to={item.route}
                                         className={"w-full flex items-center justify-start gap-3 px-4 py-3 cursor-pointer"}
                                         key={i}>

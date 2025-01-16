@@ -64,7 +64,7 @@ const Commerce = ({isMobile}) => {
         <div
             className={`w-full justify-items-center pt-24 proposition-card pb-32 flex flex-col gap-16 bg-commerce-gradient `}>
             <div className='lg:px-0 px-4 w-full text-center max-w-max-width-main mx-auto'>
-                <p className={`small ${isMobile ? 'text-grad2 fw600' : 'text300'}`}>S e r v e r s</p>
+                <p className={`small ${isMobile ? 'text-grad2 fw600' : 'text300'}`}></p>
                 <p className='mt-3 roboto text700 fw600' style={{fontSize: '44px'}}>Empowering Global Commerce</p>
                 <p className='text-lg mt-3 lg:px-32 text500' style={{fontSize: '18px'}}>
                     At KeyFX, we pave the way for seamless international commerce through advanced financial

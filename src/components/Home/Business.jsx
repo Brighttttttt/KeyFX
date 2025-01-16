@@ -45,12 +45,10 @@ const Business = ({isMobile}) => {
             id: 2, title: 'Card 2', content: (
                 <div className={`rounded-lg corporateCard`}>
                     <p className={`corporateTitle roboto text-3xl fw600 text700`}
-                       style={{fontSize: '30px'}}>Corporate Cards</p>
-                    <p className='mt-2 text500' style={{fontSize: '16px'}}>Spend securely using our Mastercard debit
-                        cards in the
-                        currency of your choice. Take
-                        advantage of competitive conversion rates and seamless transactions, both online and
-                        in-store.</p>
+                       style={{fontSize: '30px'}}>Local Accounts</p>
+                    <p className='mt-2 text500' style={{fontSize: '16px'}}>Open local accounts in GBP, EUR, and USD with KeyFX and enjoy hassle-free global transactions.
+
+Send and receive payments quickly, avoid high exchange fees, and manage your finances in one platform!</p>
                     <div className={`local-acc-card grid grid-cols-7 pb-12 ${isInView ? 'local-acc-card-hover' : ''}`}>
                         <div className='flex flex-col col-span-3 relative z-30 justify-center'>
                             <div className='bg-white shadow-inner shade1 p-2 rounded-sm flex items-center gap-2'>
@@ -182,7 +180,7 @@ const Business = ({isMobile}) => {
                 <div
                     className={`flex gap-4`}>
                     <button
-                        className={`w-10 h-10 justify-items-center rounded-full ${currentIndex === 0 ? 'step2 disabled' : 'step1'}`}
+                        className={`w-10 h-10 flex justify-center items-center rounded-full ${currentIndex === 0 ? 'step2 disabled' : 'step1'}`}
                         onClick={prev}
                         disabled={currentIndex === 0}
                     >
@@ -193,7 +191,7 @@ const Business = ({isMobile}) => {
                         )}
                     </button>
                     <button
-                        className={`w-10 h-10 justify-items-center rounded-full ${currentIndex + cardsToShow >= totalCards ? 'step2 disabled' : 'step1'}`}
+                        className={`w-10 h-10 flex justify-center items-center rounded-full ${currentIndex + cardsToShow >= totalCards ? 'step2 disabled' : 'step1'}`}
                         onClick={next}
                         disabled={currentIndex + cardsToShow >= totalCards}
                     >

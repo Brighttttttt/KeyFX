@@ -26,15 +26,15 @@ const Header = ({isMobile}) => {
                         <span className='fw600 d-inline text800'> Cards</span>
                     </p>
                     <div className={`flex flex-row md:flex-col sm:gap-3 gap-1 justify-center mt-3`}>
-                        <button
+                        <a href="https://panel.keyfx.co.uk/register"
                             className='md:w-fit w-full flex items-center justify-center gap-2 font-plusJakartaSans font-medium md:text-lg text-sm text-white rounded-full border-none bg-[#394375] hover:bg-none sm:px-6 sm:py-[10px] py-1'>
                             {isMobile ? "Account" : "Open an Account"}
                             <img alt="arrowRight" src={arrowRight} className={"md:w-fit w-[18px]"}/>
-                        </button>
-                        <button
+                        </a>
+                        <a href="/contact-us"
                             className='md:w-fit w-full rounded-full text600 font-plusJakartaSans text-[#182252] md:text-lg text-sm font-medium sm:px-6 sm:py-[10px] py-1 border-1 border-solid border-[#182252] bg-transparent'>Talk
                             to Our Team
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>

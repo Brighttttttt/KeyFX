@@ -61,7 +61,7 @@ const TransactionsImg = ({isMobile}) => {
                 amount: Number(decommafy(amount)),
             };
             try {
-                const response = await fetch("https://keyfx.co.uk/calculator", {
+                const response = await fetch("https://old.keyfx.co.uk/calculator", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -70,7 +70,7 @@ const TransactionsImg = ({isMobile}) => {
                 });
                 const data = await response.json();
                 if (data) {
-                    console.log(data);
+                    // console.log(data);
                     setExchange(data.rates[toCurrency] * amount);
                     setData((prevState) => {
                         return [...prevState, data]

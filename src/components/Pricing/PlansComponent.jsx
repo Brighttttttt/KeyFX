@@ -75,7 +75,7 @@ function PlansComponent() {
                     items.map((item, index) => {
                         return <div
                             key={index}
-                            onClick={() => setSelectedItem(index)}
+                            onMouseOver={() => setSelectedItem(index)}
                             className={`lg:w-[397px] w-full cursor-pointer ${selectedItem === index ? index === 0 ? "bg-gradient-to-b from-[#D8EAEA] from-[47.5%] to-[#789EA9] to-[94.82%]" : index === 1 ? "bg-gradient-to-b from-[#00B3FF] from-[47.5%] to-[#00D2D3] to-[94.82%]" : "bg-gradient-to-b from-[#00D2D3] from-[1%] to-[#00B3FF] to-[91%]" : ""} rounded-[48px] px-2 pb-2 pt-4`}>
                             <div
                                 className={"bg-white w-full h-full flex flex-col items-stretch justify-stretch rounded-[40px] py-6 shadow-[inset_0px_-10px_36px_0px_#3e6f9f2e,0px_0px_10px_-30px_#4a4a4a1a,0px_0px_50px_-20px_#32325d26]"}>
@@ -108,7 +108,7 @@ function PlansComponent() {
                                         })
                                     }
                                 </footer>
-                                <button className={`mt-auto roboto font-medium text-lg text-white bg-[#394375] rounded-xl py-6 md:mx-8 mx-6 z-50 ${selectedItem === index ? "visible" : "invisible"}`}>Choose</button>
+                                <a href={`https://panel.keyfx.co.uk/register?s=${selectedItem}`} className={`mt-auto roboto font-medium text-lg text-center text-white bg-[#394375] rounded-xl py-6 md:mx-8 mx-6 z-50 ${selectedItem === index ? "visible" : "invisible"}`}>Choose</a>
                             </div>
                         </div>
                     })

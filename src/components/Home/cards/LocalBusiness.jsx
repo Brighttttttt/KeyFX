@@ -67,7 +67,7 @@ const LocalBusinessCard = () => {
                                     <input className={`check-lcb ${isHovered ? 'custom-checkbox' : ''}`}
                                            checked={isHovered}
                                            type='checkbox'/>
-                                    <p className='font-bold curr-text br-gray'>$ 4 , 3 0 0</p>
+                                    <p className='font-bold curr-text br-gray'>$ 4 3 . 0 0</p>
                                     <div className='flex items-center badge'>
                                         <img className='w-4 h-4 rounded-full' alt='usd' src={usd}/>
                                         <p className='pl-1'>USD</p>
@@ -92,7 +92,7 @@ const LocalBusinessCard = () => {
                                     <input className={`check-lcb ${isHovered ? 'custom-checkbox' : ''}`}
                                            checked={isHovered}
                                            type='checkbox'/>
-                                    <p className='font-bold curr-text br-gray'>£ 8 , 1 7 2</p>
+                                    <p className='font-bold curr-text br-gray'>£ 8 1 . 7 2</p>
                                     <div className='flex items-center badge'>
                                         <img className='w-4 h-4 rounded-full' alt='gbp' src={gbp}/>
                                         <p className='pl-1'>GBP</p>

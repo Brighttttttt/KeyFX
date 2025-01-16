@@ -47,7 +47,7 @@ function ConvertCurrenciesServiceComponent() {
                 amount: Number(decommafy(amount)),
             };
             try {
-                const response = await fetch("https://keyfx.co.uk/calculator", {
+                const response = await fetch("https://old.keyfx.co.uk/calculator", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",

@@ -112,7 +112,7 @@ const Support = ({ isMobile }) => {
                                     1
                                 </button>
                                 <p className='my-3 roboto text-4xl fw600 textPeacoat'>Sign up online</p>
-                                <p className='f16 MidnightHaze'>To sign up online at keyfx, simply navigate to the
+                                <p className='f16 MidnightHaze'>To sign up online at KeyFX, simply navigate to the
                                     registration page. There, you will need to fill in the required information such as
                                     your name, email, and password. After completing the form, click the "Sign Up"
                                     button. </p>
@@ -130,7 +130,7 @@ const Support = ({ isMobile }) => {
                                     2
                                 </button>
                                 <p className='my-3 roboto text-4xl fw600 textPeacoat'>Get verified immediately</p>
-                                <p className='f16 MidnightHaze'>To get verified immediately on keyfx, log in to your
+                                <p className='f16 MidnightHaze'>To get verified immediately on KeyFX, log in to your
                                     account, navigate to the verification section, and upload the required documents
                                     (such as your ID and proof of address). </p>
                             </div>
@@ -147,7 +147,7 @@ const Support = ({ isMobile }) => {
                                     3
                                 </button>
                                 <p className='my-3 roboto text-4xl fw600 textPeacoat'>Easily fund your account</p>
-                                <p className='f16 MidnightHaze'>To easily fund your account on keyfx, log in, go to the
+                                <p className='f16 MidnightHaze'>To easily fund your account on KeyFX, log in, go to the
                                     "Deposit" section, select your preferred payment method, enter the deposit amount,
                                     and provide the necessary payment details. </p>
                             </div>

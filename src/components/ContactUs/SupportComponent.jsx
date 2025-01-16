@@ -25,7 +25,7 @@ function SupportComponent() {
                         <p className={"font-plusJakartaSans text500 text-base"}>We provide 24/7 chat support accessible
                             via the website and app for real-time assistance with account issues, foreign exchange
                             services, and card-related inquiries.</p>
-                        <button className={"bg-[#394375] border-none px-[14px] py-2 rounded-lg"}>
+                        <button onClick={() => $crisp.push(['do', 'chat:open'])} className={"bg-[#394375] border-none px-[14px] py-2 rounded-lg"}>
                             <div className={"flex items-center justify-center gap-2"}>
                                 <p className={"!roboto !font-semibold text-sm text-white"}>Visit the in-app chat</p>
                                 <img src={arrowRightIcon} alt={"arrowRightIcon"}/>
@@ -40,7 +40,7 @@ function SupportComponent() {
                     <div className={"max-w-[520px] flex items-start justify-center gap-4 flex-col "}>
                         <img src={emailSupportIcon} alt={"about1"} className={""}/>
                         <h3 className={"roboto text-4xl font-semibold"}>Email Support</h3>
-                        <p className={"font-plusJakartaSans text500 text-base"}> offer <u>info@keyfx.co.uk</u> with a
+                        <p className={"font-plusJakartaSans text500 text-base"}> offer <a href="mailto:info@keyfx.co.uk"><u>info@keyfx.co.uk</u></a> with a
                             quick response time for general questions, document submissions, and feedback.</p>
                     </div>
                 </div>

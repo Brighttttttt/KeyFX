@@ -19,8 +19,8 @@ const Services = ({isMobile}) => {
     return (
         <div className='services mainPage2'>
             <div className='text-center'>
-                <p className='small text300'>L e a r n&ensp;M o r e</p>
-                <p className='roboto fw600 text800' style={{fontSize: '44px'}}>KeyFX Services</p>
+                <p className='small text300'></p>
+                <p className={`roboto fw600 text800 ${!isMobile ? 'mt-10' : ''}`} style={{fontSize: '44px'}}>KeyFX Services</p>
             </div>
             <div>
                 <div className={`grid lg:grid-cols-2 grid-cols-1 gap-24 ${isMobile ? 'mt-10' : ' mt-36'} `}>
@@ -42,9 +42,9 @@ const Services = ({isMobile}) => {
                             platform. Enjoy <br/>bank-beating conversion rates and zero-fee transfers.Experience <br/>seamless
                             and
                             secure international payments.</p>
-                        <button
+                        <a href="https://keyfx.co.uk/blog/payment-services-keyfx/"
                             className='text-l rounded-md btn-p flex items-center gap-1 mt-4 fw600 btn-explore'>Explore me<i
-                                className="bi bi-arrow-right-short text-3xl"></i></button>
+                                className="bi bi-arrow-right-short text-3xl"></i></a>
                     </div>
                     <div className={`lg:order-2 order-1 flex ${isMobile ? 'justify-start px-3' : 'justify-center'} `}>
                         <ConvertCurrenciesServiceComponent/>
@@ -69,10 +69,10 @@ const Services = ({isMobile}) => {
                         <p className='mt-3 text500' style={{fontSize: '16px'}}>Navigate global markets with confidence.
                             KeyFX offers <br/>comprehensive foreign currency services, allowing you to
                             effortlessly <br/>manage international transactions and mitigate exchange rate risks.</p>
-                        <button
+                        <a href="https://keyfx.co.uk/blog/mastering-foreign-exchange-services-with-keyfx/"
                             className='text-l rounded-md btn-p flex items-center gap-1 mt-4 fw600 btn-explore'>Explore
                             me<i
-                                className="bi bi-arrow-right-short text-3xl"></i></button>
+                                className="bi bi-arrow-right-short text-3xl"></i></a>
                     </div>
                 </div>
                 <div className={`grid lg:grid-cols-2 grid-cols-1 gap-24 ${isMobile ? 'mt-0' : 'mt-36'} `}>
@@ -92,10 +92,10 @@ const Services = ({isMobile}) => {
                             spending wherever your <br/>business takes you. Whether it's virtual cards for online
                             transactions <br/>or physical cards for in-person purchases, KeyFX delivers the <br/>flexibility
                             and security you deserve, all at no cost to you.</p>
-                        <button
+                        <a href="https://keyfx.co.uk/blog/card-services-with-keyfx-flexibility-and-security-at-your-fingertips/"
                             className='text-l rounded-md btn-p flex items-center gap-1 mt-4 fw600 btn-explore'>Explore
                             me<i
-                                className="bi bi-arrow-right-short text-3xl"></i></button>
+                                className="bi bi-arrow-right-short text-3xl"></i></a>
                     </div>
                     <div className={`lg:order-2 order-1 flex justify-center items-end  ${isMobile ? 'mt-5' : 'mt-0'} `}>
                         <div className='leftCard'>
@@ -170,9 +170,9 @@ const Services = ({isMobile}) => {
                                         <p className='text900'>Experience the convenience of secure spending wherever
                                             your business takes you.</p>
                                     </div>
-                                    <button className='btn-dblue text-white w-full py-2 my-3'>
+                                    <a className='btn-dblue text-center text-white w-full py-2 my-3'>
                                         Continue
-                                    </button>
+                                    </a>
 
                                 </div>
                                 <div
@@ -220,10 +220,10 @@ const Services = ({isMobile}) => {
                             accounts from KeyFX. Access dedicated accounts in key <br/>markets, enabling seamless
                             transactions and
                             eliminating the <br/>complexities of cross-border banking.</p>
-                        <button
+                        <a href="https://keyfx.co.uk/blog/local-business-bank-accounts-with-keyfx-simplifying-global-operations/"
                             className='text-l rounded-md btn-p flex items-center gap-1 mt-4 fw600 btn-explore'>Explore
                             me<i
-                                className="bi bi-arrow-right-short text-3xl"></i></button>
+                                className="bi bi-arrow-right-short text-3xl"></i></a>
                     </div>
                 </div>
             </div>
