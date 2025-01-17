@@ -5,8 +5,14 @@ import liveChatIcon from "../../assets/svg/contact/live_chat.svg";
 import emailSupportIcon from "../../assets/svg/contact/email_support.svg";
 import phoneSupportIcon from "../../assets/svg/contact/phone_support.svg";
 import arrowRightIcon from "../../assets/svg/arrow_right.svg";
+import {useCallback} from "react";
 
 function SupportComponent() {
+
+    const openChat = useCallback(() => {
+        $crisp.push(['do', 'chat:open']);
+    }, []);
+
     return (
         <div className={"min-h-screen bg-white z-10 pb-16"}>
             <div className={"w-full h-[6px]"}
@@ -25,7 +31,7 @@ function SupportComponent() {
                         <p className={"font-plusJakartaSans text500 text-base"}>We provide 24/7 chat support accessible
                             via the website and app for real-time assistance with account issues, foreign exchange
                             services, and card-related inquiries.</p>
-                        <button onClick={() => $crisp.push(['do', 'chat:open'])} className={"bg-[#394375] border-none px-[14px] py-2 rounded-lg"}>
+                        <button onClick={openChat} className={"bg-[#394375] border-none px-[14px] py-2 rounded-lg"}>
                             <div className={"flex items-center justify-center gap-2"}>
                                 <p className={"!roboto !font-semibold text-sm text-white"}>Visit the in-app chat</p>
                                 <img src={arrowRightIcon} alt={"arrowRightIcon"}/>

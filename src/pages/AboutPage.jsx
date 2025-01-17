@@ -4,6 +4,7 @@ import HeaderComponent from "../components/About/HeaderComponent";
 import MainSectionComponent from "../components/About/MainSectionComponent";
 import WhyKeyFXComponent from "../components/About/WhyKeyFXComponent";
 import {useEffect} from "react";
+import useDocumentMetadata from "../hooks/useDocumentMetadata";
 
 function AboutPage() {
     useEffect(() => {
