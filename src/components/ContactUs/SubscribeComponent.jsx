@@ -1,5 +1,5 @@
-import {Button} from "react-bootstrap";
 import contact6Image from "../../assets/images/contact6_image.png";
+import {Button} from "@nextui-org/react";
 
 function SubscribeComponent({withoutBlur}) {
     return (
@@ -20,14 +20,14 @@ function SubscribeComponent({withoutBlur}) {
                 </div>
                 <div className={"w-full flex flex-col items-stretch justify-stretch gap-4"}>
                     <div
-                        className={"lg:w-[445px] w-full bg-[#D5DAEF] bg-opacity-40 rounded-lg flex items-stretch justify-between"}>
+                        className={"lg:w-[445px] w-full bg-[#D5DAEF] bg-opacity-40 rounded-lg flex items-center justify-between"}>
                         <input placeholder={"Enter your email"}
-                               className={"font-plusJakartaSans !bg-transparent px-6 py-3 w-full"}/>
+                               className={"font-plusJakartaSans !bg-transparent px-6 py-3 flex-grow"}/>
                         <Button
-                            className={"roboto font-semibold text-[20px] !bg-[#394375] border-none md:block hidden"}>SUBSCRIBE</Button>
+                            className={"roboto font-semibold text-[20px] text-white !bg-[#394375] border-none rounded-lg md:block hidden"} size={"lg"}>SUBSCRIBE</Button>
                     </div>
                     <Button
-                        className={"roboto font-semibold text-[20px] !bg-[#394375] border-none md:hidden block"}>SUBSCRIBE</Button>
+                        className={"roboto font-semibold text-[20px] text-white !bg-[#394375] border-none rounded-lg md:hidden block"} size={"lg"}>SUBSCRIBE</Button>
                 </div>
             </div>
             <div className={"w-[110vw] h-[118px] absolute bottom-1/2 translate-y-1/2 -rotate-3"}

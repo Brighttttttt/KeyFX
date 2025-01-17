@@ -102,7 +102,7 @@ function FaqComponent() {
     };
 
     return (
-        <div className={"py-20 md:px-8 px-2"}>
+        <div className={"py-10 md:px-8 px-2"}>
             <div className={"text-center"}>
                 <p className={"font-plusJakartaSans text-[#7680B0]"}>FAQ</p>
                 <p className={"roboto font-semibold text-[44px]"}>Common Questions Answered</p>

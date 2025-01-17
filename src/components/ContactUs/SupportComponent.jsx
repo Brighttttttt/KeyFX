@@ -6,6 +6,7 @@ import emailSupportIcon from "../../assets/svg/contact/email_support.svg";
 import phoneSupportIcon from "../../assets/svg/contact/phone_support.svg";
 import arrowRightIcon from "../../assets/svg/arrow_right.svg";
 import {useCallback} from "react";
+import {Button} from "@nextui-org/react";
 
 function SupportComponent() {
 
@@ -31,12 +32,12 @@ function SupportComponent() {
                         <p className={"font-plusJakartaSans text500 text-base"}>We provide 24/7 chat support accessible
                             via the website and app for real-time assistance with account issues, foreign exchange
                             services, and card-related inquiries.</p>
-                        <button onClick={openChat} className={"bg-[#394375] border-none px-[14px] py-2 rounded-lg"}>
+                        <Button onClick={openChat} className={"bg-[#394375] border-none px-[14px] py-2 rounded-lg"}>
                             <div className={"flex items-center justify-center gap-2"}>
                                 <p className={"!roboto !font-semibold text-sm text-white"}>Visit the in-app chat</p>
                                 <img src={arrowRightIcon} alt={"arrowRightIcon"}/>
                             </div>
-                        </button>
+                        </Button>
                     </div>
                     <img src={contact3Image} alt={"about1"} className={"mt-5 w-[520px] "}/>
                 </div>
