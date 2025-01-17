@@ -38,7 +38,7 @@ function HeaderComponent() {
     ];
 
     return (
-        <div
+        <header
             className={"max-w-[1440px] mx-auto relative md:min-h-[484px] min-h-[380px] overflow-hidden flex justify-center items-center"}>
             <picture className={"absolute top-0 w-full "}>
                 <source srcSet={bgLg} media="(min-width: 426px)"/>
@@ -57,7 +57,7 @@ function HeaderComponent() {
                         To Us</p>
                 </div>
             </div>
-        </div>
+        </header>
     );
 }
 

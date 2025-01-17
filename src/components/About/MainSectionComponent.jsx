@@ -1,7 +1,9 @@
 import about1Image from "../../assets/images/about1_image.png";
 import about2Image from "../../assets/images/about2_image.png";
-import about1Icon from "../../assets/svg/about/about1.svg";
-import about2Icon from "../../assets/svg/about/about2.svg";
+import about1_1Icon from "../../assets/svg/about/about1_1.svg";
+import about1_2Icon from "../../assets/svg/about/about1_2.svg";
+import about2_1Icon from "../../assets/svg/about/about2_1.svg";
+import about2_2Icon from "../../assets/svg/about/about2_2.svg";
 
 function MainSectionComponent() {
     return (
@@ -13,7 +15,10 @@ function MainSectionComponent() {
                 <div
                     className={"flex items-center justify-center lg:gap-[118px] md:gap-[56px] gap-[40px] flex-col md:flex-row"}>
                     <div className={"max-w-[520px] flex items-start justify-center gap-4 flex-col "}>
-                        <img src={about1Icon} alt={"about1"} className={""}/>
+                        <div className={"relative group mb-4"}>
+                            <img src={about1_1Icon} alt={"about11"} className={"group-hover:-rotate-6 transition-all"}/>
+                            <img src={about1_2Icon} alt={"about12"} className={"group-hover:rotate-6 transition-all absolute -bottom-2 -right-1/2 -translate-x-[40%]"}/>
+                        </div>
                         <h3 className={"roboto text-4xl font-semibold"}>Save on FX and Banking Fees</h3>
                         <p className={"font-plusJakartaSans text500 text-base"}>We offer competitive exchange rates and
                             transparent fees, helping you cut the cost of currency conversions and keep more profits.
@@ -26,9 +31,16 @@ function MainSectionComponent() {
                     className={"flex items-center justify-center lg:gap-[118px] md:gap-[56px] gap-[40px] flex-col md:flex-row"}>
                     <img src={about2Image} alt={"about1"} className={"w-[520px] "}/>
                     <div className={"max-w-[520px] flex items-start justify-center gap-4 flex-col "}>
-                        <img src={about2Icon} alt={"about1"} className={""}/>
+                        <div className={"relative group mb-4"}>
+                            <img src={about2_1Icon} alt={"about21"} className={"group-hover:-rotate-6 transition-all"}/>
+                            <img src={about2_2Icon} alt={"about22"}
+                                 className={"group-hover:rotate-6 transition-all absolute -bottom-2 -right-1/2 -translate-x-[40%]"}/>
+                        </div>
                         <h3 className={"roboto text-4xl font-semibold"}>Empowering Your Growth</h3>
-                        <p className={"font-plusJakartaSans text500 text-base"}>Beyond just banking, KEYFX provides financial insights, corporate cards, and personalized support to optimize your business. Our digital platform puts control at your fingertips, so you can focus on scaling your company, not worrying about fees.</p>
+                        <p className={"font-plusJakartaSans text500 text-base"}>Beyond just banking, KEYFX provides
+                            financial insights, corporate cards, and personalized support to optimize your business. Our
+                            digital platform puts control at your fingertips, so you can focus on scaling your company,
+                            not worrying about fees.</p>
                     </div>
                 </div>
             </main>
