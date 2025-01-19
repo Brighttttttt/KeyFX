@@ -5,4 +5,14 @@ export default defineConfig({
     plugins: [
         react(),
     ],
+    build: {
+        cssCodeSplit: true,
+        css: {
+            postcss: {
+                plugins: [
+                    require('cssnano')({ preset: 'default' }), // Minify CSS using cssnano
+                ],
+            },
+        },
+    },
 })

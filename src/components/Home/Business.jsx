@@ -2,9 +2,15 @@ import React, {useState} from 'react';
 import GB from '../../assets/svg/flags/united kingdom.svg';
 import US from '../../assets/svg/flags/united states.svg';
 import EU from '../../assets/svg/flags/eur.svg';
+import corp4 from '../../assets/svg/corp4.svg';
+import corpArrows from '../../assets/svg/corpArrows.svg';
 import listIconAqua from '../../assets/svg/home/listIconAqua.svg';
 import arrowGray from "../../assets/svg/home/arrowGray.svg";
 import arrowWhite from "../../assets/svg/home/arrowWhite.svg";
+import localAccountimg from "../../assets/svg/localAccountimg.svg";
+import corpCard from "../../assets/images/corpCard.png";
+import corpmasterCard from "../../assets/images/corpmasterCard.png";
+import middleArrow from "../../assets/images/middleArrow.png";
 import Carousel from "./utils/Carousel";
 
 
@@ -27,15 +33,15 @@ const Business = () => {
                     >
                         <div className={`relative corpDiv upsideDiv ${isInView ? 'corpCard-anim-hover' : ''}`}>
                             <img className='absolute bottom-10 sm:left-3 left-0 corp1 Card1Img '
-                                 alt="Not Found" src="/Icons/corpmasterCard.png"/>
+                                 alt="Not Found" src={corpmasterCard}/>
                             <img className='relative z-10 corp2 top15 Card2Img' alt="Not Found"
-                                 src="/Icons/corpCard.png"/>
+                                 src={corpCard}/>
                         </div>
                         <div>
-                            <img alt="Not Found" src="/Icons/corpArrows.svg"/>
+                            <img alt="Not Found" src={corpArrows}/>
                         </div>
                         <div className='corpDiv2 upsideDiv'>
-                            <img className='corp4' alt="Not Found" src="/Icons/corp4.svg"/>
+                            <img className='corp4' alt="Not Found" src={corp4}/>
                         </div>
                     </div>
                 </div>
@@ -71,10 +77,10 @@ Send and receive payments quickly, avoid high exchange fees, and manage your fin
                             </div>
                         </div>
                         <div className='col-span-1 flex items-center relative z-20 h-full'>
-                            <img className='absolute local-arrow' alt="Not Found" src="/Icons/middleArrow.png"/>
+                            <img className='absolute local-arrow' alt="Not Found" src={middleArrow}/>
                         </div>
                         <div className='local-img-wrapper col-span-3'>
-                            <img className='local-img' alt="Not Found" src="/Icons/localAccountimg.svg"/>
+                            <img className='local-img' alt="Not Found" src={localAccountimg}/>
                         </div>
                     </div>
                 </div>

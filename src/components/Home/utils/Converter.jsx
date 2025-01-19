@@ -124,7 +124,7 @@ const Converter = () => {
                         <button
                             className={`sm:h-[76px] h-[40px] aspect-square bg-[#394375] rounded-md w-full flex items-center justify-center`}
                             onClick={swap}>
-                            <img src={arrowLeftRight} alt="arrowLeftRight" className={"md:rotate-0 rotate-90 z-0"}/>
+                            <img src={arrowLeftRight} alt="arrowLeftRight" className={"md:rotate-0 rotate-90 z-0"} width={32} height={32}/>
                         </button>
                     </div>
                     <div className="w-full flex flex-col  gap-[6px]">

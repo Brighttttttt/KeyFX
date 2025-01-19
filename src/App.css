@@ -444,6 +444,7 @@ input[type="number"] {
 
     .converterWrapper {
         margin-top: -350px !important;
+        transition: all 0.3s ease-in-out;
     }
 
     .w-sm-full {
@@ -489,6 +490,7 @@ input[type="number"] {
 @media (max-width: 425px) {
     .converterWrapper {
         margin-top: -350px !important;
+        transition: all 0.3s ease-in-out;
     }
 }
 
@@ -1135,6 +1137,7 @@ button.loading:disabled {
     margin-top: -275px;
     z-index: 100;
     position: relative;
+    transition: all 0.3s ease-in-out;
     /*padding-bottom: 110px;*/
 }
 
@@ -1191,23 +1194,27 @@ button.loading:disabled {
 /*fonts*/
 @font-face {
     font-family: 'plusJakartaSans';
-    src: url('./assets/fonts/PlusJakartaSans-Regular.ttf') format('truetype');
+    src: url('./assets/fonts/PlusJakartaSans-Regular.woff') format('woff');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Roboto Serif';
-    src: url('./assets/fonts/RobotoSerif-Regular.ttf') format('truetype');
+    src: url('./assets/fonts/RobotoSerif-Regular.woff') format('woff');
     font-weight: 400;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Roboto Serif';
-    src: url('./assets/fonts/RobotoSerif-Medium.ttf') format('truetype');
+    src: url('./assets/fonts/RobotoSerif-Medium.woff') format('woff');
     font-weight: 500;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Roboto Serif';
-    src: url('./assets/fonts/RobotoSerif-SemiBold.ttf') format('truetype');
+    src: url('./assets/fonts/RobotoSerif-SemiBold.woff') format('woff');
     font-weight: 600;
+    font-display: swap;
 }

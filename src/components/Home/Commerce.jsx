@@ -5,6 +5,9 @@ import {dimensions} from "../../core/values/dimensions";
 import {Marquee} from "../ui/marquee";
 import business3Icon from "../../assets/svg/business3.svg";
 import competitiveRatesIcon from "../../assets/svg/Competitive Rates.svg";
+import personalizedSupportIcon from "../../assets/svg/Personalized Global Support.svg";
+import streamlinedPaymentsIcon from "../../assets/svg/Streamlined Cross-Border Payments.svg";
+import optimizedSolutionsIcon from "../../assets/images/Optimized FX Solutions.svg";
 
 
 const Commerce = () => {
@@ -18,7 +21,7 @@ const Commerce = () => {
         {
             id: 2,
             title: 'Personalized Global Support',
-            img: './Personalized Global Support.svg',
+            img: personalizedSupportIcon,
             desc: 'Our reach is worldwide but our service is tailored. We provide dedicated support to help you navigate the intricacies of the global financial landscape.'
         },
         {
@@ -44,13 +47,13 @@ const Commerce = () => {
         {
             id: 4,
             title: 'Streamlined Cross-Border Payments',
-            img: './Streamlined Cross-Border Payments.svg',
+            img: streamlinedPaymentsIcon,
             desc: 'With KeyFX, boundaries blur as you effortlessly send and receive payments worldwide, fueling international trade and services.'
         },
         {
             id: 5,
             title: 'Optimized FX Solutions',
-            img: './Optimized FX Solutions.svg',
+            img: optimizedSolutionsIcon,
             desc: 'Benefit from superior foreign exchange rates. Our solutions are designed to minimize conversion costs and to smartly manage foreign exchange risk.'
         },
         {

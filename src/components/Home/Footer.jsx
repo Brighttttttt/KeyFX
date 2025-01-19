@@ -4,6 +4,7 @@ import clockIcon from '../../assets/svg/clock.svg'
 import fbIcon from '../../assets/svg/Fb.svg'
 import instaIcon from '../../assets/svg/Insta.svg'
 import linkedinIcon from '../../assets/svg/Linked.svg'
+import letterIcon from '../../assets/svg/Letter.svg'
 
 const Footer = ({isMobile}) => {
     return (
@@ -52,7 +53,7 @@ const Footer = ({isMobile}) => {
                         alt='Not Available'
                         src='/Phone%20Calling%20Rounded.svg'/>0800-002-9331</a>
                     <a className='mt-2 text-sm text600 flex items-center gap-2' href="mailto:info@keyfx.co.uk"><img
-                        alt='Not Available' src='/Letter.svg'/>info@keyfx.co.uk</a>
+                        alt='Not Available' src={letterIcon}/>info@keyfx.co.uk</a>
                     <a className='mt-2 text-sm text600 flex items-center gap-2'><img alt='Not Available'
                                                                                      src={clockIcon}/>9am-5pm Mon -
                         Fri</a>

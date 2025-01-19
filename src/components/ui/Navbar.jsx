@@ -6,6 +6,7 @@ import about from '../../assets/svg/about.svg'
 import blog from '../../assets/svg/blog.svg'
 import avatar from '../../assets/images/Avatar.png'
 import defaultAvatar from '../../assets/svg/default_avatar.svg'
+import listIcon from '../../assets/svg/List.svg'
 import {Link, useNavigate} from "react-router";
 import {Button, Drawer, DrawerContent, DrawerFooter, DrawerHeader, useDisclosure} from "@nextui-org/react";
 import {useState} from "react";
@@ -65,7 +66,7 @@ const Navbar = () => {
                     </a>
                 </div>
                 <div className='sm:hidden visible'>
-                    <img alt="Not Available" src="/List.svg" onClick={onOpenChange}/>
+                    <img alt="Not Available" src={listIcon} onClick={onOpenChange}/>
                 </div>
             </nav>
             <Drawer isOpen={isOpen} onOpenChange={onOpenChange} placement={"right"} className={"h-screen z-[1000]"}
