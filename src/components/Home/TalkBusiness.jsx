@@ -20,8 +20,8 @@ const TalkBusiness = () => {
               <img className='w-14 h-14 rounded-md' alt='not available' src={icon12}/>
               <div className='ps-3'>
                 <p className='fw-bold text-left'>Danny</p>
-                <p className='small text-left mt-0'>January 10,</p>
-                <p className='small text-left mt-0'>2025</p>
+                <p className='small text-left !mt-0'>January 10,</p>
+                <p className='small text-left !mt-0'>2025</p>
               </div>
             </div>
           </div>
@@ -43,8 +43,8 @@ const TalkBusiness = () => {
               <img className='w-14 h-14 rounded-md' alt='not available' src={icon12}/>
               <div className='ps-3'>
                 <p className='fw-bold text-left'>Danny</p>
-                <p className='small text-left mt-0'>January 4,</p>
-                <p className='small text-left mt-0'>2025</p>
+                <p className='small text-left !mt-0'>January 4,</p>
+                <p className='small text-left !mt-0'>2025</p>
               </div>
             </div>
           </div>
@@ -66,8 +66,8 @@ const TalkBusiness = () => {
               <img className='w-14 h-14 rounded-md' alt='not available' src={icon12}/>
               <div className='ps-3'>
                 <p className='fw-bold text-left'>Danny</p>
-                <p className='small text-left mt-0'>December 25,</p>
-                <p className='small text-left mt-0'>2024</p>
+                <p className='small text-left !mt-0'>December 25,</p>
+                <p className='small text-left !mt-0'>2024</p>
               </div>
             </div>
           </div>
