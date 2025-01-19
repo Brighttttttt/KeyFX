@@ -28,7 +28,7 @@ const LocalBusinessCard = () => {
                                 <img className='icon-rotate1' alt="business3" src={business3}/>
                                 <img className='icon-rotate2new' alt="business4" src={business4}/>
                             </div>
-                            <p className='font-bold roboto text700 w-3/4' style={{fontSize: "16px"}}>Local Business Bank
+                            <p className='font-bold roboto text700 w-3/4 text-base'>Local Business Bank
                                 Accounts</p>
                             <div className='relative w-28 h-8'>
                                 <div className='flex justify-center mx-auto w-28 h-8'>

@@ -1,4 +1,3 @@
-import React from 'react';
 import logo from '../../assets/svg/logo.svg'
 import close from '../../assets/svg/close.svg'
 import pricing from '../../assets/svg/pricing.svg'
@@ -8,17 +7,13 @@ import blog from '../../assets/svg/blog.svg'
 import avatar from '../../assets/images/Avatar.png'
 import defaultAvatar from '../../assets/svg/default_avatar.svg'
 import {Link, useNavigate} from "react-router";
-import {Drawer, DrawerContent, DrawerFooter, DrawerHeader, useDisclosure} from "@nextui-org/react";
+import {Button, Drawer, DrawerContent, DrawerFooter, DrawerHeader, useDisclosure} from "@nextui-org/react";
+import {useState} from "react";
 
 const Navbar = () => {
 
-    const {isOpen, onOpen, onOpenChange} = useDisclosure();
+    const {isOpen, onOpenChange} = useDisclosure();
     const menuItems = [
-        // {
-        //     title: "Products",
-        //     icon: products,
-        //     route: "/",
-        // },
         {
             title: "Pricing",
             icon: pricing,
@@ -40,36 +35,33 @@ const Navbar = () => {
             route: "https://keyfx.co.uk/blog",
         },
     ];
-    const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const navigate = useNavigate();
 
     return (
         <>
-            <nav className='md:h-navbar-height-lg h-navbar-height-sm w-full flex justify-between items-center mainPage z-50'>
+            <nav
+                className='md:h-navbar-height-lg h-navbar-height-sm w-full flex justify-between items-center mainPage z-50'>
                 <div className='flex gap-3 items-center'>
                     <div onClick={() => {
                         navigate("/")
                     }} className={"cursor-pointer"}><img alt="logo" src={logo}/></div>
                     <ul className='navTabs sm:flex hidden'>
-                        {/*<li>Products</li>*/}
-                        <Link to={"/pricing"}>
-                            <li>Pricing</li>
-                        </Link>
-                        <Link to={"/contact-us"}>
-                            <li>Contact</li>
-                        </Link>
-                        <Link to={"/about"}>
-                            <li>About</li>
-                        </Link>
-                        <Link to={"https://keyfx.co.uk/blog"}>
-                            <li>Blog</li>
-                        </Link>
+                        {
+                            menuItems.map((menuItem, index) => (
+                                <Link to={menuItem.route}>
+                                    <li className={"font-plusJakartaSans font-semibold"}>{menuItem.title}</li>
+                                </Link>
+                            ))
+                        }
                     </ul>
                 </div>
                 <div className='items-center  sm:flex hidden'>
-                    <a className='fw600 btn' href="https://panel.keyfx.co.uk/login">Login
-                    </a>
-                    <a className='btn-p rounded-md py-2 px-3 fw600' href="https://panel.keyfx.co.uk/register">Sign up
+                    <a className='fw600 btn' href="https://panel.keyfx.co.uk/login">Login</a>
+                    <a href="https://panel.keyfx.co.uk/register">
+                        <Button className='rounded-md bg-[#394375] text-white font-semibold'>
+                            Sign up
+                        </Button>
                     </a>
                 </div>
                 <div className='sm:hidden visible'>

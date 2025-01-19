@@ -1,22 +1,12 @@
 import {commafy, decommafy} from "../../utils/NumberFormatter";
 import CurrenciesSelect from "./utils/CurrencySelect";
 import arrowUpDown from "../../assets/svg/home/arrowUpDown.svg";
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useMemo, useState} from "react";
 
 function ConvertCurrenciesServiceComponent() {
 
-    const fromExchanges = [
-        "USD",
-        "JPY",
-        "HUF",
-        "EUR"
-    ];
-    const toExchanges = [
-        "AUD",
-        "PLN",
-        "RON",
-        "CNY",
-    ];
+    const fromExchanges = useMemo(() => ["USD", "JPY", "HUF", "EUR"], []);
+    const toExchanges = useMemo(() => ["AUD", "PLN", "RON", "CNY"], []);
     const [data, setData] = useState([]);
     const [payeeRate, setPayeeRate] = useState(0);
     const [animate, setAnimate] = useState(false);
@@ -38,8 +28,9 @@ function ConvertCurrenciesServiceComponent() {
             return item.from === fromCurrency;
         });
         if (isDataExists) {
-            setExchange(isDataExists.rates[toCurrency] * amount);
-            setPayeeRate(isDataExists.rates[toCurrency]);
+            const rate = isDataExists.rates[toCurrency];
+            setExchange(rate * amount);
+            setPayeeRate(rate);
         } else {
             const requestData = {
                 from: fromCurrency,
@@ -54,13 +45,12 @@ function ConvertCurrenciesServiceComponent() {
                     },
                     body: JSON.stringify(requestData),
                 });
-                const data = await response.json();
-                if (data) {
-                    setExchange(data.rates[toCurrency] * amount);
-                    setPayeeRate(data.rates[toCurrency]);
-                    setData((prevState) => {
-                        return [...prevState, data]
-                    });
+                const newData = await response.json();
+                if (newData) {
+                    const rate = newData.rates[toCurrency];
+                    setData((prev) => [...prev, newData]);
+                    setExchange(rate * amount);
+                    setPayeeRate(rate);
                 }
             } catch (error) {
                 console.error("Error converting currency:", error);
@@ -81,6 +71,12 @@ function ConvertCurrenciesServiceComponent() {
         convertCurrency();
     }, [animate]);
 
+    const InfoBox = ({ label }) => (
+        <div className="w-full p-2 border rounded-md text-black flex items-center justify-start">
+            <p className="font-roboto text-[#667085] text-[10px]">{label}</p>
+        </div>
+    );
+
     return (
         <div className="flex items-center justify-center relative">
             <div
@@ -91,24 +87,12 @@ function ConvertCurrenciesServiceComponent() {
                                     </span>
                 </h2>
                 <div className="mb-3 flex gap-2 font-10 w-full">
-                    <div
-                        className="w-full p-2 border rounded-md text-black flex items-center justify-start">
-                        <p className={"font-roboto text-[#667085] text-[10px]"}>Payee</p>
-                    </div>
-                    <div
-                        className="w-full p-2 border rounded-md text-black flex items-center justify-start">
-                        <p className={"font-roboto text-[#667085] text-[10px]"}>Currency / Wallet</p>
-                    </div>
+                    <InfoBox label={"Payee"}/>
+                    <InfoBox label={"Currency / Wallet"}/>
                 </div>
                 <div className=" flex gap-2 font-10 w-full">
-                    <div
-                        className="w-full p-2 border rounded-md text-black flex items-center justify-start">
-                        <p className={"font-roboto text-[#667085] text-[10px]"}>Payee</p>
-                    </div>
-                    <div
-                        className="w-full p-2 border rounded-md text-black flex items-center justify-start">
-                        <p className={"font-roboto text-[#667085] text-[10px]"}>Currency / Wallet</p>
-                    </div>
+                    <InfoBox label={"Payee"}/>
+                    <InfoBox label={"Currency / Wallet"}/>
                 </div>
                 <div>
                     <button className="text-l w-full rounded-md btn-p flex items-center gap-1 mt-4">
@@ -127,9 +111,8 @@ function ConvertCurrenciesServiceComponent() {
                     <div>
                         <h2 className="text-lg font-semibold mb-4 roboto">Convert currencies</h2>
                         <div
-                            className="flex justify-between items-center px-4 py-2 bg50 rounded-2xl mb-4 relative"
-                            style={{backgroundColor: '#f2f4fa'}}>
-                            <p className="w-full bg-transparent fw-bold">
+                            className="flex justify-between items-center px-4 py-2 rounded-2xl mb-4 relative bg-[#f2f4fa]">
+                            <p className="w-full bg-transparent font-bold">
                                 {commafy(amount)}
                             </p>
                             <span className="flex items-center">
@@ -145,9 +128,7 @@ function ConvertCurrenciesServiceComponent() {
                             <img src={arrowUpDown} alt="arrowUpDown"/>
                         </div>
                         <div
-                            className="flex justify-between items-center px-4 py-2 bg50 rounded-2xl"
-                            style={{backgroundColor: '#f2f4fa'}}
-                        >
+                            className="flex justify-between items-center px-4 py-2 rounded-2xl bg-[#f2f4fa]">
                             <div className="rate-container">
                         <span className={`rate-value ${animate ? 'animate-slide' : ''}`}>
                             {commafy(exchange.toFixed(2))}

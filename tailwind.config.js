@@ -31,6 +31,7 @@ export default {
                 height: 'height 5s infinite',
                 "marquee-left": "marquee-left var(--duration, 40s) linear infinite",
                 "marquee-up": "marquee-up var(--duration, 40s) linear infinite",
+                'gradient-move': 'gradient-move 6s linear infinite',
             },
             keyframes: {
                 bounceSlow: {
@@ -48,6 +49,10 @@ export default {
                 "marquee-up": {
                     from: {transform: "translateY(0)"},
                     to: {transform: "translateY(calc(-100% - var(--gap)))"},
+                },
+                'gradient-move': {
+                    '0%': { backgroundPosition: '0% 50%' },
+                    '100%': { backgroundPosition: '200% 50%' },
                 },
             },
         },

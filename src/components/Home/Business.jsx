@@ -8,14 +8,14 @@ import arrowWhite from "../../assets/svg/home/arrowWhite.svg";
 import Carousel from "./utils/Carousel";
 
 
-const Business = ({isMobile}) => {
+const Business = () => {
 
     const [isInView, setIsInView] = useState(false);
     const cards = [
         {
             id: 1, title: 'Card 1', content: (
-                <div className={`rounded-lg  ${isMobile ? "py-4 px-3" : "p-6"} corporateCard`}>
-                    <p className={`${isMobile ? " mt-0" : " mt-3"} roboto text-3xl fw600 text700`}
+                <div className={`rounded-lg sm:px-6 sm:py-6 px-3 py-4 corporateCard`}>
+                    <p className={`sm:mt-3 mt-0 roboto text-3xl fw600 text700`}
                        style={{fontSize: '30px'}}>Corporate Cards</p>
                     <p className='mt-2 text500' style={{fontSize: '16px'}}>Spend securely using our Mastercard debit
                         cards in the
@@ -83,8 +83,8 @@ Send and receive payments quickly, avoid high exchange fees, and manage your fin
         },
         {
             id: 3, title: 'Card 2', content: (
-                <div className={`rounded-lg  ${isMobile ? "py-4 px-3" : "p-6"} corporateCard relative`}>
-                    <p className={`${isMobile ? " mt-0" : " mt-3"} roboto text-3xl fw600 text700`}
+                <div className={`rounded-lg  sm:px-6 sm:py-6 px-3 py-4 corporateCard relative`}>
+                    <p className={`sm:mt-3 mt-0 roboto text-3xl fw600 text700`}
                        style={{fontSize: '30px'}}>Global Multi-Currency Account</p>
                     <p className='mt-2 text500' style={{fontSize: '16px'}}>Manage your finances globally with an account
                         that
@@ -204,7 +204,7 @@ Send and receive payments quickly, avoid high exchange fees, and manage your fin
                 </div>
             </div>
             <div className={"max-w-max-width-main lg:mt-16 md:mt-14 mt-10 mx-auto"}>
-                <Carousel cards={cards} component={'business'} isMobile={isMobile} cardsToShow={cardsToShow}
+                <Carousel cards={cards} component={'business'} cardsToShow={cardsToShow}
                           currentIndex={currentIndex} totalCards={totalCards}/>
             </div>
         </div>

@@ -5,6 +5,8 @@ import FlagsSvg from '../utils/FlagsSvg';
 const BarChart = () => {
     const [heights, setHeights] = useState([20, 50, 80, 60, 40]);
     const [activeFlag, setActiveFlag] = useState(0);
+    const currencySymbols = ["£", "¥", "kr", "kr", "$"];
+    const activeCurrency = currencySymbols[activeFlag];
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -18,9 +20,9 @@ const BarChart = () => {
         <div className='flex justify-center relative'>
             <div
                 className="2xl:w-96 w-60 md:w-80 v-card absolute bottom-0 top-5 left-0 px-4 py-3 cc-rad ChartBarHeight">
-                <p className='serviceAmount pb-2'>{activeFlag === 0 ? "£" : activeFlag === 1 ? "¥" : activeFlag === 2 ? "kr" : activeFlag === 3 ? "kr" : "$"} 20,245</p>
+                <p className='serviceAmount pb-2'>{activeCurrency} 20,245</p>
                 <p className='flex gap-2 pb-4'>
-                    <svg width="51" height="28" viewBox="0 0 51 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="51" height="28" viewBox="0 0 51 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label={"svg"}>
                         <rect x="0.5" y="0.5" width="50" height="27" rx="13.5" fill="#E8FFF4"/>
                         <rect x="0.5" y="0.5" width="50" height="27" rx="13.5" stroke="#8FE7BE"/>
                         <path

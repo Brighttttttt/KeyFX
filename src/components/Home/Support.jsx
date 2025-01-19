@@ -3,8 +3,10 @@ import TransactionsImg from './cards/TransactionsImg';
 import Payto from './cards/Payto';
 import Lisence from './cards/Lisence';
 import Veri from './cards/Veri';
+import {useMediaQuery} from "../../hooks/useMediaQuery";
+import {dimensions} from "../../core/values/dimensions";
 
-const Support = ({ isMobile }) => {
+const Support = () => {
     const [isInView, setIsInView] = useState(false);
     const [isInView1, setIsInView1] = useState(false);
     const [isInView2, setIsInView2] = useState(false);
@@ -13,11 +15,12 @@ const Support = ({ isMobile }) => {
     const targetRef1 = useRef(null);
     const targetRef2 = useRef(null);
     const targetRef3 = useRef(null);
+    const isBreakPoint = useMediaQuery(dimensions.sm);
 
     useEffect(() => {
         const observerOptions = {
             root: null,
-            rootMargin: `-70px 0px ${isMobile ? '-90px' : '-200px'} 0px`,
+            rootMargin: `-70px 0px ${isBreakPoint ? '-90px' : '-200px'} 0px`,
             threshold: 0,
         };
         const observerCallback = (entries) => {
@@ -86,14 +89,14 @@ const Support = ({ isMobile }) => {
                 observer3.unobserve(targetRef3.current);
             }
         };
-    }, [isMobile]);
+    }, [isBreakPoint]);
 
     return (
         <div className={"w-full"}>
             <div className='support-card'>
                 <div className='text-center '>
                     <p className='small text300'>S u p p o r t</p>
-                    <p className='mt-3 roboto text700 fw600' style={{fontSize: '44px'}}>We are here to help you</p>
+                    <p className='mt-3 roboto text700 font-semibold text-[44px]'>We are here to help you</p>
                     <p className=' roboto text-4xl fw600 text-grad '>24/7, every day of the week.</p>
                     <p className='text-lg text500'>Chat to us in app any time, or call or email if you'd prefer,<br />We'll answer your questions and help solve any problems you have,<br />No need for branches, and no need to make an appointment</p>
                 </div>
@@ -102,9 +105,9 @@ const Support = ({ isMobile }) => {
                 <div className={"max-w-max-width-main"}>
                     <div className='text-center'>
                         <p className='small text400'>L e a r n&ensp;M o r e </p>
-                        <p className='mt-3 roboto text800 fw600' style={{fontSize: '44px'}}>How it works</p>
+                        <p className='mt-3 roboto text800 font-semibold text-[44px]'>How it works</p>
                     </div>
-                    <div className={`lg:px-0 sm:px-24   ${isMobile ? " px-0 mt-10" : " px-10 mt-32"}`}>
+                    <div className={`lg:px-0 sm:px-10 sm:mt-32 px-0 mt-10`}>
                         <div className='grid lg:grid-cols-2 grid-cols-1'>
                             <div className='lg:order-1 order-2 '>
                                 <button ref={targetRef}
@@ -119,7 +122,7 @@ const Support = ({ isMobile }) => {
                             </div>
                             <div className='overflow-visible lg:order-2 order-1 flex lg:justify-start justify-center'>
                                 <div className="overflow-visible mx-auto">
-                                    <Lisence isMobile={isMobile}/>
+                                    <Lisence isMobile={isBreakPoint}/>
                                 </div>
                             </div>
                         </div>
@@ -136,7 +139,7 @@ const Support = ({ isMobile }) => {
                             </div>
                             <div className='lg:order-2 order-1 flex lg:justify-start justify-center'>
                                 <div className='mx-auto my-3'>
-                                    <Veri isMobile={isMobile}/>
+                                    <Veri isMobile={isBreakPoint}/>
                                 </div>
                             </div>
                         </div>
@@ -153,7 +156,7 @@ const Support = ({ isMobile }) => {
                             </div>
                             <div className='lg:order-2 order-1 flex lg:justify-start justify-center'>
                                 <div className='mx-auto pb-5'>
-                                    <Payto isMobile={isMobile}/>
+                                    <Payto isMobile={isBreakPoint}/>
                                 </div>
                             </div>
                         </div>
@@ -174,7 +177,7 @@ const Support = ({ isMobile }) => {
                             </div>
                             <div className='lg:order-2 order-1 flex lg:justify-start justify-center'>
                                 <div className='mx-auto my-3'>
-                                    <TransactionsImg isMobile={isMobile}/>
+                                    <TransactionsImg isMobile={isBreakPoint}/>
                                 </div>
                             </div>
                         </div>

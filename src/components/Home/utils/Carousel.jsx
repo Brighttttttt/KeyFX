@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../../assets/styles/Carousel.css';
 
-const Carousel = ({cards, component = 'unset', isMobile, currentIndex, cardsToShow, totalCards}) => {
+const Carousel = ({cards, component = 'unset', currentIndex, cardsToShow, totalCards}) => {
 
     const translateX = (currentIndex / totalCards) * (100);
 
@@ -10,7 +10,7 @@ const Carousel = ({cards, component = 'unset', isMobile, currentIndex, cardsToSh
             <div className="carousel-container overflow-hidden">
                 <div className="carousel">
                     <div
-                        className={`card-container flex  transition-transform duration-500 ${isMobile ? "gap-2" : "gap-4"}`}
+                        className={`card-container flex  transition-transform duration-500 sm:gap-4 gap-2`}
                         style={{transform: `translateX(-${translateX}%)`}}
                     >
                         {cards.map(card => (

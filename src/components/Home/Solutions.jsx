@@ -3,9 +3,8 @@ import Carousel from './utils/Carousel';
 import doubleQuote from '../../assets/svg/home/doubleQuote.svg';
 import arrowGray from "../../assets/svg/home/arrowGray.svg";
 import arrowWhite from "../../assets/svg/home/arrowWhite.svg";
-// import useEmblaCarousel from 'embla-carousel-react'
 
-const Solution = ({isMobile}) => {
+const Solution = () => {
     const cards = [
         {
             id: 1, title: 'Card 1', content: (
@@ -14,9 +13,10 @@ const Solution = ({isMobile}) => {
                         <img alt="doubleQuote" className='-mt-1 w-24 rounded-0' src={doubleQuote}/>
                     </div>
                     <div>
-                        <p className='fw600 text-gray text-left pb-5'>KeyFX has revolutionised the way I handle global transactions with their multicurrency account. It's incredibly easy to manage funds across different currencies.</p>
+                        <p className='fw600 text-gray text-left pb-5'>KeyFX has revolutionised the way I handle global
+                            transactions with their multicurrency account. It's incredibly easy to manage funds across
+                            different currencies.</p>
                         <div className='mt-10 flex gap-3 items-center'>
-                            
                             <div>
                                 <p className='fw600 text700'>Sophia M. </p>
                                 <p className='small text-left text500'>Business Owner</p>
@@ -33,9 +33,11 @@ const Solution = ({isMobile}) => {
                         <img alt="doubleQuote" className='-mt-1 w-24 rounded-0' src={doubleQuote}/>
                     </div>
                     <div>
-                        <p className='fw600 text-gray text-left pb-5'>KeyFX delivers speed and affordability in international payments. Their competitive rates and always-available support team make the process seamless and stress-free.</p>
+                        <p className='fw600 text-gray text-left pb-5'>KeyFX delivers speed and affordability in
+                            international payments. Their competitive rates and always-available support team make the
+                            process seamless and stress-free.</p>
                         <div className='mt-10 flex gap-3 items-center'>
-                           
+
                             <div>
                                 <p className='fw600 text700'> James L.</p>
                                 <p className='small text-left text500'>Consultant</p>
@@ -52,9 +54,11 @@ const Solution = ({isMobile}) => {
                         <img alt="doubleQuote" className='-mt-1 w-24 rounded-0' src={doubleQuote}/>
                     </div>
                     <div>
-                        <p className='fw600 text-gray text-left pb-5'>KeyFX’s card lets me spend internationally without worrying about fees. It's a perfect combination of convenience, transparency, and exceptional customer service!</p>
+                        <p className='fw600 text-gray text-left pb-5'>KeyFX’s card lets me spend internationally without
+                            worrying about fees. It's a perfect combination of convenience, transparency, and
+                            exceptional customer service!</p>
                         <div className='mt-10 flex gap-3 items-center'>
-                            
+
                             <div>
                                 <p className='fw600 text700'>Emma R.</p>
                                 <p className='small text-left text500'>Traveller</p>
@@ -71,9 +75,11 @@ const Solution = ({isMobile}) => {
                         <img alt="doubleQuote" className='-mt-1 w-24 rounded-0' src={doubleQuote}/>
                     </div>
                     <div>
-                        <p className='fw600 text-gray text-left pb-5'>KeyFX has completely streamlined my international transactions. Their tools are not just cost-effective but also incredibly user-friendly, saving me time and effort.</p>
+                        <p className='fw600 text-gray text-left pb-5'>KeyFX has completely streamlined my international
+                            transactions. Their tools are not just cost-effective but also incredibly user-friendly,
+                            saving me time and effort.</p>
                         <div className='mt-10 flex gap-3 items-center'>
-                            
+
                             <div>
                                 <p className='fw600 text700'>Amelia T</p>
                                 <p className='small text-left text500'>Entrepreneur</p>
@@ -90,9 +96,11 @@ const Solution = ({isMobile}) => {
                         <img alt="doubleQuote" className='-mt-1 w-24 rounded-0' src={doubleQuote}/>
                     </div>
                     <div>
-                        <p className='fw600 text-gray text-left pb-5'>KeyFX provides unbeatable exchange rates along with a seamless platform for managing currency conversions. The process is quick, reliable, and completely stress-free.</p>
+                        <p className='fw600 text-gray text-left pb-5'>KeyFX provides unbeatable exchange rates along
+                            with a seamless platform for managing currency conversions. The process is quick, reliable,
+                            and completely stress-free.</p>
                         <div className='mt-10 flex gap-3 items-center'>
-                            
+
                             <div>
                                 <p className='fw600 text700'>Oliver H.</p>
                                 <p className='small text-left text500'>Freelancer</p>
@@ -103,7 +111,6 @@ const Solution = ({isMobile}) => {
             )
         },
     ];
-    // const [emblaRef] = useEmblaCarousel()
 
     const [isInView, setIsInView] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -130,17 +137,14 @@ const Solution = ({isMobile}) => {
     return (
         <div className='w-full pt-48'>
             <div className='business-card'>
-                <div className={"max-w-max-width-main xl:mx-auto flex md:items-end items-start md:gap-0 gap-6 justify-between md:flex-row flex-col"}>
+                <div
+                    className={"max-w-max-width-main xl:mx-auto flex md:items-end items-start md:gap-0 gap-6 justify-between md:flex-row flex-col"}>
                     <div>
-                        <p className='text-grad text-l'>C u s t o m e r{"\u2007"}T e s t i m o n i a l s</p>
-                        <p className='roboto fw600' style={{fontSize: '44px'}}>What they said about KeyFX Solutions
-                            for
+                        <p className='text-grad text-lg'>C u s t o m e r&nbsp;&nbsp;T e s t i m o n i a l s</p>
+                        <p className='roboto font-semibold text-[44px]'>What they said about KeyFX Solutions for
                             Businesses?</p>
-                        <p className='' style={{fontSize: '18px', color: '#D5DAEF'}}>We go the extra mile, The KeyFX
-                            platform
-                            is
-                            designed to make it easier for users to make any
-                            payments.</p>
+                        <p className='text-lg text-[#D5DAEF]'>We go the extra mile, The KeyFX platform is designed to
+                            make it easier for users to make any payments.</p>
                     </div>
                     <div
                         className={`flex gap-4`}>
@@ -169,8 +173,7 @@ const Solution = ({isMobile}) => {
                     </div>
                 </div>
                 <div className='max-w-max-width-main lg:mt-16 md:mt-14 mt-10 mx-auto'>
-                    {/*<Carousel cards={cards} isMobile={isMobile}/>*/}
-                    <Carousel cards={cards} isMobile={isMobile} cardsToShow={cardsToShow}
+                    <Carousel cards={cards} cardsToShow={cardsToShow}
                               currentIndex={currentIndex} totalCards={totalCards}/>
                 </div>
             </div>

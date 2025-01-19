@@ -24,14 +24,21 @@ function SubscribeComponent({withoutBlur}) {
                         <input placeholder={"Enter your email"}
                                className={"font-plusJakartaSans !bg-transparent px-6 py-3 flex-grow"}/>
                         <Button
-                            className={"roboto font-semibold text-[20px] text-white !bg-[#394375] border-none rounded-lg md:block hidden"} size={"lg"}>SUBSCRIBE</Button>
+                            className={"roboto font-semibold text-[20px] text-white !bg-[#394375] border-none rounded-lg md:block hidden"}
+                            size={"lg"}>SUBSCRIBE</Button>
                     </div>
                     <Button
-                        className={"roboto font-semibold text-[20px] text-white !bg-[#394375] border-none rounded-lg md:hidden block"} size={"lg"}>SUBSCRIBE</Button>
+                        className={"roboto font-semibold text-[20px] text-white !bg-[#394375] border-none rounded-lg md:hidden block"}
+                        size={"lg"}>SUBSCRIBE</Button>
                 </div>
             </div>
-            <div className={"w-[110vw] h-[118px] absolute bottom-1/2 translate-y-1/2 -rotate-3"}
-                 style={{background: "linear-gradient(to right,#EEC840 3%,#00D2D3 27%,#0076FF 56%,#00D2D3 85%,#EEC840 100%)"}}/>
+            <div
+                className="w-[110vw] h-[118px] absolute bottom-1/2 translate-y-1/2 -rotate-3 animate-gradient-move"
+                style={{
+                    background: `linear-gradient(to right, #EEC840 0%, #00D2D3 25%, #0076FF 50%, #00D2D3 75%, #EEC840 100%)`,
+                    backgroundSize: "200% 100%",
+                }}
+            />
         </div>
     );
 }

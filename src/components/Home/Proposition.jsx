@@ -24,7 +24,7 @@ import team1 from "../../assets/svg/home/proposition/team1.svg";
 import team1w from "../../assets/svg/home/proposition/team1w.svg";
 import team2 from "../../assets/svg/home/proposition/team2.svg";
 
-const Proposition = ({isMobile}) => {
+const Proposition = () => {
   const [hovered, setHovered] = useState(null);
 
   const propo = [
@@ -98,10 +98,10 @@ const Proposition = ({isMobile}) => {
     <div className='proposition-card pt-24 mainPage2 w-full justify-items-center'>
       <div className='text-center '>
         <p className='small text300'>B e n e fi t s</p>
-        <p className='mt-3 roboto fw600 textPeacoat' style={{fontSize: '44px'}}>The KeyFX Value Proposition</p>
+        <p className='mt-3 roboto font-semibold textPeacoat' style={{fontSize: '44px'}}>The KeyFX Value Proposition</p>
       </div>
       <div
-        className={`max-w-max-width-main grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 ${isMobile ? 'mt-16' : 'mt-32'} `}>
+        className={`max-w-max-width-main grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 sm:mt-32 mt-16`}>
         {propo.map(
           (pro, index) => (
             <div

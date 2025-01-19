@@ -1,5 +1,4 @@
-import React, {useEffect, useState} from 'react';
-import Navbar from '../components/Home/Navbar';
+import React, {useEffect} from 'react';
 import Services from '../components/Home/Services';
 import Solutions from '../components/Home/Solutions';
 import Proposition from '../components/Home/Proposition';
@@ -7,7 +6,6 @@ import Business from '../components/Home/Business';
 import Commerce from '../components/Home/Commerce';
 import Support from '../components/Home/Support';
 import TalkBusiness from '../components/Home/TalkBusiness';
-import Footer from '../components/Home/Footer';
 import SubscribeComponent from "../components/ContactUs/SubscribeComponent";
 
 // contact assets
@@ -38,22 +36,6 @@ const preloadImages = (imageUrls) => {
 };
 
 const MainPage = () => {
-    const [isMobile, setIsMobile] = useState(false);
-
-    useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth <= 640);
-        };
-
-        // Set initial value based on screen width
-        handleResize();
-
-        // Listen for resize events
-        window.addEventListener('resize', handleResize);
-
-        // Cleanup event listener on component unmount
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
 
     useEffect(() => {
         const imagesToPreload = [
@@ -78,17 +60,15 @@ const MainPage = () => {
 
     return (
         <div className={"flex flex-col items-center justify-center"}>
-            <Navbar/>
-            <Header isMobile={isMobile}/>
-            <Services isMobile={isMobile}/>
-            <Solutions isMobile={isMobile}/>
-            <Proposition isMobile={isMobile}/>
-            <Business isMobile={isMobile}/>
-            <Commerce isMobile={isMobile}/>
-            <Support isMobile={isMobile}/>
-            <TalkBusiness isMobile={isMobile}/>
+            <Header/>
+            <Services/>
+            <Solutions/>
+            <Proposition/>
+            <Business/>
+            <Commerce/>
+            <Support/>
+            <TalkBusiness/>
             <SubscribeComponent withoutBlur={true}/>
-            <Footer isMobile={isMobile}/>
         </div>
     );
 };

@@ -294,7 +294,7 @@ input[type="number"] {
 
 .support-card {
     margin-top: 100px;
-    background-image: url('../public/24Hsupport.svg');
+    background-image: url('./assets/svg/24Hsupport.svg');
     background-position: center;
     background-repeat: no-repeat;
     min-height: 420px;
@@ -1204,4 +1204,10 @@ button.loading:disabled {
     font-family: 'Roboto Serif';
     src: url('./assets/fonts/RobotoSerif-Medium.ttf') format('truetype');
     font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Roboto Serif';
+    src: url('./assets/fonts/RobotoSerif-SemiBold.ttf') format('truetype');
+    font-weight: 600;
 }

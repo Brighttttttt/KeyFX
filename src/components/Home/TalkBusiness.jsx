@@ -2,8 +2,9 @@ import React, {useState} from 'react';
 import Carousel from './utils/Carousel';
 import arrowGray from "../../assets/svg/home/arrowGray.svg";
 import arrowWhite from "../../assets/svg/home/arrowWhite.svg";
+import icon12 from "../../assets/images/12.png";
 
-const TalkBusiness = ({ isMobile }) => {
+const TalkBusiness = () => {
   const cards = [
     
     {
@@ -16,7 +17,7 @@ const TalkBusiness = ({ isMobile }) => {
           
           <div className='mt-3 book-mark rounded-md flex items-center justify-between px-3 py-1'>
             <div className='flex items-center'>
-              <img className='w-14 h-14 rounded-md' alt='not available' src='/12.png'/>
+              <img className='w-14 h-14 rounded-md' alt='not available' src={icon12}/>
               <div className='ps-3'>
                 <p className='fw-bold text-left'>Danny</p>
                 <p className='small text-left mt-0'>January 10,</p>
@@ -39,7 +40,7 @@ const TalkBusiness = ({ isMobile }) => {
           
           <div className='mt-3 book-mark rounded-md flex items-center justify-between px-3 py-1'>
             <div className='flex items-center'>
-              <img className='w-14 h-14 rounded-md' alt='not available' src='/12.png'/>
+              <img className='w-14 h-14 rounded-md' alt='not available' src={icon12}/>
               <div className='ps-3'>
                 <p className='fw-bold text-left'>Danny</p>
                 <p className='small text-left mt-0'>January 4,</p>
@@ -62,7 +63,7 @@ const TalkBusiness = ({ isMobile }) => {
           
           <div className='mt-3 book-mark rounded-md flex items-center justify-between px-3 py-1'>
             <div className='flex items-center'>
-              <img className='w-14 h-14 rounded-md' alt='not available' src='/12.png'/>
+              <img className='w-14 h-14 rounded-md' alt='not available' src={icon12}/>
               <div className='ps-3'>
                 <p className='fw-bold text-left'>Danny</p>
                 <p className='small text-left mt-0'>December 25,</p>
@@ -100,11 +101,11 @@ const TalkBusiness = ({ isMobile }) => {
     }, 2500);
   
   return (
-      <div className={`w-full max-w-max-width-main overflow-visible ${isMobile ? "pt-10" : "pt-32"}`}>
+      <div className={`w-full max-w-max-width-main overflow-visible sm:pt-32 pt-10`}>
           <div className={"mainPage max-w-max-width-main xl:mx-auto flex md:items-end items-start md:gap-0 gap-6 justify-between md:flex-row flex-col"}>
               <div className='text-start'>
                   <p className='small text400'>B l o g</p>
-                  <p className='mt-3 roboto text800 fw600' style={{fontSize: '44px'}}>Let's talk business</p>
+                  <p className='mt-3 roboto text800 font-semibold text-[44px]'>Let's talk business</p>
               </div>
               <div className={`flex gap-4`}>
                   <button
@@ -132,7 +133,7 @@ const TalkBusiness = ({ isMobile }) => {
               </div>
           </div>
           <div className='max-w-max-width-main lg:mt-16 md:mt-14 mt-10 mx-auto'>
-              <Carousel cards={cards} component={'business'} isMobile={isMobile} cardsToShow={cardsToShow}
+              <Carousel cards={cards} component={'business'} cardsToShow={cardsToShow}
                         currentIndex={currentIndex} totalCards={totalCards}/>
           </div>
       </div>

@@ -3,14 +3,16 @@ import radialBlur from "../../assets/images/radial_blur.png";
 import {useMediaQuery} from "../../hooks/useMediaQuery";
 import {dimensions} from "../../core/values/dimensions";
 import {Marquee} from "../ui/marquee";
+import business3Icon from "../../assets/svg/business3.svg";
+import competitiveRatesIcon from "../../assets/svg/Competitive Rates.svg";
 
 
-const Commerce = ({isMobile}) => {
+const Commerce = () => {
     const comm = [
         {
             id: 1,
             title: 'Unified Banking Services',
-            img: './business3.svg',
+            img: business3Icon,
             desc: 'Experience the convenience of integrated banking. Our unified platform offers a singular, streamlined interface for all your international finance needs.'
         },
         {
@@ -22,13 +24,13 @@ const Commerce = ({isMobile}) => {
         {
             id: 3,
             title: 'Competitive Rates',
-            img: './Competitive Rates.svg',
+            img: competitiveRatesIcon,
             desc: 'We strive to outmatch traditional banking rates, ensuring your business saves on every transaction.'
         },
         {
             id: 4,
             title: 'Unified Banking Services',
-            img: './business3.svg',
+            img: business3Icon,
             desc: 'Experience the convenience of integrated banking. Our unified platform offers a singular, streamlined interface for all your international finance needs.'
         },
     ];
@@ -36,7 +38,7 @@ const Commerce = ({isMobile}) => {
         {
             id: 3,
             title: 'Competitive Rates',
-            img: './Competitive Rates.svg',
+            img: competitiveRatesIcon,
             desc: 'We strive to outmatch traditional banking rates, ensuring your business saves on every transaction.'
         },
         {
@@ -54,7 +56,7 @@ const Commerce = ({isMobile}) => {
         {
             id: 6,
             title: 'Unified Banking Services',
-            img: './business3.svg',
+            img: business3Icon,
             desc: 'Experience the convenience of integrated banking. Our unified platform offers a singular, streamlined interface for all your international finance needs.'
         },
     ];
@@ -64,7 +66,7 @@ const Commerce = ({isMobile}) => {
         <div
             className={`w-full justify-items-center pt-24 proposition-card pb-32 flex flex-col gap-16 bg-commerce-gradient `}>
             <div className='lg:px-0 px-4 w-full text-center max-w-max-width-main mx-auto'>
-                <p className={`small ${isMobile ? 'text-grad2 fw600' : 'text300'}`}></p>
+                <p className={`small ${isBreakPoint ? 'text-grad2 fw600' : 'text300'}`}></p>
                 <p className='mt-3 roboto text700 fw600' style={{fontSize: '44px'}}>Empowering Global Commerce</p>
                 <p className='text-lg mt-3 lg:px-32 text500' style={{fontSize: '18px'}}>
                     At KeyFX, we pave the way for seamless international commerce through advanced financial
