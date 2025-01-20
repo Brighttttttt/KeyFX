@@ -150,12 +150,12 @@ const TransactionsImg = ({isMobile}) => {
                 <div className='v-card rounded-xl p-0'>
                     <p className='card-head-blue py-3 bb-gray w-full'>Get verified instantly</p>
                     <div className='mt-3 mb-4 v-card2 rounded-lg mx-4 p-0'>
-                        <div className='bb-gray p-3 flex justify-between items-center'>
+                        <div className='bb-gray p-3 flex items-center justify-between '>
                             <div>
                                 <p className='text-gray-500 font-10'>Amount</p>
                                 <p className='card-head-blue flex'>{amount}</p>
                             </div>
-                            <div className='relative w-full flex justify-content-end items-center'>
+                            <div className='relative flex justify-content-end items-center'>
                                 <img src={getFlagByCode(fromCurrency.toUpperCase())} alt="usd" className={"w-8"}/>
                             </div>
                         </div>
@@ -164,7 +164,7 @@ const TransactionsImg = ({isMobile}) => {
                                 <p className='text-gray-500 font-10'>Amount</p>
                                 <p className='card-head-blue flex'>{exchange.toFixed(4)}</p>
                             </div>
-                            <div className='relative w-full flex justify-content-end items-center'>
+                            <div className='relative flex justify-content-end items-center'>
                                 <img src={getFlagByCode(toCurrency.toUpperCase())} alt="usd" className={"w-8"}/>
                             </div>
                         </div>

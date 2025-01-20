@@ -34,7 +34,7 @@ const Veri = ({ isMobile }) => {
         className={`relative cursor-pointer ${isClicked ? 'veri-hove' : ''} ${isInView ? 'veri-hove' : ''}`}
         onClick={() => setIsClicked(!isClicked)}
       >
-        <div className="v-card rounded-3xl w-77 flex flex-col items-center">
+        <div className="v-card rounded-3xl w-[23rem] flex flex-col items-center">
           <svg className="veri-tick-1" width="39" height="38" viewBox="0 0 39 38" fill="none"
                xmlns="http://www.w3.org/2000/svg">
             <path fillRule="evenodd" clipRule="evenodd"

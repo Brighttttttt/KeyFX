@@ -71,7 +71,7 @@ function ConvertCurrenciesServiceComponent() {
         convertCurrency();
     }, [animate]);
 
-    const InfoBox = ({ label }) => (
+    const InfoBox = ({label}) => (
         <div className="w-full p-2 border rounded-md text-black flex items-center justify-start">
             <p className="font-roboto text-[#667085] text-[10px]">{label}</p>
         </div>
@@ -81,8 +81,8 @@ function ConvertCurrenciesServiceComponent() {
         <div className="flex items-center justify-center relative">
             <div
                 className="v-card absolute -top-4 left-10 cc-rad px-3 py-4 sm:w-72 w-60 transform translate-x-8 translate-y-4 card2">
-                <h2 className="text-xl font-semibold mb-4 text-center rate-container flex justify-center">
-                                    <span className={`rate-value text-payee ${animate ? 'animate-slide' : ''}`}>
+                <h2 className="text-xl font-semibold mb-4 text-center flex justify-center overflow-hidden relative">
+                                    <span className={`inline-block relative font-bold transition-all duration-1000 text-payee ${animate ? '-translate-y-full' : ''}`}>
                                         ${payeeRate.toFixed(2)}
                                     </span>
                 </h2>
@@ -95,27 +95,28 @@ function ConvertCurrenciesServiceComponent() {
                     <InfoBox label={"Currency / Wallet"}/>
                 </div>
                 <div>
-                    <button className="text-l w-full rounded-md btn-p flex items-center gap-1 mt-4">
+                    <button className="text-lg w-full rounded-md btn-p flex items-center gap-1 mt-4">
                         continue
                     </button>
                 </div>
                 <div className="currency-symbol top-right">
                 </div>
             </div>
-            <div className='relative mt-32'>
+            <div className='relative mt-32 '>
                 <div className="currency-symbol top-left z-9">
                 </div>
-                <div className="v-card relative bg-white cc-rad p-6 sm:w-80 w-60 z-10 card1">
+                <div className="v-card relative bg-white  cc-rad p-6 sm:w-80 w-60 z-10 card1">
                     <div className="currency-symbol bottom-right z-99">
                     </div>
                     <div>
                         <h2 className="text-lg font-semibold mb-4 roboto">Convert currencies</h2>
-                        <div
-                            className="flex justify-between items-center px-4 py-2 rounded-2xl mb-4 relative bg-[#f2f4fa]">
-                            <p className="w-full bg-transparent font-bold">
-                                {commafy(amount)}
-                            </p>
-                            <span className="flex items-center">
+                        <div className={"relative"}>
+                            <div
+                                className="flex justify-between items-center px-4 py-2 rounded-2xl mb-4 relative bg-[#f2f4fa]">
+                                <p className="w-full bg-transparent font-bold">
+                                    {commafy(amount)}
+                                </p>
+                                <span className="flex items-center">
                         <CurrenciesSelect
                             selectedCurrency={fromCurrency}
                             onCurrencyChange={handleFromCurrencyChange}
@@ -123,18 +124,15 @@ function ConvertCurrenciesServiceComponent() {
                             disableClick={true}
                         />
                       </span>
-                        </div>
-                        <div className="arrow-icon z-99" onClick={convertCurrency}>
-                            <img src={arrowUpDown} alt="arrowUpDown"/>
-                        </div>
-                        <div
-                            className="flex justify-between items-center px-4 py-2 rounded-2xl bg-[#f2f4fa]">
-                            <div className="rate-container">
-                        <span className={`rate-value ${animate ? 'animate-slide' : ''}`}>
+                            </div>
+                            <div
+                                className="flex justify-between items-center px-4 py-2 rounded-2xl bg-[#f2f4fa]">
+                                <div className="overflow-hidden relative">
+                        <span className={`inline-block relative font-bold transition-all duration-1000 ${animate ? '-translate-y-full' : ''}`}>
                             {commafy(exchange.toFixed(2))}
                         </span>
-                            </div>
-                            <span className="flex items-center">
+                                </div>
+                                <span className="flex items-center">
                         <CurrenciesSelect
                             selectedCurrency={toCurrency}
                             onCurrencyChange={handleToCurrencyChange}
@@ -142,7 +140,13 @@ function ConvertCurrenciesServiceComponent() {
                             disableClick={true}
                         />
                       </span>
+                            </div>
+                            <div
+                                className="w-14 h-14 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#2C3667FF] z-40 rounded-2xl flex items-center justify-center">
+                                <img src={arrowUpDown} alt="arrowUpDown"/>
+                            </div>
                         </div>
+
                     </div>
                 </div>
             </div>

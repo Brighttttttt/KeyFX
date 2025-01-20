@@ -40,7 +40,7 @@ function CardServiceComponent() {
                     link={'https://keyfx.co.uk/blog/card-services-with-keyfx-flexibility-and-security-at-your-fingertips/'}/>
             </div>
             <div className={`lg:order-2 order-1 flex justify-center items-end sm:mt-0 mt-5`}>
-                <div className='leftCard'>
+                <div className='relative'>
                     <div className='relative'>
                         <div
                             className="virtualCard v-card sm:w-72 w-60 flex flex-col items-center justify-center rounded-3xl">
@@ -132,7 +132,7 @@ function CardServiceComponent() {
                         </div>
                     </div>
                 </div>
-                <div className='rightCard foil-image ATMCard-wrapper'>
+                <div className='relative foil-image ATMCard-wrapper'>
                     <img src={ATMCard} alt="ATMCard" className='ATMCard'/>
                 </div>
             </div>

@@ -107,9 +107,9 @@ Send and receive payments quickly, avoid high exchange fees, and manage your fin
                                     <img src={GB} alt="GB" className='mr-5'/>
                                 </div>
                                 <div className='input-wrapper'>
-                                    <div className='text200 fw400 text-xxs'>Sort code</div>
+                                    <div className='text200 font-normal text-xxs'>Sort code</div>
                                     <div className="input">11_00_42</div>
-                                    <div className='text200 fw400 text-xxs acc-num'>Account number</div>
+                                    <div className='text200 font-normal text-xxs acc-num'>Account number</div>
                                     <div className="input">76543087</div>
                                 </div>
                             </div>

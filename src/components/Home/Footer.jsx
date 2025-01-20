@@ -1,10 +1,13 @@
 import React from 'react';
-import logo2 from '../../assets/svg/logo2.svg'
-import clockIcon from '../../assets/svg/clock.svg'
-import fbIcon from '../../assets/svg/Fb.svg'
-import instaIcon from '../../assets/svg/Insta.svg'
-import linkedinIcon from '../../assets/svg/Linked.svg'
-import letterIcon from '../../assets/svg/Letter.svg'
+import logo2 from '../../assets/svg/logo2.svg';
+import clockIcon from '../../assets/svg/clock.svg';
+import fbIcon from '../../assets/svg/Fb.svg';
+import instaIcon from '../../assets/svg/Insta.svg';
+import linkedinIcon from '../../assets/svg/Linked.svg';
+import letterIcon from '../../assets/svg/Letter.svg';
+import lcciLogo from '../../assets/svg/LCCI 1.svg';
+import phoneCallingRoundedIcon from '../../assets/svg/Phone Calling Rounded.svg';
+import streetMapPointIcon from '../../assets/svg/Streets Map Point.svg';
 
 const Footer = ({isMobile}) => {
     return (
@@ -51,23 +54,21 @@ const Footer = ({isMobile}) => {
 
                     <a className='mt-4 text-sm text600 flex items-center gap-2' href="tel:08000029331"><img
                         alt='Not Available'
-                        src='/Phone%20Calling%20Rounded.svg'/>0800-002-9331</a>
+                        src={phoneCallingRoundedIcon}/>0800-002-9331</a>
                     <a className='mt-2 text-sm text600 flex items-center gap-2' href="mailto:info@keyfx.co.uk"><img
                         alt='Not Available' src={letterIcon}/>info@keyfx.co.uk</a>
                     <a className='mt-2 text-sm text600 flex items-center gap-2'><img alt='Not Available'
                                                                                      src={clockIcon}/>9am-5pm Mon -
                         Fri</a>
                     <a className='mt-2 text-sm text600 flex items-center gap-2'><img alt='Not Available'
-                                                                                     src='/Streets%20Map%20Point.svg'/>128
+                                                                                     src={streetMapPointIcon}/>128
                         City
                         Road, London, EC1V 2NX</a>
                 </div>
             </div>
-            <div className='border-line'>
-
-            </div>
+            <div className='mx-[-20px] my-[30px] border-[0.5px] border-solid border-[#D5DAEF]'/>
             <div className={`flex sm-col gap-4 ${isMobile ? " items-start" : " items-center"}  `}>
-                <a href="https://www.londonchamber.co.uk/"><img className='w-80' src="/LCCI%201.svg"
+                <a href="https://www.londonchamber.co.uk/"><img className='w-80' src={lcciLogo}
                                                                 alt='Not Available'/></a>
                 <p className='text-xxs'>KeyFX is registered as a Money Services Business, regulated by HM Revenue &
                     Customs under the Money Laundering Regulations 2017 (Registration number XDML00000157237). Our
@@ -78,7 +79,7 @@ const Footer = ({isMobile}) => {
                     927951).</p>
             </div>
             <div className='flex my-4 gap-3'>
-                <p className='text600 fw400' style={{fontSize: '14px'}}>Connect with KeyFX in social media</p>
+                <p className='text600 font-normal text-sm'>Connect with KeyFX in social media</p>
                 <img alt="Not Available" src={fbIcon} className={"cursor-pointer"}
                      onClick={() => window.open("https://www.facebook.com/TheKeyfx")}/>
                 <img alt="Not Available" src={instaIcon} className={"cursor-pointer"}

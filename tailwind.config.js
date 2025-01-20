@@ -22,6 +22,7 @@ export default {
                 roboto: ['Roboto Serif', 'sans-serif'],
             },
             backgroundImage: {
+                'hit-bg': 'linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.3) 25%, rgba(246, 249, 252, 0.3) 50%, #F6F9FC 60%)',
                 'linear3': 'linear-gradient(to right,#EEC840 3%,#00D2D3 27%,#0076FF 56%,#00D2D3 85%,#EEC840 100%)',
                 'commerce-gradient': 'linear-gradient(to bottom, #ffffff66 0%, #ffffff4d 25%, #f6f9fc4d 50%, #f6f9fc 60%)',
                 'flow-gradient': 'linear-gradient(180deg ,#EEC840 ,#00D2D3 ,#0076FF ,#00D2D3 ,#EEC840)',

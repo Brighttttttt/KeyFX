@@ -177,7 +177,13 @@ const Solution = () => {
                               currentIndex={currentIndex} totalCards={totalCards}/>
                 </div>
             </div>
-            <div className='grad-line'></div>
+            <div
+                className="w-[110vw] h-[5px] animate-gradient-move"
+                style={{
+                    background: `linear-gradient(to right, #EEC840 0%, #00D2D3 25%, #0076FF 50%, #00D2D3 75%, #EEC840 100%)`,
+                    backgroundSize: "200% 100%",
+                }}
+            />
         </div>
     );
 };

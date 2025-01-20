@@ -15,7 +15,7 @@ const TalkBusiness = () => {
           <p className='mt-3 fw600 text-lg text-left pb-3'>Over 140,000 Business Accounts Closed by Major Banks: A Growing Concern for UK Businesses</p>
           <p className='small text-left MidnightHaze'>Recent figures from the UK Treasury Committee highlight a worrisome trend in the financial sector: over 140,000 business accounts were closed by major banks in 2023. This surge in “de-banking” has sparked concerns about the accessibility and dependability of banking services, particularly for small and medium-sized enterprises (SMEs), which are among the hardest hit.</p>
           
-          <div className='mt-3 book-mark rounded-md flex items-center justify-between px-3 py-1'>
+          <div className='mt-3 bg-[#F4F6F9] h-[72px] rounded-md flex items-center justify-between px-3 py-1'>
             <div className='flex items-center'>
               <img className='w-14 h-14 rounded-md' alt='not available' src={icon12}/>
               <div className='ps-3'>
@@ -38,7 +38,7 @@ const TalkBusiness = () => {
           <p className='mt-3 fw600 text-lg text-left pb-3'>Reliable Food & Beverage Importers You Can Count On</p>
           <p className='small px-0 text-left MidnightHaze'>Are you struggling to find reliable food and beverage importers in the United Kingdom? Many import and export companies face challenges in identifying trustworthy partners for their vegetable and other food products. This article outlines how to identify top importers in your area, evaluate their industry specialisations, and assess their reputation and customer feedback</p>
           
-          <div className='mt-3 book-mark rounded-md flex items-center justify-between px-3 py-1'>
+          <div className='mt-3 bg-[#F4F6F9] h-[72px] rounded-md flex items-center justify-between px-3 py-1'>
             <div className='flex items-center'>
               <img className='w-14 h-14 rounded-md' alt='not available' src={icon12}/>
               <div className='ps-3'>
@@ -61,7 +61,7 @@ const TalkBusiness = () => {
           <p className='mt-3 fw600 text-lg text-left pb-3'>Optimising Your Electrical Equipment Imports: Best Suppliers and Bulk Deals in the UK</p>
           <p className='small text-left MidnightHaze'>Sourcing electrical equipment for your business is a critical decision that affects quality, compliance, and cost efficiency. At KEYFX, we provide tailored FX services to importers, enabling seamless payments and cost savings on currency transfers. Top 10 Suppliers of Electrical Equipment in the UK The UK boasts a robust market for electrical equipment, making it.</p>
           
-          <div className='mt-3 book-mark rounded-md flex items-center justify-between px-3 py-1'>
+          <div className='mt-3 bg-[#F4F6F9] h-[72px] rounded-md flex items-center justify-between px-3 py-1'>
             <div className='flex items-center'>
               <img className='w-14 h-14 rounded-md' alt='not available' src={icon12}/>
               <div className='ps-3'>

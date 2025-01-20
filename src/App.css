@@ -38,14 +38,10 @@ body {
     width: 100%;
 }
 
-::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-}
-
-* {
-    scrollbar-width: none;
-}
+/*input {*/
+/*    position: relative;*/
+/*    z-index: -1;*/
+/*}*/
 
 .mainContainer {
     max-width: 1440px;

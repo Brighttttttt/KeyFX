@@ -92,8 +92,8 @@ const Support = () => {
     }, [isBreakPoint]);
 
     return (
-        <div className={"w-full"}>
-            <div className='support-card'>
+        <div className={"w-full overflow-visible"}>
+            <div className='support-card overflow-visible'>
                 <div className='text-center '>
                     <p className='small text300'>S u p p o r t</p>
                     <p className='mt-3 roboto text700 font-semibold text-[44px]'>We are here to help you</p>
@@ -101,32 +101,32 @@ const Support = () => {
                     <p className='text-lg text500'>Chat to us in app any time, or call or email if you'd prefer,<br />We'll answer your questions and help solve any problems you have,<br />No need for branches, and no need to make an appointment</p>
                 </div>
             </div>
-            <div className='py-32 mainPage2 hit-bg justify-items-center'>
-                <div className={"max-w-max-width-main"}>
-                    <div className='text-center'>
+            <div className='py-32 mainPage2 bg-hit-bg justify-items-center overflow-visible'>
+                <div className={"max-w-max-width-main overflow-visible"}>
+                    <div className='text-center overflow-visible'>
                         <p className='small text400'>L e a r n&ensp;M o r e </p>
                         <p className='mt-3 roboto text800 font-semibold text-[44px]'>How it works</p>
                     </div>
-                    <div className={`lg:px-0 sm:px-10 sm:mt-32 px-0 mt-10`}>
-                        <div className='grid lg:grid-cols-2 grid-cols-1'>
+                    <div className={`lg:px-0 sm:px-10 sm:mt-32 px-0 mt-10 overflow-visible`}>
+                        <div className='grid lg:grid-cols-2 grid-cols-1 overflow-visible'>
                             <div className='lg:order-1 order-2 '>
                                 <button ref={targetRef}
                                         className={`${isInView ? 'step1' : 'step2 roboto'} rounded-full py-2 px-4`}>Step
                                     1
                                 </button>
-                                <p className='my-3 roboto text-4xl fw600 textPeacoat'>Sign up online</p>
-                                <p className='f16 MidnightHaze'>To sign up online at KeyFX, simply navigate to the
+                                <p className='my-3 roboto text-4xl font-semibold textPeacoat'>Sign up online</p>
+                                <p className='f16 MidnightHaze font-plusJakartaSans'>To sign up online at KeyFX, simply navigate to the
                                     registration page. There, you will need to fill in the required information such as
                                     your name, email, and password. After completing the form, click the "Sign Up"
                                     button. </p>
                             </div>
-                            <div className='overflow-visible lg:order-2 order-1 flex lg:justify-start justify-center'>
+                            <div className='overflow-visible lg:order-2 order-1 flex lg:justify-start justify-center '>
                                 <div className="overflow-visible mx-auto">
                                     <Lisence isMobile={isBreakPoint}/>
                                 </div>
                             </div>
                         </div>
-                        <div className='grid lg:grid-cols-2 grid-cols-1 lg:gap-0 gap-5 mt-20'>
+                        <div className='grid lg:grid-cols-2 grid-cols-1 lg:gap-0 gap-5 mt-28'>
                             <div className='lg:order-1 order-2'>
                                 <button ref={targetRef1}
                                         className={`${isInView1 ? 'step1' : 'step2 roboto'} rounded-full py-2 px-4`}>Step
@@ -143,7 +143,7 @@ const Support = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='grid lg:grid-cols-2 grid-cols-1 lg:gap-0 gap-5 mt-24'>
+                        <div className='grid lg:grid-cols-2 grid-cols-1 lg:gap-0 gap-5 mt-32'>
                             <div className='lg:order-1 order-2'>
                                 <button ref={targetRef2}
                                         className={`${isInView2 ? 'step1' : 'step2 roboto'} rounded-full py-2 px-4`}>Step
@@ -160,7 +160,7 @@ const Support = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='grid lg:grid-cols-2 grid-cols-1 lg:gap-0 gap-5 mt-24 '>
+                        <div className='grid lg:grid-cols-2 grid-cols-1 lg:gap-0 gap-5 mt-36 '>
                             <div className='lg:order-1 order-2'>
                                 <button ref={targetRef3}
                                         className={`${isInView3 ? 'step1' : 'step2 roboto'} rounded-full py-2 px-4`}>Step
