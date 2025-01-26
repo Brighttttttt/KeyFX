@@ -17,13 +17,13 @@ function CardServiceComponent() {
 
     return (
         <div className={`grid lg:grid-cols-2 grid-cols-1 gap-24 sm:mt-36 mt-0`}>
-            <div className='lg:order-1 order-2 flex flex-col gap-4'>
+            <div className='lg:order-1 order-2 flex flex-col gap-6'>
                 <div className='icon-rotate mb-3'>
                     <img className='icon-rotate1' alt="card1" src={card1}/>
                     <img className='icon-rotate2' alt="card2" src={card2}/>
                 </div>
                 <p className='roboto font-semibold text700 text-3xl'>Card Services</p>
-                <ul className={`flex flex-col gap-4`}>
+                <ul className={`flex flex-col gap-6`}>
                     {items.map((item, index) => (
                         <div key={index} className={"flex items-center justify-start gap-2"}>
                             <img src={blueTickIcon} alt={"tick"}/>
@@ -132,7 +132,7 @@ function CardServiceComponent() {
                         </div>
                     </div>
                 </div>
-                <div className='relative foil-image ATMCard-wrapper'>
+                <div className='relative foil-image ATMCard-wrapper sm:-mb-10'>
                     <img src={ATMCard} alt="ATMCard" className='ATMCard'/>
                 </div>
             </div>

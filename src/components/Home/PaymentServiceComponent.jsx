@@ -14,13 +14,13 @@ function PaymentServiceComponent() {
 
     return (
         <div className={`grid lg:grid-cols-2 grid-cols-1 gap-24 sm:mt-36 mt-10`}>
-            <div className='lg:order-1 order-2 flex flex-col gap-4'>
+            <div className='lg:order-1 order-2 flex flex-col gap-6'>
                 <div className='icon-rotate mb-3'>
                     <img className='icon-rotate1' alt="payment1" src={payment1}/>
                     <img className='icon-rotate2' alt="payment2" src={payment2}/>
                 </div>
                 <p className='roboto font-semibold text700 text-3xl'>Payment Services</p>
-                <ul className={`flex flex-col gap-4`}>
+                <ul className={`flex flex-col gap-6`}>
                     {items.map((item, index) => (
                         <div key={index} className={"flex items-center justify-start gap-2"}>
                             <img src={blueTickIcon} alt={"tick"}/>

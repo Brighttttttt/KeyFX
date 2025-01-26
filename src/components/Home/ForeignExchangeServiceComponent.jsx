@@ -16,13 +16,13 @@ function ForeignExchangeServiceComponent() {
     return (
         <div className={`grid lg:grid-cols-2 grid-cols-1 gap-24 mt-36`}>
             <BarChart/>
-            <div className={"flex flex-col gap-4"}>
+            <div className={"flex flex-col gap-6"}>
                 <div className='icon-rotate mb-2'>
                     <img className='icon-rotate1' alt="exchange1" src={exchange1}/>
                     <img className='icon-rotate2' alt="exchange2" src={exchange2}/>
                 </div>
                 <p className='roboto font-semibold text700 text-3xl'>Foreign Exchange Services</p>
-                <ul className={`flex flex-col gap-4`}>
+                <ul className={`flex flex-col gap-6`}>
                     {items.map((item, index) => (
                         <div key={index} className={"flex items-center justify-start gap-2"}>
                             <img src={blueTickIcon} alt={"tick"}/>

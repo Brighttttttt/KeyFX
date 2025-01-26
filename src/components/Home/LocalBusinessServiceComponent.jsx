@@ -17,7 +17,7 @@ function LocalBusinessServiceComponent() {
             <div className='justify-center flex mb-5'>
                 <LocalBusinessCard/>
             </div>
-            <div className={"flex flex-col gap-4"}>
+            <div className={"flex flex-col gap-6"}>
                 <div className='icon-rotate mb-2'>
                     <img className='icon-rotate1' alt="business1" src={business1}/>
                     <img className='icon-rotate2' alt="business2" src={business2}/>

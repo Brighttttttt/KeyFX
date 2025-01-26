@@ -57,8 +57,8 @@ const Navbar = () => {
                         }
                     </ul>
                 </div>
-                <div className='items-center  sm:flex hidden'>
-                    <a className='fw600 px-2 py-6' href="https://panel.keyfx.co.uk/login">Login</a>
+                <div className='items-center sm:flex hidden gap-3'>
+                    <a className='font-semibold px-4 py-6 text-[#394375]' href="https://panel.keyfx.co.uk/login">Login</a>
                     <a href="https://panel.keyfx.co.uk/register">
                         <Button className='rounded-md bg-[#394375] text-white font-semibold'>
                             Sign up
